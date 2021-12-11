@@ -1,0 +1,71 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.banner {
+  background-image: url('../assets/dot.png');
+}
+
+.border-left {
+  border-left: 2px solid #007bff !important;
+}
+
+.animation-Left {
+  animation: slideInFromLeft 1.5s ease-in;
+}
+
+.animation-Right {
+  animation: slideInFromRight 1.5s ease-in;
+}
+
+.animation-Top {
+  animation: slideInFromTop 1.5s ease-in;
+}
+
+.animation-Buttom {
+  animation: slideInFromBottom 1.5s ease-in;
+}
+
+/* Animations */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
