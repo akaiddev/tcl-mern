@@ -23,7 +23,7 @@ export const boardOfDirectorListReducer = (state = { boardOfDirectors: [] }, act
     case BOARD_OF_DIRECTOR_LIST_REQUEST:
       return { loading: true, boardOfDirectors: [] }
     case BOARD_OF_DIRECTOR_LIST_SUCCESS:
-      return { loading: true, boardOfDirectors: action.payload }
+      return { loading: false, boardOfDirectors: action.payload }
     case BOARD_OF_DIRECTOR_LIST_FAIL:
       return { loading: false, error: action.payload }
     default:

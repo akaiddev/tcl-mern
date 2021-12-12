@@ -3,6 +3,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Login from './accounts/Login'
 import Profile from './accounts/Profile'
 import Registration from './accounts/Registration'
+import BoardOfDirectorEdit from './admin/BoardOfDirectorEdit'
+import BoardOfDirectorList from './admin/BoardOfDirectorList'
 import EquipmentEdit from './admin/EquipmentEdit'
 import EquipmentList from './admin/EquipmentList'
 import PrivateProjectEdit from './admin/PrivateProjectEdit'
@@ -86,6 +88,9 @@ function Router() {
 
         {/* admin  panel*/}
 
+        <Route path='/admin/board-of-director' element={<BoardOfDirectorList />} />
+        <Route path='/admin/board-of-director/:id/edit' element={<BoardOfDirectorEdit />} />
+
         <Route path='/admin/service-product' element={<ServiceProductList />} />
         <Route path='/admin/service-product/:id/edit' element={<ServiceProductEdit />} />
 
@@ -106,7 +111,6 @@ function Router() {
         <Route path='/admin/private-project/:id/edit' element={<PrivateProjectEdit />} />
 
         <Route path='*' element={<NotFound />} />
-
       </Routes>
 
       <Footer />

@@ -68,28 +68,27 @@ const Header = () => {
 
             {userInfo && userInfo.isAdmin && (
               <NavDropdown title='Admin' id='adminMenu'>
-                <NavDropdown.Item as={Link} to='/admin/users'>
-                  User List
+                <NavDropdown.Item as={Link} to='/admin/board-of-director'>
+                  Board Of Director List
                 </NavDropdown.Item>
 
                 <NavDropdown.Item as={Link} to='/admin/service-product'>
                   Service Product List
                 </NavDropdown.Item>
-
                 <NavDropdown.Item as={Link} to='/admin/equipment'>
                   Equipment List
                 </NavDropdown.Item>
-
                 <NavDropdown.Item as={Link} to='/admin/running-project'>
                   Running Project List
                 </NavDropdown.Item>
-
                 <NavDropdown.Item as={Link} to='/admin/public-project'>
                   Public Project List
                 </NavDropdown.Item>
-
                 <NavDropdown.Item as={Link} to='/admin/private-project'>
                   Private Project List
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to='/admin/users'>
+                  User List
                 </NavDropdown.Item>
               </NavDropdown>
             )}
