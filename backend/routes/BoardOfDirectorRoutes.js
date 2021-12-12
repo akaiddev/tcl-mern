@@ -1,5 +1,11 @@
 import express from 'express'
-import { createBoardOfDirector, deleteBoardOfDirector, getBoardOfDirectorById, getBoardOfDirectors, updateBoardOfDirector } from '../controllers/BoardOfDirectorController.js'
+import {
+    createBoardOfDirector,
+    deleteBoardOfDirector,
+    getBoardOfDirectorById,
+    getBoardOfDirectors,
+    updateBoardOfDirector
+} from '../controllers/BoardOfDirectorController.js'
 import { admin, protect } from '../middleware/authMiddleware.js'
 
 const router = express.Router()
