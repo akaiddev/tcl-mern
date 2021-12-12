@@ -15,7 +15,7 @@ import {
   MANAGEMENT_UPDATE_FAIL,
   MANAGEMENT_UPDATE_REQUEST,
   MANAGEMENT_UPDATE_RESET,
-  MANAGEMENT_UPDATE_SUCCESS,
+  MANAGEMENT_UPDATE_SUCCESS
 } from './../constants/ManagementConstants'
 
 export const managementListReducer = (state = { managements: [] }, action) => {
