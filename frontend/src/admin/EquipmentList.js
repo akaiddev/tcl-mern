@@ -109,13 +109,13 @@ const EquipmentList = () => {
 
                     <td>
                       <Link to={`/admin/equipment/${equipment._id}/edit`}>
-                        <Button variant='outline-dark' className='btn-sm'>
+                        <Button variant='outline-dark' className='btn-sm rounded-circle'>
                           <i className='fas fa-edit'></i>
                         </Button>
                       </Link>
                     </td>
                     <td>
-                      <Button variant='outline-danger' className='btn-sm' onClick={() => deleteHandler(equipment._id)}>
+                      <Button variant='outline-danger' className='btn-sm rounded-circle' onClick={() => deleteHandler(equipment._id)}>
                         <i className='fas fa-trash'></i>
                       </Button>
                     </td>

@@ -55,7 +55,6 @@ const Header = () => {
                     <i className='far fa-user-circle'></i> Profile
                   </NavDropdown.Item>
 
-                  <NavDropdown.Divider />
                   <NavDropdown.Item onClick={logoutHandler}>
                     <i className='fas fa-sign-out-alt'></i> Logout
                   </NavDropdown.Item>
@@ -70,23 +69,27 @@ const Header = () => {
             {userInfo && userInfo.isAdmin && (
               <NavDropdown title='Admin' id='adminMenu'>
                 <NavDropdown.Item as={Link} to='/admin/users'>
-                  <i className='fas fa-user-alt'></i> User List
+                  User List
+                </NavDropdown.Item>
+
+                <NavDropdown.Item as={Link} to='/admin/service-product'>
+                  Service Product List
                 </NavDropdown.Item>
 
                 <NavDropdown.Item as={Link} to='/admin/equipment'>
-                  <i className='fab fa-staylinked'></i> Equipment List
+                  Equipment List
                 </NavDropdown.Item>
 
                 <NavDropdown.Item as={Link} to='/admin/running-project'>
-                  <i className='fab fa-staylinked'></i> Running Project List
+                  Running Project List
                 </NavDropdown.Item>
 
                 <NavDropdown.Item as={Link} to='/admin/public-project'>
-                  <i className='fab fa-staylinked'></i> Public Project List
+                  Public Project List
                 </NavDropdown.Item>
 
                 <NavDropdown.Item as={Link} to='/admin/private-project'>
-                  <i className='fab fa-staylinked'></i> Private Project List
+                  Private Project List
                 </NavDropdown.Item>
               </NavDropdown>
             )}

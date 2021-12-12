@@ -108,13 +108,13 @@ const PublicProjectList = () => {
                     <td>{publicProject.nameOfWork}</td>
                     <td>
                       <Link to={`/admin/public-project/${publicProject._id}/edit`}>
-                        <Button variant='outline-dark' className='btn-sm'>
+                        <Button variant='outline-dark' className='btn-sm rounded-circle'>
                           <i className='fas fa-edit'></i>
                         </Button>
                       </Link>
                     </td>
                     <td>
-                      <Button variant='outline-danger' className='btn-sm' onClick={() => deleteHandler(publicProject._id)}>
+                      <Button variant='outline-danger' className='btn-sm rounded-circle' onClick={() => deleteHandler(publicProject._id)}>
                         <i className='fas fa-trash'></i>
                       </Button>
                     </td>

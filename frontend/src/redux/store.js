@@ -37,7 +37,13 @@ import {
   runningProjectTopRatedReducer,
   runningProjectUpdateReducer
 } from './reducers/runningProjectReducers'
-import { serviceProductListReducer } from './reducers/serviceProductReducers'
+import {
+  serviceProductCreateReducer,
+  serviceProductDeleteReducer,
+  serviceProductDetailsReducer,
+  serviceProductListReducer,
+  serviceProductUpdateReducer
+} from './reducers/serviceProductReducers'
 import {
   userDeleteReducer,
   userDetailsReducer,
@@ -51,6 +57,10 @@ import {
 const reducer = combineReducers({
   // Service Product
   serviceProductList: serviceProductListReducer,
+  serviceProductDetails: serviceProductDetailsReducer,
+  serviceProductDelete: serviceProductDeleteReducer,
+  serviceProductCreate: serviceProductCreateReducer,
+  serviceProductUpdate: serviceProductUpdateReducer,
 
   // equipment List
   equipmentList: equipmentListReducer,

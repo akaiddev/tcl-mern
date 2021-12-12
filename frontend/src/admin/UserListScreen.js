@@ -69,13 +69,13 @@ const UserListScreen = () => {
                   <td>{user.isAdmin ? <i className='fas fa-check' style={{ color: 'green' }}></i> : <i className='fas fa-times' style={{ color: 'red' }}></i>}</td>
                   <td>
                     <Link to={`/admin/user/${user._id}/edit`}>
-                      <Button variant='dark' className='btn-sm'>
+                      <Button variant='dark' className='btn-sm rounded-circle'>
                         <i className='fas fa-edit'></i>
                       </Button>
                     </Link>
                   </td>
                   <td>
-                    <Button variant='outline-danger' className='btn-sm' onClick={() => deleteHandler(user._id)}>
+                    <Button variant='outline-danger' className='btn-sm rounded-circle' onClick={() => deleteHandler(user._id)}>
                       <i className='fas fa-trash'></i>
                     </Button>
                   </td>

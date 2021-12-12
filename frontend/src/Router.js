@@ -11,6 +11,8 @@ import PublicProjectEdit from './admin/PublicProjectEdit'
 import PublicProjectList from './admin/PublicProjectList'
 import RunningProjectEdit from './admin/RunningProjectEdit'
 import RunningProjectList from './admin/RunningProjectList'
+import ServiceProductEdit from './admin/ServiceProductEdit'
+import ServiceProductList from './admin/ServiceProductList'
 import UserEditScreen from './admin/UserEditScreen'
 import UserListScreen from './admin/UserListScreen'
 import Footer from './common/Footer'
@@ -83,6 +85,10 @@ function Router() {
         <Route path='/admin/user/:id/edit' element={<UserEditScreen />} />
 
         {/* admin  panel*/}
+
+        <Route path='/admin/service-product' element={<ServiceProductList />} />
+        <Route path='/admin/service-product/:id/edit' element={<ServiceProductEdit />} />
+
         <Route path='/admin/equipment' element={<EquipmentList />} />
         <Route path='/admin/equipment/:pageNumber' element={<EquipmentList />} />
         <Route path='/admin/equipment/:id/edit' element={<EquipmentEdit />} />
