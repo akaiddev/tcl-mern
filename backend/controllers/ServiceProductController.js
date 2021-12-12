@@ -30,10 +30,10 @@ const getServiceProductById = asyncHandler(async (req, res) => {
 // @access  Private/Admin
 
 const deleteServiceProduct = asyncHandler(async (req, res) => {
-  const publicProject = await ServiceProduct.findById(req.params.id)
+  const serviceProduct = await ServiceProduct.findById(req.params.id)
 
-  if (publicProject) {
-    await publicProject.remove()
+  if (serviceProduct) {
+    await serviceProduct.remove()
     res.json({ message: 'Service Product Removed' })
   } else {
     res.status(404)

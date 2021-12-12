@@ -6,7 +6,11 @@
 }
 
 .banner {
-  background-image: url('../assets/dot.png');
+  background-image: url('../assets/bg/2.png');
+  background-size: cover;
+}
+.topTtile {
+  background-image: url('../assets/bg/3.jpg');
 }
 
 .border-left {

@@ -7,12 +7,14 @@ import privateProjects from './data/privateProjects.js'
 import serviceProducts from './data/serviceProducts.js'
 import publicProjects from './data/publicProjects.js'
 import runningProjects from './data/runningProjects.js'
+import BoardOfDirectors from './data/BoardOfDirectors.js'
 import users from './data/users.js'
 import Equipment from './models/equipmentModel.js'
 import PrivateProject from './models/privateProjectModel.js'
 import ServiceProduct from './models/serviceProductModel.js'
 import PublicProject from './models/publicProjectModel.js'
 import RunningProject from './models/RunningProjectModel.js'
+import BoardOfDirector from './models/BoardOfDirectorModel.js'
 import User from './models/userModel.js'
 
 dotenv.config()
@@ -20,6 +22,7 @@ connectDB()
 
 const importData = async () => {
   try {
+    await BoardOfDirector.deleteMany()
     await ServiceProduct.deleteMany()
     await Equipment.deleteMany()
     await RunningProject.deleteMany()
@@ -31,10 +34,22 @@ const importData = async () => {
 
     const adminUser = createdUsers[0]._id
 
+
+
+    const sampleBoardOfDirector = BoardOfDirectors.map((BoardOfDirector) => {
+      return { ...BoardOfDirector, user: adminUser }
+    })
+    await BoardOfDirector.insertMany(sampleBoardOfDirector)
+
+
+
+
     const sampleServiceProduct = serviceProducts.map((serviceProduct) => {
       return { ...serviceProduct, user: adminUser }
     })
-    await ServiceProduct.insertMany(sampleServiceProduct)
+    await ServiceProduct.insertMany(sampleServiceProduct)  
+    
+    
 
     const sampleEquipment = equipments.map((equipment) => {
       return { ...equipment, user: adminUser }
@@ -66,6 +81,7 @@ const importData = async () => {
 
 const destroyData = async () => {
   try {
+    await BoardOfDirector.deleteMany()
     await ServiceProduct.deleteMany()
     await Equipment.deleteMany()
     await RunningProject.deleteMany()

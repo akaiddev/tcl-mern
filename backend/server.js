@@ -5,6 +5,7 @@ import morgan from 'morgan'
 import path from 'path'
 import connectDB from './config/database.js'
 import { errorHandler, notFound } from './middleware/errorMiddleware.js'
+import BoardOfDirectorRoutes from './routes/BoardOfDirectorRoutes.js'
 import equipmentRoutes from './routes/equipmentRoutes.js'
 import privateProjectRoutes from './routes/privateProjectRoutes.js'
 import publicProjectRoutes from './routes/publicProjectRoutes.js'
@@ -24,6 +25,7 @@ if (process.env.NODE_ENV === 'Development') {
 
 app.use(express.json())
 
+app.use('/api/boardOfDirectors', BoardOfDirectorRoutes)
 app.use('/api/serviceProducts', ServiceProductRoutes)
 app.use('/api/equipments', equipmentRoutes)
 app.use('/api/runningProjects', runningProjects)
