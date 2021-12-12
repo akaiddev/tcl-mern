@@ -2,6 +2,13 @@ import { applyMiddleware, combineReducers, createStore } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import thunk from 'redux-thunk'
 import {
+  boardOfDirectorCreateReducer,
+  boardOfDirectorDeleteReducer,
+  boardOfDirectorDetailsReducer,
+  boardOfDirectorListReducer,
+  boardOfDirectorUpdateReducer
+} from './reducers/BoardOfDirectorReducers'
+import {
   equipmentCreateReducer,
   equipmentDeleteReducer,
   equipmentDetailsReducer,
@@ -55,6 +62,14 @@ import {
 } from './reducers/userReducers'
 
 const reducer = combineReducers({
+  
+  // Board Of Director
+  boardOfDirectorList: boardOfDirectorListReducer,
+  boardOfDirectorDetails: boardOfDirectorDetailsReducer,
+  boardOfDirectorDelete: boardOfDirectorDeleteReducer,
+  boardOfDirectorCreate: boardOfDirectorCreateReducer,
+  boardOfDirectorUpdate: boardOfDirectorUpdateReducer,
+
   // Service Product
   serviceProductList: serviceProductListReducer,
   serviceProductDetails: serviceProductDetailsReducer,
