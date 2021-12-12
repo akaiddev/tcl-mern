@@ -7,6 +7,8 @@ import BoardOfDirectorEdit from './admin/BoardOfDirectorEdit'
 import BoardOfDirectorList from './admin/BoardOfDirectorList'
 import EquipmentEdit from './admin/EquipmentEdit'
 import EquipmentList from './admin/EquipmentList'
+import ManagementEdit from './admin/ManagementEdit'
+import ManagementList from './admin/ManagementList'
 import PrivateProjectEdit from './admin/PrivateProjectEdit'
 import PrivateProjectList from './admin/PrivateProjectList'
 import PublicProjectEdit from './admin/PublicProjectEdit'
@@ -87,6 +89,10 @@ function Router() {
         <Route path='/admin/user/:id/edit' element={<UserEditScreen />} />
 
         {/* admin  panel*/}
+
+        <Route path='/admin/management' element={<ManagementList />} />
+        <Route path='/admin/management/:id/edit' element={<ManagementEdit />} />
+
 
         <Route path='/admin/board-of-director' element={<BoardOfDirectorList />} />
         <Route path='/admin/board-of-director/:id/edit' element={<BoardOfDirectorEdit />} />
