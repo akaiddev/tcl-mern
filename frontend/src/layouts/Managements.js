@@ -1,13 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Col, Container } from 'react-bootstrap'
+import { useDispatch, useSelector } from 'react-redux'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick-theme.css'
 import 'slick-carousel/slick/slick.css'
+import Message from '../common/Message'
 import Management from '../components/Management'
 import TopTitle from '../components/TopTitle'
-import ManagementData from '../data/ManagementData'
+import Loader from './../common/Loader'
+import { listManagement } from './../redux/actions/ManagementActions'
 
 const Managements = () => {
+  const dispatch = useDispatch()
+  const managementList = useSelector((state) => state.managementList)
+  const { loading, error, managements } = managementList
+
+  useEffect(() => {
+    dispatch(listManagement())
+  }, [dispatch])
+
   let settings = {
     dots: true,
     infinite: true,
@@ -51,13 +62,19 @@ const Managements = () => {
     <Container className='mt-5'>
       <TopTitle text='MANAGEMENT STRUCTURE' />
 
-      <Slider {...settings}>
-        {ManagementData.map((managementItem) => (
-          <Col xs={12} sm={6} md={4} lg={3} key={managementItem._id} className='mb-3 '>
-            <Management managementItem={managementItem} />
-          </Col>
-        ))}
-      </Slider>
+      {loading ? (
+        <Loader />
+      ) : error ? (
+        <Message variant='danger'>{error}</Message>
+      ) : (
+        <Slider {...settings}>
+          {managements.map((managementItem) => (
+            <Col xs={12} sm={6} md={4} lg={3} key={managementItem._id} className='mb-3 '>
+              <Management managementItem={managementItem} />
+            </Col>
+          ))}
+        </Slider>
+      )}
     </Container>
   )
 }

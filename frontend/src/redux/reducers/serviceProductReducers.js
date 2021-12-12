@@ -31,7 +31,7 @@ export const serviceProductListReducer = (state = { serviceProducts: [] }, actio
   }
 }
 
-export const serviceProductDetailsReducer = (state = { serviceProduct: { reviews: [] } }, action) => {
+export const serviceProductDetailsReducer = (state = { serviceProduct: {} }, action) => {
   switch (action.type) {
     case SERVICE_PRODUCT_DETAILS_REQUEST:
       return { ...state, loading: true }

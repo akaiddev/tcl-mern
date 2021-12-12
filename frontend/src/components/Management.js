@@ -7,7 +7,12 @@ const Management = ({ managementItem }) => {
       <Image src={managementItem.image} alt={managementItem.name} />
       <Card.Body>
         <Card.Title className='fw-bold'>{managementItem.name}</Card.Title>
-        <Card.Text>{managementItem.designation}</Card.Text>
+        <Card.Text as='h6' className='fw-bold'>
+          {managementItem.designation}
+        </Card.Text>
+        <Card.Text as='h6' className='fw-bold'>
+          {managementItem.email}
+        </Card.Text>
       </Card.Body>
     </Card>
   )

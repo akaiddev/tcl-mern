@@ -18,6 +18,13 @@ import {
   equipmentUpdateReducer
 } from './reducers/equipmentReducers'
 import {
+  managementCreateReducer,
+  managementDeleteReducer,
+  managementDetailsReducer,
+  managementListReducer,
+  managementUpdateReducer
+} from './reducers/ManagementReducers'
+import {
   privateProjectCreateReducer,
   privateProjectDeleteReducer,
   privateProjectDetailsReducer,
@@ -62,7 +69,13 @@ import {
 } from './reducers/userReducers'
 
 const reducer = combineReducers({
-  
+  // Managements
+  managementList: managementListReducer,
+  managementDetails: managementDetailsReducer,
+  managementDelete: managementDeleteReducer,
+  managementCreate: managementCreateReducer,
+  managementUpdate: managementUpdateReducer,
+
   // Board Of Director
   boardOfDirectorList: boardOfDirectorListReducer,
   boardOfDirectorDetails: boardOfDirectorDetailsReducer,

@@ -31,7 +31,7 @@ export const boardOfDirectorListReducer = (state = { boardOfDirectors: [] }, act
   }
 }
 
-export const boardOfDirectorDetailsReducer = (state = { boardOfDirector: { reviews: [] } }, action) => {
+export const boardOfDirectorDetailsReducer = (state = { boardOfDirector: {} }, action) => {
   switch (action.type) {
     case BOARD_OF_DIRECTOR_DETAILS_REQUEST:
       return { ...state, loading: true }

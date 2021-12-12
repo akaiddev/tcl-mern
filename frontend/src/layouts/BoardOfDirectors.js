@@ -20,12 +20,13 @@ const BoardOfDirectors = () => {
   return (
     <Container className='my-4'>
       <TopTitle text='BOARD OF DIRECTORS' />
-      {loading ? (
-        <Loader />
-      ) : error ? (
-        <Message variant='danger'>{error}</Message>
-      ) : (
-        <>
+
+      <>
+        {loading ? (
+          <Loader />
+        ) : error ? (
+          <Message variant='danger'>{error}</Message>
+        ) : (
           <Row>
             {boardOfDirectors.map((BoardOfDirectorItem) => (
               <Col xs={12} sm={12} md={6} key={BoardOfDirectorItem._id} className='mt-2'>
@@ -33,8 +34,8 @@ const BoardOfDirectors = () => {
               </Col>
             ))}
           </Row>
-        </>
-      )}
+        )}
+      </>
       <Row className='my-5'>
         <Col xs={12} sm={12} className='mx-auto'>
           <TopTitle text=' MESSAGE FROM THE MANAGING DIRECTOR' />
@@ -48,12 +49,11 @@ const BoardOfDirectors = () => {
             driven our success over the last sixteen years. Zero compromise on quality, continuing innovation and improvement in business process, significant
             investment in human resources, and a strong commitment to maximizing value, these values are ingrained into our corporate culture and are followed
             in every aspect of our business operation. It gives us great pride to have been involved in projects of national importance. Our business excels
-            only through the relationships we have built so far and by execution that promises a world-class standard. We belimport {listBoardOfDirector} from
-            './../redux/actions/BoardOfDirectorActions'; ieve in growing our business while enhancing the lives of people, everywhere we operate. Thanks to our
-            loyal team of workers and professionals, we have succeeded in proving that we can deliver on our promises, we can rise to the challenge and excel in
-            our performance to the satisfaction of our clients. Our major challenge today is to sustain the growth we generated till date. We are proud of our
-            past and we have an active present and we look forward to a promising future. It is an absolute pleasure to introduce{' '}
-            <strong>Tanvir Constructions Ltd</strong>.
+            only through the relationships we have built so far and by execution that promises a world-class standard. We believe in growing our business while
+            enhancing the lives of people, everywhere we operate. Thanks to our loyal team of workers and professionals, we have succeeded in proving that we
+            can deliver on our promises, we can rise to the challenge and excel in our performance to the satisfaction of our clients. Our major challenge today
+            is to sustain the growth we generated till date. We are proud of our past and we have an active present and we look forward to a promising future.
+            It is an absolute pleasure to introduce <strong>Tanvir Constructions Ltd</strong>.
           </p>
           <small>
             <h5 className='fw-bold'>Tanvir Ahmed</h5>
