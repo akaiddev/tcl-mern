@@ -5,6 +5,29 @@
   scroll-behavior: smooth;
 }
 
+body {
+  background-image: url('../assets/bg/showcase.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#CarouselSlider {
+  max-height: 100vh;
+  overflow: hidden;
+}
+.carousel-caption {
+  right: initial;
+  top: 35%;
+  bottom: initial;
+  padding-bottom: 1.25rem;
+  text-align: left;
+}
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.514);
+  padding: 20px;
+  border-radius: 10px;
+}
 .banner {
   background-image: url('../assets/bg/2.png');
   background-size: cover;

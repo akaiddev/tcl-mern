@@ -1,4 +1,4 @@
-const CorporateData = [
+const Corporates = [
   {
     _id: '1',
     name: 'OUR VISION',
@@ -45,4 +45,4 @@ const CorporateData = [
     ],
   },
 ]
-export default CorporateData
+export default Corporates

@@ -5,7 +5,7 @@ import {
     getBoardOfDirectorById,
     getBoardOfDirectors,
     updateBoardOfDirector
-} from '../controllers/BoardOfDirectorController.js'
+} from '../controllers/BoardOfDirectorControllers.js'
 import { admin, protect } from '../middleware/authMiddleware.js'
 
 const router = express.Router()

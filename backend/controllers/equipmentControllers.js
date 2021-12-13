@@ -1,5 +1,5 @@
 import asyncHandler from 'express-async-handler'
-import Equipment from './../models/equipmentModel.js'
+import Equipment from '../models/equipmentModel.js'
 
 // @desc    Fetch all Equipments
 // @route   GET /api/equipments

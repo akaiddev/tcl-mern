@@ -7,7 +7,7 @@ import {
   getRunningProjects,
   getTopRunningProjects,
   updateRunningProject,
-} from '../controllers/runningProjectController.js'
+} from '../controllers/runningProjectControllers.js'
 import { admin, protect } from '../middleware/authMiddleware.js'
 
 const router = express.Router()

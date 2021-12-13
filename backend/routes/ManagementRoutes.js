@@ -1,11 +1,5 @@
 import express from 'express'
-import {
-    createManagement,
-    deleteManagement,
-    getManagementById,
-    getManagements,
-    updateManagement
-} from '../controllers/ManagementControllers.js'
+import { createManagement, deleteManagement, getManagementById, getManagements, updateManagement } from '../controllers/ManagementControllers.js'
 import { admin, protect } from '../middleware/authMiddleware.js'
 
 const router = express.Router()

@@ -7,10 +7,7 @@ const BoardOfDirector = ({ BoardOfDirectorItem }) => {
       <Image src={BoardOfDirectorItem.image} alt={BoardOfDirectorItem.name} />
       <Card.Body>
         <Card.Title as='h3'>{BoardOfDirectorItem.name}</Card.Title>
-        <Card.Text as='h5'>
-          <strong> Designation: </strong>
-          {BoardOfDirectorItem.designation}
-        </Card.Text>
+        <Card.Text as='h5'>{BoardOfDirectorItem.designation}</Card.Text>
       </Card.Body>
     </Card>
   )

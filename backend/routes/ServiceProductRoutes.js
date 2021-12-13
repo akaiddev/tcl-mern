@@ -1,5 +1,5 @@
 import express from 'express'
-import { createServiceProduct, deleteServiceProduct, getServiceProductById, getServiceProducts, updateServiceProduct } from '../controllers/ServiceProductController.js'
+import { createServiceProduct, deleteServiceProduct, getServiceProductById, getServiceProducts, updateServiceProduct } from '../controllers/ServiceProductControllers.js'
 import { admin, protect } from '../middleware/authMiddleware.js'
 
 const router = express.Router()

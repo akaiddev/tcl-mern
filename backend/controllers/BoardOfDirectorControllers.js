@@ -1,5 +1,5 @@
 import asyncHandler from 'express-async-handler'
-import BoardOfDirector from './../models/BoardOfDirectorModel.js'
+import BoardOfDirector from '../models/BoardOfDirectorModel.js'
 
 // @desc    Fetch all Board of Directors
 // @route   GET /api/boardOfDirectors
