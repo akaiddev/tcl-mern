@@ -9,7 +9,7 @@ import WhoWeAre from '../layouts/WhoWeAre'
 
 const AboutScreen = () => {
   return (
-    <>
+    <div className='about'>
       <Banner title='About Us ' subtitle='Tanvir Constructions Limited.' />
 
       <WhoWeAre />
@@ -18,7 +18,7 @@ const AboutScreen = () => {
       <OverviewTexts />
       <Corporates />
       <OurCoreValue />
-    </>
+    </div>
   )
 }
 

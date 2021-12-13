@@ -5,17 +5,17 @@ import Footers from '../data/Footer'
 
 const Footer = () => {
   return (
-    <div className='bg-dark text-light'>
+    <div className='footer'>
       <Container>
         <Row>
           {Footers.map((ft) => (
             <Col sm={6} md={4} className='my-5' key={ft.title}>
-              <h3 className='fw-bold text-light'>{ft.title}</h3>
+              <h3 className='fw-bold '>{ft.title}</h3>
 
               <Nav className='flex-column'>
                 {ft.description.map((item) => (
                   <Nav.Item key={item}>
-                    <Nav.Link className='fw-bold text-light' as={Link} to='/'>
+                    <Nav.Link className='fw-bold ' as={Link} to='/'>
                       {item}
                     </Nav.Link>
                   </Nav.Item>
@@ -25,7 +25,7 @@ const Footer = () => {
           ))}
         </Row>
       </Container>
-      <div className='bg-dark text-light py-3 border-top'>
+      <div className='bg-dark text-light  py-3 border-top'>
         <div className='text-center'>
           All Rights Reserved <strong> Tanvir Constructions Ltd</strong>. {new Date().getFullYear()}
         </div>

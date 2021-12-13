@@ -5,8 +5,18 @@
   scroll-behavior: smooth;
 }
 
-body {
+.home {
   background-image: url('../assets/bg/showcase.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.service {
+  background-image: url('../assets/service.png');
+  background-repeat: no-repeat;
+}
+.about {
+  background-image: url('../assets/main-bg.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -95,4 +105,10 @@ body {
   100% {
     transform: translateX(0);
   }
+}
+
+.footer {
+  background-image: url('../assets/footer-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
