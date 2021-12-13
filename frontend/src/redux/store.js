@@ -8,13 +8,7 @@ import {
   boardOfDirectorListReducer,
   boardOfDirectorUpdateReducer
 } from './reducers/BoardOfDirectorReducers'
-import {
-  corporateCreateReducer,
-  corporateDeleteReducer,
-  corporateDetailsReducer,
-  corporateListReducer,
-  corporateUpdateReducer
-} from './reducers/CorporateReducers'
+import { corporateCreateReducer, corporateDeleteReducer, corporateDetailsReducer, corporateListReducer, corporateUpdateReducer } from './reducers/CorporateReducers'
 import {
   equipmentCreateReducer,
   equipmentDeleteReducer,
@@ -24,13 +18,8 @@ import {
   equipmentTopRatedReducer,
   equipmentUpdateReducer
 } from './reducers/equipmentReducers'
-import {
-  managementCreateReducer,
-  managementDeleteReducer,
-  managementDetailsReducer,
-  managementListReducer,
-  managementUpdateReducer
-} from './reducers/ManagementReducers'
+import { managementCreateReducer, managementDeleteReducer, managementDetailsReducer, managementListReducer, managementUpdateReducer } from './reducers/ManagementReducers'
+import { overviewCreateReducer, overviewDeleteReducer, overviewDetailsReducer, overviewListReducer, overviewUpdateReducer } from './reducers/OverviewReducers'
 import {
   privateProjectCreateReducer,
   privateProjectDeleteReducer,
@@ -75,7 +64,16 @@ import {
   userUpdateReducer
 } from './reducers/userReducers'
 
+
 const reducer = combineReducers({
+  // Overviews
+
+  overviewList: overviewListReducer,
+  overviewDetails: overviewDetailsReducer,
+  overviewDelete: overviewDeleteReducer,
+  overviewCreate: overviewCreateReducer,
+  overviewUpdate: overviewUpdateReducer,
+
   // Corporate
   corporateList: corporateListReducer,
   corporateDetails: corporateDetailsReducer,

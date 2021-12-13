@@ -47,14 +47,14 @@ const deleteOverview = asyncHandler(async (req, res) => {
 
 const createOverview = asyncHandler(async (req, res) => {
   const overview = new Overview({
-    col: '9',
+    col: 9,
     animation: 'animation-Left',
     description:
       'The success in the field of road construction has been possible due to high quality inputs from high qualified and experienced professionals associated with the company besides skilled technicians and laborers associated with it',
     user: req.user._id,
   })
 
-  const createdoverview = await Overview.save()
+  const createdoverview = await overview.save()
   res.status(201).json(createdoverview)
 })
 

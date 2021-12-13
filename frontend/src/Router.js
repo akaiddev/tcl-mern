@@ -11,6 +11,8 @@ import EquipmentEdit from './admin/EquipmentEdit'
 import EquipmentList from './admin/EquipmentList'
 import ManagementEdit from './admin/ManagementEdit'
 import ManagementList from './admin/ManagementList'
+import OverviewEdit from './admin/OverviewEdit'
+import OverviewList from './admin/OverviewList'
 import PrivateProjectEdit from './admin/PrivateProjectEdit'
 import PrivateProjectList from './admin/PrivateProjectList'
 import PublicProjectEdit from './admin/PublicProjectEdit'
@@ -100,6 +102,9 @@ function Router() {
 
         <Route path='/admin/corporate' element={<CorporateList />} />
         <Route path='/admin/corporate/:id/edit' element={<CorporateEdit />} />
+
+        <Route path='/admin/overview' element={<OverviewList />} />
+        <Route path='/admin/overview/:id/edit' element={<OverviewEdit />} />
 
         <Route path='/admin/service-product' element={<ServiceProductList />} />
         <Route path='/admin/service-product/:id/edit' element={<ServiceProductEdit />} />
