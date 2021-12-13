@@ -50,7 +50,7 @@ const ManagementList = () => {
 
   return (
     <>
-      <Banner title='Service Product List' />
+      <Banner title=' Management List' />
       <Container className='my-5'>
         <Row className='align-items-center my-3'>
           <Col>

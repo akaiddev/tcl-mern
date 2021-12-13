@@ -1,21 +1,21 @@
 import axios from 'axios'
 import {
-    CORPORATE_CREATE_FAIL,
-    CORPORATE_CREATE_REQUEST,
-    CORPORATE_CREATE_SUCCESS,
-    CORPORATE_DELETE_FAIL,
-    CORPORATE_DELETE_REQUEST,
-    CORPORATE_DELETE_SUCCESS,
-    CORPORATE_DETAILS_FAIL,
-    CORPORATE_DETAILS_REQUEST,
-    CORPORATE_DETAILS_SUCCESS,
-    CORPORATE_LIST_FAIL,
-    CORPORATE_LIST_REQUEST,
-    CORPORATE_LIST_SUCCESS,
-    CORPORATE_UPDATE_FAIL,
-    CORPORATE_UPDATE_REQUEST,
-    CORPORATE_UPDATE_SUCCESS
-} from './../constants/corporateConstants'
+  CORPORATE_CREATE_FAIL,
+  CORPORATE_CREATE_REQUEST,
+  CORPORATE_CREATE_SUCCESS,
+  CORPORATE_DELETE_FAIL,
+  CORPORATE_DELETE_REQUEST,
+  CORPORATE_DELETE_SUCCESS,
+  CORPORATE_DETAILS_FAIL,
+  CORPORATE_DETAILS_REQUEST,
+  CORPORATE_DETAILS_SUCCESS,
+  CORPORATE_LIST_FAIL,
+  CORPORATE_LIST_REQUEST,
+  CORPORATE_LIST_SUCCESS,
+  CORPORATE_UPDATE_FAIL,
+  CORPORATE_UPDATE_REQUEST,
+  CORPORATE_UPDATE_SUCCESS
+} from './../constants/CorporateConstants'
 import { logout } from './userActions'
 
 export const listCorporate = () => async (dispatch) => {
@@ -60,7 +60,6 @@ export const deleteCorporate = (id) => async (dispatch, getState) => {
 export const createCorporate = () => async (dispatch, getState) => {
   try {
     dispatch({ type: CORPORATE_CREATE_REQUEST })
-
     const {
       userLogin: { userInfo },
     } = getState()

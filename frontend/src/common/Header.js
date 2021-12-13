@@ -71,11 +71,12 @@ const Header = () => {
                 <NavDropdown.Item as={Link} to='/admin/management'>
                   Management List
                 </NavDropdown.Item>
-
                 <NavDropdown.Item as={Link} to='/admin/board-of-director'>
                   Board Of Director List
+                </NavDropdown.Item>{' '}
+                <NavDropdown.Item as={Link} to='/admin/corporate'>
+                  Corporate List
                 </NavDropdown.Item>
-
                 <NavDropdown.Item as={Link} to='/admin/service-product'>
                   Service Product List
                 </NavDropdown.Item>

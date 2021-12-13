@@ -1,66 +1,67 @@
 import React, { useEffect } from 'react'
-import { Button, Col, Container, Image, Row, Table } from 'react-bootstrap'
+import { Button, Col, Container, Row, Table } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import Loader from '../common/Loader'
 import Message from '../common/Message'
 import Banner from '../components/Banner'
-import { createBoardOfDirector, deleteBoardOfDirector, listBoardOfDirector } from '../redux/actions/BoardOfDirectorActions'
-import { BOARD_OF_DIRECTOR_CREATE_RESET } from '../redux/constants/BoardOfDirectorConstants'
+import { createCorporate, listCorporate } from '../redux/actions/CorporateActions'
+import { CORPORATE_CREATE_RESET } from '../redux/constants/CorporateConstants'
+import { deleteCorporate } from './../redux/actions/CorporateActions'
 
-const BoardOfDirectorList = () => {
+const CorporateList = () => {
   const dispatch = useDispatch()
   let navigate = useNavigate()
 
-  const boardOfDirectorList = useSelector((state) => state.boardOfDirectorList)
-  const { loading, error, boardOfDirectors } = boardOfDirectorList
+  const corporateList = useSelector((state) => state.corporateList)
+  const { loading, error, corporates } = corporateList
 
-  const boardOfDirectorDelete = useSelector((state) => state.boardOfDirectorDelete)
-  const { loading: loadingDelete, error: errorDelete, success: successDelete } = boardOfDirectorDelete
+  const corporateDelete = useSelector((state) => state.corporateDelete)
+  const { loading: loadingDelete, error: errorDelete, success: successDelete } = corporateDelete
 
-  const boardOfDirectorCreate = useSelector((state) => state.boardOfDirectorCreate)
-  const { loading: loadingCreate, error: errorCreate, success: successCreate, boardOfDirector: createdBoardOfDirector } = boardOfDirectorCreate
+  const corporateCreate = useSelector((state) => state.corporateCreate)
+  const { loading: loadingCreate, error: errorCreate, success: successCreate, corporate: createdCorporate } = corporateCreate
 
   const userLogin = useSelector((state) => state.userLogin)
   const { userInfo } = userLogin
 
   useEffect(() => {
-    dispatch({ type: BOARD_OF_DIRECTOR_CREATE_RESET })
+    dispatch({ type: CORPORATE_CREATE_RESET })
 
     if (!userInfo || !userInfo.isAdmin) {
       navigate('/login')
     }
 
     if (successCreate) {
-      navigate(`/admin/board-of-director/${createdBoardOfDirector._id}/edit`)
+      navigate(`/admin/corporate/${createdCorporate._id}/edit`)
     } else {
-      dispatch(listBoardOfDirector())
+      dispatch(listCorporate())
     }
-  }, [dispatch, navigate, userInfo, successDelete, successCreate, createdBoardOfDirector])
+  }, [dispatch, navigate, userInfo, successDelete, successCreate, createdCorporate])
 
   const deleteHandler = (id) => {
     if (window.confirm('Are you sure')) {
-      dispatch(deleteBoardOfDirector(id))
+      dispatch(deleteCorporate(id))
     }
   }
 
-  const createboardOfDirectorHandler = () => {
-    dispatch(createBoardOfDirector())
+  const createCorporateHandler = () => {
+    dispatch(createCorporate())
   }
 
   return (
     <>
-      <Banner title='Board Of Director List' />
+      <Banner title='Corporate List' />
       <Container className='my-5'>
         <Row className='align-items-center my-3'>
           <Col>
             <h1 className='fw-bold'>
-              <i className='fas fa-briefcase'></i> Board Of Directors List
+              <i className='fas fa-briefcase'></i> Corporates List
             </h1>
           </Col>
           <Col className='text-right'>
-            <Button variant='dark' className='col-12 ' onClick={createboardOfDirectorHandler}>
-              <i className='fas fa-plus'></i> Create a New Board Of Directors
+            <Button variant='dark' className='col-12 ' onClick={createCorporateHandler}>
+              <i className='fas fa-plus'></i> Create a New Corporates
             </Button>
           </Col>
         </Row>
@@ -79,33 +80,36 @@ const BoardOfDirectorList = () => {
               <thead>
                 <tr>
                   <th>#ID</th>
-                  <th>Image</th>
                   <th>name</th>
-                  <th>Designation</th>
+                  <th>Description</th>
 
                   <th>Edit</th>
                   <th>Delete</th>
                 </tr>
               </thead>
               <tbody>
-                {boardOfDirectors.map((boardOfDirector, index) => (
-                  <tr key={boardOfDirector._id}>
+                {corporates.map((corporate, index) => (
+                  <tr key={corporate._id}>
                     <td>{index + 1}</td>
+
+                    <td>{corporate.name}</td>
                     <td>
-                      <Image src={boardOfDirector.image} fluid width='60' className='rounded-circle' />
+                      <ol>
+                        {corporate.description.map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ol>
                     </td>
-                    <td>{boardOfDirector.name}</td>
-                    <td>{boardOfDirector.designation}</td>
 
                     <td>
-                      <Link to={`/admin/board-of-director/${boardOfDirector._id}/edit`}>
+                      <Link to={`/admin/corporate/${corporate._id}/edit`}>
                         <Button variant='outline-dark' className='btn-sm rounded-circle'>
                           <i className='fas fa-edit'></i>
                         </Button>
                       </Link>
                     </td>
                     <td>
-                      <Button variant='outline-danger' className='btn-sm rounded-circle' onClick={() => deleteHandler(boardOfDirector._id)}>
+                      <Button variant='outline-danger' className='btn-sm rounded-circle' onClick={() => deleteHandler(corporate._id)}>
                         <i className='fas fa-trash'></i>
                       </Button>
                     </td>
@@ -120,4 +124,4 @@ const BoardOfDirectorList = () => {
   )
 }
 
-export default BoardOfDirectorList
+export default CorporateList

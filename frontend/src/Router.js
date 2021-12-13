@@ -5,6 +5,8 @@ import Profile from './accounts/Profile'
 import Registration from './accounts/Registration'
 import BoardOfDirectorEdit from './admin/BoardOfDirectorEdit'
 import BoardOfDirectorList from './admin/BoardOfDirectorList'
+import CorporateEdit from './admin/CorporateEdit'
+import CorporateList from './admin/CorporateList'
 import EquipmentEdit from './admin/EquipmentEdit'
 import EquipmentList from './admin/EquipmentList'
 import ManagementEdit from './admin/ManagementEdit'
@@ -93,9 +95,11 @@ function Router() {
         <Route path='/admin/management' element={<ManagementList />} />
         <Route path='/admin/management/:id/edit' element={<ManagementEdit />} />
 
-
         <Route path='/admin/board-of-director' element={<BoardOfDirectorList />} />
         <Route path='/admin/board-of-director/:id/edit' element={<BoardOfDirectorEdit />} />
+
+        <Route path='/admin/corporate' element={<CorporateList />} />
+        <Route path='/admin/corporate/:id/edit' element={<CorporateEdit />} />
 
         <Route path='/admin/service-product' element={<ServiceProductList />} />
         <Route path='/admin/service-product/:id/edit' element={<ServiceProductEdit />} />
