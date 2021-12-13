@@ -6,6 +6,7 @@ import equipments from './data/equipments.js'
 import privateProjects from './data/privateProjects.js'
 import serviceProducts from './data/serviceProducts.js'
 import publicProjects from './data/publicProjects.js'
+import corporates from './data/Corporates.js'
 import runningProjects from './data/runningProjects.js'
 import BoardOfDirectors from './data/BoardOfDirectors.js'
 import managements from './data/Managements.js'
@@ -17,6 +18,7 @@ import PublicProject from './models/publicProjectModel.js'
 import RunningProject from './models/RunningProjectModel.js'
 import BoardOfDirector from './models/BoardOfDirectorModel.js'
 import Management from './models/ManagementModel.js'
+import Corporate from './models/CorporateModel.js'
 import User from './models/userModel.js'
 
 dotenv.config()
@@ -25,6 +27,7 @@ connectDB()
 const importData = async () => {
   try {
     
+    await Corporate.deleteMany()
     await Management.deleteMany()
     await BoardOfDirector.deleteMany()
     await ServiceProduct.deleteMany()
@@ -38,6 +41,11 @@ const importData = async () => {
 
     const adminUser = createdUsers[0]._id
 
+    const sampleCorporate = corporates.map((corporate) => {
+      return { ...corporate, user: adminUser }
+    })
+    await Corporate.insertMany(sampleCorporate)   
+    
     const sampleManagement = managements.map((management) => {
       return { ...management, user: adminUser }
     })
@@ -83,6 +91,7 @@ const importData = async () => {
 
 const destroyData = async () => {
   try {
+    await Corporate.deleteMany()
     await Management.deleteMany()
     await BoardOfDirector.deleteMany()
     await ServiceProduct.deleteMany()

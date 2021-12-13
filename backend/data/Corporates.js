@@ -1,12 +1,10 @@
 const Corporates = [
   {
-    _id: '1',
     name: 'OUR VISION',
     description: ['Be a partner to build the nation.', 'To be a leading construction company in the global market'],
   },
 
   {
-    _id: '2',
     name: 'OUR MISSION',
     description: [
       'To provide high quality engineering solutions.',
@@ -16,13 +14,11 @@ const Corporates = [
   },
 
   {
-    _id: '3',
     name: 'OUR COMMITMENTS',
     description: ['To the Customers.', 'To the Nation.', 'To the Shareholders.', 'To the Employees.', 'To the other Stakeholders.'],
   },
 
   {
-    _id: '4',
     name: 'STRATEGIC OBJECTIVES',
     description: [
       'Introducing innovative and technology based Products & Services.',
@@ -33,7 +29,6 @@ const Corporates = [
   },
 
   {
-    _id: '5',
     name: 'EMPLOYEE CODE OF CONDUCT',
     description: [
       'Adhere to the Principles and applicable laws.',
