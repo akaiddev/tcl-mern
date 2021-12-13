@@ -44,70 +44,70 @@ const Header = () => {
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          <Nav>
+          <Nav className='ms-auto'>
             <Nav.Link as={Link} to='/contact'>
               Contact
             </Nav.Link>
-            {userInfo ? (
+
+            {userInfo && userInfo.isAdmin && (
               <>
-                <NavDropdown title={userInfo.name} id='userName'>
-                  <NavDropdown.Item as={Link} to='/profile'>
-                    <i className='far fa-user-circle'></i> Profile
+                <NavDropdown title='Admin' id='adminMenu'>
+                  <NavDropdown.Item as={Link} to='/admin/management'>
+                    Management List
                   </NavDropdown.Item>
 
-                  <NavDropdown.Item onClick={logoutHandler}>
-                    <i className='fas fa-sign-out-alt'></i> Logout
+                  <NavDropdown.Item as={Link} to='/admin/board-of-director'>
+                    Board Of Director List
+                  </NavDropdown.Item>
+
+                  <NavDropdown.Item as={Link} to='/admin/corporate'>
+                    Corporate List
+                  </NavDropdown.Item>
+
+                  <NavDropdown.Item as={Link} to='/admin/overview'>
+                    Overview List
+                  </NavDropdown.Item>
+
+                  <NavDropdown.Item as={Link} to='/admin/service-product'>
+                    Service Product List
+                  </NavDropdown.Item>
+
+                  <NavDropdown.Item as={Link} to='/admin/equipment'>
+                    Equipment List
+                  </NavDropdown.Item>
+
+                  <NavDropdown.Item as={Link} to='/admin/running-project'>
+                    Running Project List
+                  </NavDropdown.Item>
+
+                  <NavDropdown.Item as={Link} to='/admin/public-project'>
+                    Public Project List
+                  </NavDropdown.Item>
+
+                  <NavDropdown.Item as={Link} to='/admin/private-project'>
+                    Private Project List
+                  </NavDropdown.Item>
+
+                  <NavDropdown.Item as={Link} to='/admin/users'>
+                    User List
                   </NavDropdown.Item>
                 </NavDropdown>
+              </>
+            )}
+            {userInfo ? (
+              <>
+                <Nav.Link as={Link} to='/profile'>
+                  <i className='far fa-user-circle'></i> Profile
+                </Nav.Link>
+
+                <Nav.Link onClick={logoutHandler}>
+                  <i className='fas fa-sign-out-alt'></i> Logout
+                </Nav.Link>
               </>
             ) : (
               <Nav.Link as={Link} to='/login'>
                 Login
               </Nav.Link>
-            )}
-
-            {userInfo && userInfo.isAdmin && (
-              <NavDropdown title='Admin' id='adminMenu'>
-                <NavDropdown.Item as={Link} to='/admin/management'>
-                  Management List
-                </NavDropdown.Item>
-
-                <NavDropdown.Item as={Link} to='/admin/board-of-director'>
-                  Board Of Director List
-                </NavDropdown.Item>
-
-                <NavDropdown.Item as={Link} to='/admin/corporate'>
-                  Corporate List
-                </NavDropdown.Item>
-
-                <NavDropdown.Item as={Link} to='/admin/overview'>
-                  Overview List
-                </NavDropdown.Item>
-
-                <NavDropdown.Item as={Link} to='/admin/service-product'>
-                  Service Product List
-                </NavDropdown.Item>
-
-                <NavDropdown.Item as={Link} to='/admin/equipment'>
-                  Equipment List
-                </NavDropdown.Item>
-
-                <NavDropdown.Item as={Link} to='/admin/running-project'>
-                  Running Project List
-                </NavDropdown.Item>
-
-                <NavDropdown.Item as={Link} to='/admin/public-project'>
-                  Public Project List
-                </NavDropdown.Item>
-
-                <NavDropdown.Item as={Link} to='/admin/private-project'>
-                  Private Project List
-                </NavDropdown.Item>
-
-                <NavDropdown.Item as={Link} to='/admin/users'>
-                  User List
-                </NavDropdown.Item>
-              </NavDropdown>
             )}
           </Nav>
         </Navbar.Collapse>

@@ -18,7 +18,7 @@ const BoardOfDirectors = () => {
   }, [dispatch])
 
   return (
-    <Container className='my-4'>
+    <Container className='my-2'>
       <TopTitle text='BOARD OF DIRECTORS' />
 
       <>
@@ -29,7 +29,7 @@ const BoardOfDirectors = () => {
         ) : (
           <Row>
             {boardOfDirectors.map((BoardOfDirectorItem) => (
-              <Col xs={12} sm={12} md={6} key={BoardOfDirectorItem._id} className='mt-2'>
+              <Col xs={12} sm={12} md={6} key={BoardOfDirectorItem._id}>
                 <BoardOfDirector BoardOfDirectorItem={BoardOfDirectorItem} />
               </Col>
             ))}

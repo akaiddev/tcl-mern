@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Login from './accounts/Login'
 import Profile from './accounts/Profile'
 import Registration from './accounts/Registration'
+import AdminScreen from './admin/AdminScreen'
 import BoardOfDirectorEdit from './admin/BoardOfDirectorEdit'
 import BoardOfDirectorList from './admin/BoardOfDirectorList'
 import CorporateEdit from './admin/CorporateEdit'
@@ -88,7 +89,7 @@ function Router() {
         <Route path='/login' element={<Login />} />
         <Route path='/registration' element={<Registration />} />
         <Route path='/profile' element={<Profile />} />
-        <Route path='/admin' element={<adminScreen />} />
+        <Route path='/admin' element={<AdminScreen />} />
         <Route path='/admin/users' element={<UserListScreen />} />
         <Route path='/admin/user/:id/edit' element={<UserEditScreen />} />
 

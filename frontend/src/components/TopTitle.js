@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const TopTitle = ({ text, link, title }) => {
   return (
-    <Row className='align-items-center shadow-sm px-2 my-2 g-1 rounded-2 topTtile'>
+    <Row className='align-items-center my-2 g-1 rounded-2'>
       <Col md={8}>
         <h4 className='fw-bold my-3  text-uppercase border-0 '>{text}</h4>
       </Col>
