@@ -22,7 +22,7 @@ const Managements = () => {
   let settings = {
     dots: true,
     infinite: true,
-    slidesToShow: 4,
+    slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
@@ -69,7 +69,7 @@ const Managements = () => {
       ) : (
         <Slider {...settings}>
           {managements.map((managementItem) => (
-            <Col xs={12} sm={6} md={4} lg={3} key={managementItem._id} className='mb-3 '>
+            <Col xs={12} sm={6} md={4} lg={4} key={managementItem._id} className='mb-3 '>
               <Management managementItem={managementItem} />
             </Col>
           ))}

@@ -6,12 +6,13 @@ const Management = ({ managementItem }) => {
     <Card className='border-0 m-1'>
       <Image src={managementItem.image} alt={managementItem.name} />
       <Card.Body>
-        <Card.Title className='fw-bold'>{managementItem.name}</Card.Title>
-        <Card.Text as='h6' className='fw-bold'>
+        <Card.Title as='h4'>{managementItem.name}</Card.Title>
+        <Card.Text as='h6'>
+          <strong> Designation: </strong>
           {managementItem.designation}
         </Card.Text>
-        <Card.Text as='h6' className='fw-bold'>
-          {managementItem.email}
+        <Card.Text as='h6'>
+          <strong> Email: </strong> {managementItem.email}
         </Card.Text>
       </Card.Body>
     </Card>
