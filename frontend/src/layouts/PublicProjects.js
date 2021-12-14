@@ -25,7 +25,7 @@ const PublicProjects = () => {
   }, [dispatch, keyword, pageNumber])
 
   return (
-    <Container>
+    <Container className='my-4'>
       {loading ? (
         <Loader />
       ) : error ? (
@@ -34,7 +34,7 @@ const PublicProjects = () => {
         <>
           <Row>
             {publicProjects.map((publicProject) => (
-              <Col sm={12} md={6} lg={4} className='my-2' key={publicProject._id}>
+              <Col sm={12} md={6} lg={4}  key={publicProject._id}>
                 <PublicProject publicProject={publicProject} />
               </Col>
             ))}

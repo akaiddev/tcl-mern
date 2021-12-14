@@ -3,7 +3,7 @@ import { Button, Card, Col, Container, Form, Row } from 'react-bootstrap'
 
 const GetInTouch = () => {
   return (
-    <Container className='my-5'>
+    <Container className='my-5 '>
       <Row>
         <Col xs={12} sm={12} md={12} lg={7} xl={7} className='animation-Left'>
           <Card>
@@ -16,7 +16,7 @@ const GetInTouch = () => {
                 <Card.Body>
                   <Row>
                     <Col md={2}>
-                      <h1 className=' display-3'>
+                      <h1 className='text-info display-3'>
                         <i className='fas fa-map-marker-alt'></i>
                       </h1>
                     </Col>
@@ -31,7 +31,7 @@ const GetInTouch = () => {
                 <Card.Body>
                   <Row>
                     <Col md={2}>
-                      <h1 className=' display-3'>
+                      <h1 className='text-warning display-3'>
                         <i className='fas fa-phone-volume'></i>
                       </h1>
                     </Col>
@@ -49,7 +49,7 @@ const GetInTouch = () => {
                 <Card.Body>
                   <Row>
                     <Col md={2}>
-                      <h1 className=' display-3'>
+                      <h1 className='text-success display-3'>
                         <i className='fas fa-envelope'></i>
                       </h1>
                     </Col>

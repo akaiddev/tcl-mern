@@ -17,7 +17,7 @@ const RunningProjects = () => {
   }, [dispatch])
 
   return (
-    <Container>
+    <Container className='my-4'>
       {loading ? (
         <Loader />
       ) : error ? (
@@ -26,7 +26,7 @@ const RunningProjects = () => {
         <>
           <Row>
             {runningProjects.map((runningProject) => (
-              <Col sm={12} md={6} lg={4} className='my-2' key={runningProject._id}>
+              <Col sm={12} md={6} lg={4} key={runningProject._id}>
                 <RunningProject runningProject={runningProject} />
               </Col>
             ))}

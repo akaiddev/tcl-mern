@@ -20,7 +20,7 @@ const TopRatedPublicProject = () => {
 
   return (
     <div className='public-project'>
-      <Container>
+      <Container className='my-4'>
         <Row className='align-items-center my-2'>
           <Col>
             <h4 className='fw-bold'>
@@ -41,7 +41,7 @@ const TopRatedPublicProject = () => {
         ) : (
           <Row>
             {publicProjects.map((publicProject) => (
-              <Col xs={12} sm={6} md={6} lg={4} xl={3} xxl={3} key={publicProject._id} className='mb-4'>
+              <Col xs={12} sm={6} md={6} lg={4} xl={3} xxl={3} key={publicProject._id}>
                 <PublicProject publicProject={publicProject} />
               </Col>
             ))}

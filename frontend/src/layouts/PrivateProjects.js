@@ -25,7 +25,7 @@ const PrivateProjects = () => {
   }, [dispatch, keyword, pageNumber])
 
   return (
-    <Container>
+    <Container className='my-4'>
       {loading ? (
         <Loader />
       ) : error ? (
@@ -34,7 +34,7 @@ const PrivateProjects = () => {
         <>
           <Row>
             {privateProjects.map((privateProject) => (
-              <Col sm={12} md={6} lg={4} className='my-2' key={privateProject._id}>
+              <Col sm={12} md={6} lg={4}  key={privateProject._id}>
                 <PrivateProject privateProject={privateProject} />
               </Col>
             ))}

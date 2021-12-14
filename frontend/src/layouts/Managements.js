@@ -59,7 +59,7 @@ const Managements = () => {
     ],
   }
   return (
-    <Container className='mt-5'>
+    <Container>
       <TopTitle text='MANAGEMENT STRUCTURE' />
 
       {loading ? (
@@ -69,7 +69,7 @@ const Managements = () => {
       ) : (
         <Slider {...settings}>
           {managements.map((managementItem) => (
-            <Col xs={12} sm={6} md={4} lg={4} key={managementItem._id} className='mb-3 '>
+            <Col xs={12} sm={6} md={4} lg={4} key={managementItem._id}>
               <Management managementItem={managementItem} />
             </Col>
           ))}

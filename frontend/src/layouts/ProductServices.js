@@ -26,7 +26,7 @@ const ProductServices = () => {
         <>
           <Row className='g-0'>
             {serviceProducts.map((serviceProduct) => (
-              <Col md={12} key={serviceProduct._id} className='my-2'>
+              <Col md={12} key={serviceProduct._id} >
                 <ProductService serviceProduct={serviceProduct} />
               </Col>
             ))}

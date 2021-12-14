@@ -1,6 +1,5 @@
 import React from 'react'
 import { Card, Col, Container, Row } from 'react-bootstrap'
-import TopTitle from '../components/TopTitle'
 import OurCoreValues from '../data/OurCoreValues'
 
 const OurCoreValue = () => {
@@ -9,7 +8,7 @@ const OurCoreValue = () => {
       <Row>
         {OurCoreValues.map((coreValue) => (
           <Col key={coreValue._id}>
-            <TopTitle text={coreValue.name} />
+            <Card.Title as='h4' className='fw-bold'>{coreValue.name}</Card.Title>
             <Card.Body>
               <Row>
                 <Col md={6}>
