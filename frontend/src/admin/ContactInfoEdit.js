@@ -30,7 +30,7 @@ const ContactInfoEdit = () => {
   useEffect(() => {
     if (successUpdate) {
       dispatch({ type: CONTACT_INFO_UPDATE_RESET })
-      navigate('/admin/contactInfo')
+      navigate('/admin/contact-Info')
     } else {
       if (!contactInfo.icon || contactInfo._id !== contactInfoId) {
         dispatch(listContactInfoDetails(contactInfoId))

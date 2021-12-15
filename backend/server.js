@@ -6,6 +6,7 @@ import path from 'path'
 import connectDB from './config/database.js'
 import { errorHandler, notFound } from './middleware/errorMiddleware.js'
 import BoardOfDirectorRoutes from './routes/BoardOfDirectorRoutes.js'
+import CareerRoutes from './routes/CareerRoutes.js'
 import ContactInfoRoutes from './routes/ContactInfoRoutes.js'
 import CorporateRoutes from './routes/CorporateRoutes.js'
 import equipmentRoutes from './routes/equipmentRoutes.js'
@@ -30,6 +31,7 @@ if (process.env.NODE_ENV === 'Development') {
 
 app.use(express.json())
 
+app.use('/api/careers', CareerRoutes)
 app.use('/api/socialMedias', SocialMediaRoutes)
 app.use('/api/contactInfos', ContactInfoRoutes)
 app.use('/api/overviews', OverviewRoutes)

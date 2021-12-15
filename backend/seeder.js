@@ -1,8 +1,8 @@
 import colors from 'colors'
-import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import connectDB from './config/database.js'
 import BoardOfDirectors from './data/BoardOfDirectors.js'
+import careers from './data/careers.js'
 import contactInfos from './data/contactInfos.js'
 import corporates from './data/Corporates.js'
 import equipments from './data/equipments.js'
@@ -15,6 +15,7 @@ import serviceProducts from './data/serviceProducts.js'
 import socialMedias from './data/socialMedias.js'
 import users from './data/users.js'
 import BoardOfDirector from './models/BoardOfDirectorModel.js'
+import Career from './models/careerModel.js'
 import ContactInfo from './models/ContactInfoModel.js'
 import Corporate from './models/CorporateModel.js'
 import Equipment from './models/equipmentModel.js'
@@ -32,6 +33,7 @@ connectDB()
 
 const importData = async () => {
   try {
+    await Career.deleteMany()
     await SocialMedia.deleteMany()
     await ContactInfo.deleteMany()
     await Overview.deleteMany()
@@ -49,11 +51,16 @@ const importData = async () => {
 
     const adminUser = createdUsers[0]._id
 
+    const sampleCareer = careers.map((career) => {
+      return { ...career, user: adminUser }
+    })
+    await Career.insertMany(sampleCareer)
+
     const sampleSocialMedia = socialMedias.map((socialMedia) => {
       return { ...socialMedia, user: adminUser }
     })
-    await SocialMedia.insertMany(sampleSocialMedia) 
-    
+    await SocialMedia.insertMany(sampleSocialMedia)
+
     const sampleContactInfo = contactInfos.map((contactInfo) => {
       return { ...contactInfo, user: adminUser }
     })
@@ -114,6 +121,7 @@ const importData = async () => {
 
 const destroyData = async () => {
   try {
+    await Career.deleteMany()
     await SocialMedia.deleteMany()
     await ContactInfo.deleteMany()
     await Overview.deleteMany()

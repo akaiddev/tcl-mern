@@ -105,8 +105,8 @@ function Router() {
         <Route path='/admin/social-media/:id/edit' element={<SocialMediaEdit />} />
 
 
-        <Route path='/admin/contactInfo' element={<ContactInfoList />} />
-        <Route path='/admin/contactInfo/:id/edit' element={<ContactInfoEdit />} />
+        <Route path='/admin/contact-Info' element={<ContactInfoList />} />
+        <Route path='/admin/contact-Info/:id/edit' element={<ContactInfoEdit />} />
 
         <Route path='/admin/management' element={<ManagementList />} />
         <Route path='/admin/management/:id/edit' element={<ManagementEdit />} />
