@@ -28,6 +28,7 @@ import Footer from './common/Footer'
 import Header from './common/Header'
 import NotFound from './common/NotFound'
 import AboutScreen from './screens/AboutScreen'
+import CareerScreen from './screens/CareerScreen'
 import CompleteProjectScreen from './screens/CompleteProjectScreen'
 import ContactScreen from './screens/ContactScreen'
 import EquipmentDetailScreen from './screens/EquipmentDetailScreen'
@@ -49,6 +50,7 @@ function Router() {
       <Routes>
         <Route path='/' element={<HomeScreen />} />
         <Route path='/about' element={<AboutScreen />} />
+        <Route path='/careers' element={<CareerScreen />} />
 
         {/* Running-project */}
         <Route path='/running-project' element={<RunningProjectScreen />} />
