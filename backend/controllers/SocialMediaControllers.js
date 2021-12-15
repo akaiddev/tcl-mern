@@ -48,14 +48,15 @@ const deleteSocialMedia = asyncHandler(async (req, res) => {
 const createSocialMedia = asyncHandler(async (req, res) => {
   const socialMedia = new SocialMedia({
     name: 'facebook',
+
     url: 'https://www.facebook.com',
-    name: 'fab fa-facebook',
+    icon: 'fab fa-facebook',
     animation: 'animation-Right',
     iconColor: 'text-dark',
     user: req.user._id,
   })
 
-  const createdSocialMedia = await SocialMedia.save()
+  const createdSocialMedia = await socialMedia.save()
   res.status(201).json(createdSocialMedia)
 })
 
@@ -64,7 +65,7 @@ const createSocialMedia = asyncHandler(async (req, res) => {
 // @access  Private/Admin
 
 const updateSocialMedia = asyncHandler(async (req, res) => {
-  const { icon, name,animation, iconColor, url } = req.body
+  const { icon, name, animation, iconColor, url } = req.body
 
   const socialMedia = await SocialMedia.findById(req.params.id)
 

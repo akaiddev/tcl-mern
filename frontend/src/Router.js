@@ -6,6 +6,8 @@ import Registration from './accounts/Registration'
 import AdminScreen from './admin/AdminScreen'
 import BoardOfDirectorEdit from './admin/BoardOfDirectorEdit'
 import BoardOfDirectorList from './admin/BoardOfDirectorList'
+import ContactInfoEdit from './admin/ContactInfoEdit'
+import ContactInfoList from './admin/ContactInfoList'
 import CorporateEdit from './admin/CorporateEdit'
 import CorporateList from './admin/CorporateList'
 import EquipmentEdit from './admin/EquipmentEdit'
@@ -22,6 +24,8 @@ import RunningProjectEdit from './admin/RunningProjectEdit'
 import RunningProjectList from './admin/RunningProjectList'
 import ServiceProductEdit from './admin/ServiceProductEdit'
 import ServiceProductList from './admin/ServiceProductList'
+import SocialMediaEdit from './admin/SocialMediaEdit'
+import SocialMediaList from './admin/SocialMediaList'
 import UserEditScreen from './admin/UserEditScreen'
 import UserListScreen from './admin/UserListScreen'
 import Footer from './common/Footer'
@@ -96,6 +100,13 @@ function Router() {
         <Route path='/admin/user/:id/edit' element={<UserEditScreen />} />
 
         {/* admin  panel*/}
+
+        <Route path='/admin/social-Media' element={<SocialMediaList />} />
+        <Route path='/admin/social-media/:id/edit' element={<SocialMediaEdit />} />
+
+
+        <Route path='/admin/contactInfo' element={<ContactInfoList />} />
+        <Route path='/admin/contactInfo/:id/edit' element={<ContactInfoEdit />} />
 
         <Route path='/admin/management' element={<ManagementList />} />
         <Route path='/admin/management/:id/edit' element={<ManagementEdit />} />

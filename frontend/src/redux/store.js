@@ -8,6 +8,7 @@ import {
   boardOfDirectorListReducer,
   boardOfDirectorUpdateReducer
 } from './reducers/BoardOfDirectorReducers'
+import { contactInfoCreateReducer, contactInfoDeleteReducer, contactInfoDetailsReducer, contactInfoListReducer, contactInfoUpdateReducer } from './reducers/contactInfoReducers'
 import { corporateCreateReducer, corporateDeleteReducer, corporateDetailsReducer, corporateListReducer, corporateUpdateReducer } from './reducers/CorporateReducers'
 import {
   equipmentCreateReducer,
@@ -55,6 +56,13 @@ import {
   serviceProductUpdateReducer
 } from './reducers/serviceProductReducers'
 import {
+  socialMediaCreateReducer,
+  socialMediaDeleteReducer,
+  socialMediaDetailsReducer,
+  socialMediaListReducer,
+  socialMediaUpdateReducer
+} from './reducers/SocialMediaReducers'
+import {
   userDeleteReducer,
   userDetailsReducer,
   userListReducer,
@@ -64,10 +72,22 @@ import {
   userUpdateReducer
 } from './reducers/userReducers'
 
-
 const reducer = combineReducers({
-  // Overviews
+  // Contact Info
+  contactInfoList: contactInfoListReducer,
+  contactInfoDetails: contactInfoDetailsReducer,
+  contactInfoDelete: contactInfoDeleteReducer,
+  contactInfoCreate: contactInfoCreateReducer,
+  contactInfoUpdate: contactInfoUpdateReducer,
 
+  // Social Media
+  socialMediaList: socialMediaListReducer,
+  socialMediaDetails: socialMediaDetailsReducer,
+  socialMediaDelete: socialMediaDeleteReducer,
+  socialMediaCreate: socialMediaCreateReducer,
+  socialMediaUpdate: socialMediaUpdateReducer,
+
+  // Overviews
   overviewList: overviewListReducer,
   overviewDetails: overviewDetailsReducer,
   overviewDelete: overviewDeleteReducer,

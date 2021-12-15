@@ -22,6 +22,7 @@ const Header = () => {
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav className='mx-auto'>
+            
             <Nav.Link as={Link} to='/about'>
               About
             </Nav.Link>
@@ -42,6 +43,7 @@ const Header = () => {
               <NavDropdown.Item as={Link} to='/complete-project'>
                 Complete Project
               </NavDropdown.Item>
+
             </NavDropdown>
           </Nav>
           <Nav className='ms-auto'>
@@ -55,6 +57,14 @@ const Header = () => {
             {userInfo && userInfo.isAdmin && (
               <>
                 <NavDropdown title='Admin' id='adminMenu'>
+                  <NavDropdown.Item as={Link} to='/admin/social-media'>
+                    Social Media List
+                  </NavDropdown.Item>
+
+                  <NavDropdown.Item as={Link} to='/admin/contact-Info'>
+                    Contact Info List
+                  </NavDropdown.Item>
+
                   <NavDropdown.Item as={Link} to='/admin/management'>
                     Management List
                   </NavDropdown.Item>
@@ -94,6 +104,7 @@ const Header = () => {
                   <NavDropdown.Item as={Link} to='/admin/users'>
                     User List
                   </NavDropdown.Item>
+
                 </NavDropdown>
               </>
             )}

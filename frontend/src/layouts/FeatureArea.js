@@ -13,9 +13,9 @@ const FeatureArea = () => {
                 <div className='content'>
                   <div className='title-section-left'>
                     <h3>
-                      Know More <span>About Us</span>
+                      Know <span>About Us</span>
                     </h3>
-                    <h6>We are are professional</h6>
+                    <h6>We are professional</h6>
                   </div>
                   <p>
                     We believe in team spirit to attain the common goals. To attain goal, every organization should have some specific and well defined policy statements
