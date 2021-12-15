@@ -2,25 +2,29 @@ import colors from 'colors'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import connectDB from './config/database.js'
-import equipments from './data/equipments.js'
-import privateProjects from './data/privateProjects.js'
-import serviceProducts from './data/serviceProducts.js'
-import publicProjects from './data/publicProjects.js'
-import corporates from './data/Corporates.js'
-import runningProjects from './data/runningProjects.js'
 import BoardOfDirectors from './data/BoardOfDirectors.js'
+import contactInfos from './data/contactInfos.js'
+import corporates from './data/Corporates.js'
+import equipments from './data/equipments.js'
 import managements from './data/Managements.js'
 import overviews from './data/Overviews.js'
+import privateProjects from './data/privateProjects.js'
+import publicProjects from './data/publicProjects.js'
+import runningProjects from './data/runningProjects.js'
+import serviceProducts from './data/serviceProducts.js'
+import socialMedias from './data/socialMedias.js'
 import users from './data/users.js'
+import BoardOfDirector from './models/BoardOfDirectorModel.js'
+import ContactInfo from './models/ContactInfoModel.js'
+import Corporate from './models/CorporateModel.js'
 import Equipment from './models/equipmentModel.js'
+import Management from './models/ManagementModel.js'
+import Overview from './models/OverviewModel.js'
 import PrivateProject from './models/privateProjectModel.js'
-import ServiceProduct from './models/serviceProductModel.js'
 import PublicProject from './models/publicProjectModel.js'
 import RunningProject from './models/RunningProjectModel.js'
-import BoardOfDirector from './models/BoardOfDirectorModel.js'
-import Management from './models/ManagementModel.js'
-import Corporate from './models/CorporateModel.js'
-import Overview from './models/OverviewModel.js'
+import ServiceProduct from './models/serviceProductModel.js'
+import SocialMedia from './models/SocialMediaModel.js'
 import User from './models/userModel.js'
 
 dotenv.config()
@@ -28,7 +32,8 @@ connectDB()
 
 const importData = async () => {
   try {
-    
+    await SocialMedia.deleteMany()
+    await ContactInfo.deleteMany()
     await Overview.deleteMany()
     await Corporate.deleteMany()
     await Management.deleteMany()
@@ -44,16 +49,26 @@ const importData = async () => {
 
     const adminUser = createdUsers[0]._id
 
+    const sampleSocialMedia = socialMedias.map((socialMedia) => {
+      return { ...socialMedia, user: adminUser }
+    })
+    await SocialMedia.insertMany(sampleSocialMedia) 
+    
+    const sampleContactInfo = contactInfos.map((contactInfo) => {
+      return { ...contactInfo, user: adminUser }
+    })
+    await ContactInfo.insertMany(sampleContactInfo)
+
     const sampleOverview = overviews.map((overview) => {
       return { ...overview, user: adminUser }
     })
-    await Overview.insertMany(sampleOverview)    
-    
+    await Overview.insertMany(sampleOverview)
+
     const sampleCorporate = corporates.map((corporate) => {
       return { ...corporate, user: adminUser }
     })
-    await Corporate.insertMany(sampleCorporate)   
-    
+    await Corporate.insertMany(sampleCorporate)
+
     const sampleManagement = managements.map((management) => {
       return { ...management, user: adminUser }
     })
@@ -99,6 +114,8 @@ const importData = async () => {
 
 const destroyData = async () => {
   try {
+    await SocialMedia.deleteMany()
+    await ContactInfo.deleteMany()
     await Overview.deleteMany()
     await Corporate.deleteMany()
     await Management.deleteMany()
