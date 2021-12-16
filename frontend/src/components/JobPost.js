@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const JobPost = ({ career }) => {
   return (
-    <Link to={`career-datails/${career._id}`} className='text-decoration-none '>
+    <Link to={`/career-datails/${career._id}`} className='text-decoration-none '>
       <Card className='text-center shadow-sm'>
         <Card.Header>
           <strong>Position:</strong> {career.position}
@@ -18,7 +18,7 @@ const JobPost = ({ career }) => {
             <strong>Experience:</strong> {career.experience}
           </Card.Text>
         </Card.Body>
-        <Card.Footer className='text-muted'> {career.createdAt} </Card.Footer>
+        <Card.Footer className='text-muted fw-bold'> {career.type} </Card.Footer>
       </Card>
     </Link>
   )

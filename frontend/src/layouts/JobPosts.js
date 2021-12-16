@@ -1,18 +1,37 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
+import { useDispatch, useSelector } from 'react-redux'
 import JobPost from '../components/JobPost'
-import careerData from '../data/careers'
+import Loader from './../common/Loader'
+import Message from './../common/Message'
+import { listCareer } from './../redux/actions/CareerActions'
 
 const JobPosts = () => {
+  const dispatch = useDispatch()
+
+  const careerList = useSelector((state) => state.careerList)
+
+  const { loading, error, careers } = careerList
+
+  useEffect(() => {
+    dispatch(listCareer())
+  }, [dispatch])
+
   return (
     <Container className='my-5'>
-      <Row>
-        {careerData.map((career) => (
-          <Col key={career._id} xs={12} sm={6} md={6} lg={6} className='mb-3'>   
-            <JobPost career={career} />
-          </Col>
-        ))}
-      </Row>
+      {loading ? (
+        <Loader />
+      ) : error ? (
+        <Message />
+      ) : (
+        <Row>
+          {careers.map((career) => (
+            <Col key={career._id} xs={12} sm={6} md={6} lg={6} className='mb-3'>
+              <JobPost career={career} />
+            </Col>
+          ))}
+        </Row>
+      )}
     </Container>
   )
 }

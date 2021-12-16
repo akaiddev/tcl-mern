@@ -32,6 +32,7 @@ import Footer from './common/Footer'
 import Header from './common/Header'
 import NotFound from './common/NotFound'
 import AboutScreen from './screens/AboutScreen'
+import CareerDetailScreen from './screens/CareerDetailScreen'
 import CareerScreen from './screens/CareerScreen'
 import CompleteProjectScreen from './screens/CompleteProjectScreen'
 import ContactScreen from './screens/ContactScreen'
@@ -54,7 +55,7 @@ function Router() {
       <Routes>
         <Route path='/' element={<HomeScreen />} />
         <Route path='/about' element={<AboutScreen />} />
-        <Route path='/careers' element={<CareerScreen />} />
+        
 
         {/* Running-project */}
         <Route path='/running-project' element={<RunningProjectScreen />} />
@@ -91,6 +92,10 @@ function Router() {
         {/* Contact */}
         <Route path='/contact' element={<ContactScreen />} />
 
+        {/* Careers */}
+        <Route path='/careers' element={<CareerScreen />} />
+        <Route path='/career-datails/:id' element={<CareerDetailScreen />} />
+
         {/* Account admin Auth And User Screen */}
         <Route path='/login' element={<Login />} />
         <Route path='/registration' element={<Registration />} />
@@ -103,7 +108,6 @@ function Router() {
 
         <Route path='/admin/social-Media' element={<SocialMediaList />} />
         <Route path='/admin/social-media/:id/edit' element={<SocialMediaEdit />} />
-
 
         <Route path='/admin/contact-Info' element={<ContactInfoList />} />
         <Route path='/admin/contact-Info/:id/edit' element={<ContactInfoEdit />} />

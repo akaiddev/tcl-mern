@@ -8,7 +8,14 @@ import {
   boardOfDirectorListReducer,
   boardOfDirectorUpdateReducer
 } from './reducers/BoardOfDirectorReducers'
-import { contactInfoCreateReducer, contactInfoDeleteReducer, contactInfoDetailsReducer, contactInfoListReducer, contactInfoUpdateReducer } from './reducers/contactInfoReducers'
+import { careerCreateReducer, careerDeleteReducer, careerDetailsReducer, careerListReducer, careerUpdateReducer } from './reducers/CareerReducers'
+import {
+  contactInfoCreateReducer,
+  contactInfoDeleteReducer,
+  contactInfoDetailsReducer,
+  contactInfoListReducer,
+  contactInfoUpdateReducer
+} from './reducers/contactInfoReducers'
 import { corporateCreateReducer, corporateDeleteReducer, corporateDetailsReducer, corporateListReducer, corporateUpdateReducer } from './reducers/CorporateReducers'
 import {
   equipmentCreateReducer,
@@ -73,6 +80,13 @@ import {
 } from './reducers/userReducers'
 
 const reducer = combineReducers({
+  // Career 
+  careerList: careerListReducer,
+  careerDetails: careerDetailsReducer,
+  careerDelete: careerDeleteReducer,
+  careerCreate: careerCreateReducer,
+  careerUpdate: careerUpdateReducer,
+  
   // Contact Info
   contactInfoList: contactInfoListReducer,
   contactInfoDetails: contactInfoDetailsReducer,

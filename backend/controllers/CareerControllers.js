@@ -6,17 +6,8 @@ import Career from '../models/careerModel.js'
 // @access  Public
 
 const getCareers = asyncHandler(async (req, res) => {
-  const pageSize = 10
-  const page = Number(req.query.pageNumber) || 1
-
-  const keyword = req.query.keyword ? { position: { $regex: req.query.keyword, $options: 'i' } } : {}
-
-  const count = await Career.countDocuments({ ...keyword })
-  const careers = await Career.find({ ...keyword })
-    .limit(pageSize)
-    .skip(pageSize * (page - 1))
-
-  res.json({ careers, page, pages: Math.ceil(count / pageSize) })
+  const careers = await Career.find({})
+  res.json(careers)
 })
 
 // @desc    Fetch Career
@@ -76,7 +67,7 @@ const createCareer = asyncHandler(async (req, res) => {
 // @access  Private/Admin
 
 const updateCareer = asyncHandler(async (req, res) => {
-  const { position, headline, type, qualifications, experience, salary , skills, description} = req.body
+  const { position, headline, type, qualifications, experience, salary, skills, description } = req.body
 
   const career = await Career.findById(req.params.id)
 
