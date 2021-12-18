@@ -6,6 +6,8 @@ import Registration from './accounts/Registration'
 import AdminScreen from './admin/AdminScreen'
 import BoardOfDirectorEdit from './admin/BoardOfDirectorEdit'
 import BoardOfDirectorList from './admin/BoardOfDirectorList'
+import CareerEdit from './admin/CareerEdit'
+import CareerList from './admin/CareerList'
 import ContactInfoEdit from './admin/ContactInfoEdit'
 import ContactInfoList from './admin/ContactInfoList'
 import CorporateEdit from './admin/CorporateEdit'
@@ -55,7 +57,6 @@ function Router() {
       <Routes>
         <Route path='/' element={<HomeScreen />} />
         <Route path='/about' element={<AboutScreen />} />
-        
 
         {/* Running-project */}
         <Route path='/running-project' element={<RunningProjectScreen />} />
@@ -105,6 +106,9 @@ function Router() {
         <Route path='/admin/user/:id/edit' element={<UserEditScreen />} />
 
         {/* admin  panel*/}
+
+        <Route path='/admin/careers' element={<CareerList />} />
+        <Route path='/admin/career/:id/edit' element={<CareerEdit />} />
 
         <Route path='/admin/social-Media' element={<SocialMediaList />} />
         <Route path='/admin/social-media/:id/edit' element={<SocialMediaEdit />} />

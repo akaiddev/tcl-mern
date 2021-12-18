@@ -4,10 +4,10 @@ import HomeCarousel from '../layouts/HomeCarousel'
 
 const HomeScreen = () => {
   return (
-    <>
+    <div className='home'>
       <HomeCarousel />
       <FeatureArea />
-    </>
+    </div>
   )
 }
 

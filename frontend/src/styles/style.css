@@ -12,7 +12,6 @@
 }
 
 .about .row {
-  background: #fff;
   position: relative;
   top: 120px;
   border-radius: 0 0 5px 5px;
@@ -41,12 +40,12 @@
   font-weight: 600;
 }
 
-.about h2 span {
+.about h2 spanspan {
   color: #f7a30a;
 }
 
 .about h6 {
-  color: #333;
+  color: #fff;
   margin-bottom: 28px;
   margin-top: 10px;
 }
@@ -57,7 +56,6 @@
 }
 
 .services .content {
-  background: #fff;
   text-align: center;
   border-radius: 6px;
   padding: 30px;
@@ -241,7 +239,6 @@
 
 /* features */
 .features .content {
-  background: #fff;
   border-radius: 6px;
   padding-bottom: 40px;
   position: relative;

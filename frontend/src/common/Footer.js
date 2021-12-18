@@ -10,12 +10,12 @@ const Footer = () => {
         <Row>
           {Footers.map((ft) => (
             <Col sm={6} md={4} className='my-5' key={ft.title}>
-              <h3 className='fw-bold '>{ft.title}</h3>
+              <h4 className='fw-bold '>{ft.title}</h4>
 
               <Nav className='flex-column'>
                 {ft.description.map((item) => (
                   <Nav.Item key={item}>
-                    <Nav.Link className='fw-bold ' as={Link} to='/'>
+                    <Nav.Link as={Link} to='/'>
                       {item}
                     </Nav.Link>
                   </Nav.Item>

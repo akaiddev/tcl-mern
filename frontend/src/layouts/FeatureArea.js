@@ -12,7 +12,7 @@ const FeatureArea = () => {
               <div className='col-md-6'>
                 <div className='content'>
                   <div className='title-section-left'>
-                    <h3>
+                    <h3 className='text-light'>
                       Know <span>About Us</span>
                     </h3>
                     <h6>We are professional</h6>
@@ -61,7 +61,7 @@ const FeatureArea = () => {
         <div className='services section bg-grey' >
           <div className='container'>
             <div className='title-section'>
-              <h3>
+              <h3 className='text-light'>
                 Our <span>Service</span>
               </h3>
               <p>
@@ -74,7 +74,7 @@ const FeatureArea = () => {
               <div className='col col-md-4 col-sm-12 col-12'>
                 <div className='content'>
                   <i className='fa fa-building' />
-                  <h5>OUR PRODUCTS & SERVICES</h5>
+                  <h5 className='text-light'>OUR PRODUCTS & SERVICES</h5>
                   <p className='mb-0'>
                     TCL is a reputed civil engineering company operating in Bangladesh mainly engaged in constructions and maintenance of large and medium type projects
                     Road & High Ways, Water Plant, Airport, Electrical Plant etc. both in Private and Public Sector.TCL is offering various products and services which
@@ -85,7 +85,7 @@ const FeatureArea = () => {
               <div className='col col-md-4 col-sm-12 col-12'>
                 <div className='content content-center'>
                   <i className='fa fa-dumbbell' />
-                  <h5>OUR STRENGTH & EXPERTISE</h5>
+                  <h5 className='text-light'>OUR STRENGTH & EXPERTISE</h5>
                   <p className='mb-0'>
                     Tanvir Constructions Limitedhas some proven professionals and expert engineers, technicians and is offering one stop service to its customers in the
                     domestic civil engineering sector. Our specialized teams have proven expertise and experience in delivering mega projects in the countryʼs
@@ -96,7 +96,7 @@ const FeatureArea = () => {
               <div className='col col-md-4 col-sm-12 col-12'>
                 <div className='content'>
                   <i className='fa fa-wrench' />
-                  <h5>CORPORATE SOCIAL RESPONSIBILITY (CSR)</h5>
+                  <h5 className='text-light'>CORPORATE SOCIAL RESPONSIBILITY (CSR)</h5>
                   <p className='mb-0'>
                     Now-a-days,saving our ‘Mother Planetʼ has become the crucial issue. To save our beloved earth from all sorts of erosion and pollution, we, as global
                     citizen, obviously have some responsibilities to keep our mother planet green.Tanvir Construction Limited is also committed to maintaining a clean
@@ -113,7 +113,7 @@ const FeatureArea = () => {
         <div className='features section'>
           <div className='container'>
             <div className='title-section'>
-              <h3>
+              <h3 className='text-light'>
                 Our <span>Campany</span> Features
               </h3>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit dolore vel voluptatum libero consectetur accusamus! Ipsum qui veniam nemo nisi.</p>
@@ -121,7 +121,7 @@ const FeatureArea = () => {
             <div className='row'>
               <div className='col col-sm-12 col-12 col-md-6'>
                 <div className='content'>
-                  <h4>We always give the best</h4>
+                  <h4 className='text-light'>We always give the best</h4>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda sed quo laudantium quae soluta magni architecto, voluptate quasi quidem error,
                     dolorum accusamus modi quaerat eos autem.
@@ -132,7 +132,7 @@ const FeatureArea = () => {
                     <i className='fa fa-fire' />
                   </div>
                   <div className='content-text'>
-                    <h5>Repair if there is damage </h5>
+                    <h5 className='text-light'>Repair if there is damage </h5>
                     <p className='mb-0'>Lorem ipsum dolor sit amet consectetur adipisicing elit Amet perspiciatis fuga repellendus similique quod obcaecati.</p>
                   </div>
                 </div>
@@ -141,7 +141,7 @@ const FeatureArea = () => {
                     <i className='fa fa-calendar' />
                   </div>
                   <div className='content-text'>
-                    <h5>Controling every month</h5>
+                    <h5 className='text-light'>Controling every month</h5>
                     <p className='mb-0'>Lorem ipsum dolor sit amet consectetur adipisicing elit Amet perspiciatis fuga repellendus similique quod obcaecati.</p>
                   </div>
                 </div>
@@ -150,7 +150,7 @@ const FeatureArea = () => {
                     <i className='fa fa-cog' />
                   </div>
                   <div className='content-text'>
-                    <h5>Strong and durable</h5>
+                    <h5 className='text-light'>Strong and durable</h5>
                     <p className='mb-0'>Lorem ipsum dolor sit amet consectetur adipisicing elit Amet perspiciatis fuga repellendus similique quod obcaecati.</p>
                   </div>
                 </div>
@@ -159,13 +159,13 @@ const FeatureArea = () => {
                     <i className='fa fa-comments' />
                   </div>
                   <div className='content-text'>
-                    <h5>Free consultation</h5>
+                    <h5 className='text-light'>Free consultation</h5>
                     <p className='mb-0'>Lorem ipsum dolor sit amet consectetur adipisicing elit Amet perspiciatis fuga repellendus similique quod obcaecati.</p>
                   </div>
                 </div>
               </div>
               <div className='col col-sm-12 col-12 col-md-6'>
-                <img src={features} alt='img' className='w-100' />
+                <img src={features} alt='img' className='w-100 mb-5' />
               </div>
             </div>
           </div>

@@ -6,7 +6,7 @@ const JobPost = ({ career }) => {
   return (
     <Link to={`/career-datails/${career._id}`} className='text-decoration-none '>
       <Card className='text-center shadow-sm'>
-        <Card.Header>
+        <Card.Header className='bg-dark text-light'>
           <strong>Position:</strong> {career.position}
         </Card.Header>
         <Card.Body>

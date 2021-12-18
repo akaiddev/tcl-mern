@@ -33,8 +33,8 @@ const CareerDetailScreen = () => {
           <Container className='my-5'>
             <Row className='d-flex justify-content-center'>
               <Col sm={12} md={10} lg={6}>
-                <Card className='shadow-lg'>
-                  <Card.Header>Position: {career.position}</Card.Header>
+                <Card className='shadow'>
+                  <Card.Header className='bg-dark text-light fw-bold'>Position: {career.position}</Card.Header>
                   <Card.Body>
                     <Card.Title>{career.headline}</Card.Title>
                     <Card.Text>Skills: {career.skills}</Card.Text>
@@ -43,7 +43,7 @@ const CareerDetailScreen = () => {
                     <Card.Text>Qualifications: {career.qualifications} </Card.Text>
                     <Card.Text>Experience: {career.experience} </Card.Text>
                     <Card.Text>Salary: {career.salary} </Card.Text>
-                    <Button variant='info'>Go Application</Button>
+                    <Button variant='dark'>Go Application</Button>
                   </Card.Body>
                 </Card>
               </Col>
