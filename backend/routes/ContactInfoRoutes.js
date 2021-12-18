@@ -1,11 +1,5 @@
 import express from 'express'
-import {
-    createContactInfo,
-    deleteContactInfo,
-    getContactInfoById,
-    getContactInfos,
-    updateContactInfo
-} from '../controllers/ContactInfoControllers.js'
+import { createContactInfo, deleteContactInfo, getContactInfoById, getContactInfos, updateContactInfo } from '../controllers/ContactInfoControllers.js'
 import { admin, protect } from '../middleware/authMiddleware.js'
 
 const router = express.Router()

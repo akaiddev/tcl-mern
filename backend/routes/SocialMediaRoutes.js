@@ -1,11 +1,5 @@
 import express from 'express'
-import {
-    createSocialMedia,
-    deleteSocialMedia,
-    getSocialMediaById,
-    getSocialMedias,
-    updateSocialMedia
-} from '../controllers/SocialMediaControllers.js'
+import { createSocialMedia, deleteSocialMedia, getSocialMediaById, getSocialMedias, updateSocialMedia } from '../controllers/SocialMediaControllers.js'
 import { admin, protect } from '../middleware/authMiddleware.js'
 
 const router = express.Router()

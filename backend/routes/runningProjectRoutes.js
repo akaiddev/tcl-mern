@@ -6,7 +6,7 @@ import {
   getRunningProjectById,
   getRunningProjects,
   getTopRunningProjects,
-  updateRunningProject,
+  updateRunningProject
 } from '../controllers/runningProjectControllers.js'
 import { admin, protect } from '../middleware/authMiddleware.js'
 

@@ -129,3 +129,4 @@ const getTopPrivateProjects = asyncHandler(async (req, res) => {
 })
 
 export { getPrivateProjects, getPrivateProjectById, deletePrivateProject, createPrivateProject, updatePrivateProject, createPrivateProjectReview, getTopPrivateProjects }
+

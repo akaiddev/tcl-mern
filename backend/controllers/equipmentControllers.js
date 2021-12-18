@@ -75,7 +75,7 @@ const createEquipment = asyncHandler(async (req, res) => {
 // @access  Private/Admin
 
 const updateEquipment = asyncHandler(async (req, res) => {
-  const { nameOfEquipment, capacity, image, madeIn,  modelNo, quantity } = req.body
+  const { nameOfEquipment, capacity, image, madeIn, modelNo, quantity } = req.body
 
   const equipment = await Equipment.findById(req.params.id)
 

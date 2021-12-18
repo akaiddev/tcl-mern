@@ -63,7 +63,7 @@ const createManagement = asyncHandler(async (req, res) => {
 // @access  Private/Admin
 
 const updateManagement = asyncHandler(async (req, res) => {
-  const { name,email, designation, image } = req.body
+  const { name, email, designation, image } = req.body
 
   const management = await Management.findById(req.params.id)
 

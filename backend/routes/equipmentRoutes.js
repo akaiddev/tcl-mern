@@ -1,5 +1,13 @@
 import express from 'express'
-import { createEquipment, createEquipmentReview, deleteEquipment, getEquipmentById, getEquipments, getTopEquipments, updateEquipment } from '../controllers/equipmentControllers.js'
+import {
+    createEquipment,
+    createEquipmentReview,
+    deleteEquipment,
+    getEquipmentById,
+    getEquipments,
+    getTopEquipments,
+    updateEquipment
+} from '../controllers/equipmentControllers.js'
 import { admin, protect } from '../middleware/authMiddleware.js'
 
 const router = express.Router()

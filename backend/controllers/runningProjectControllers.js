@@ -128,12 +128,5 @@ const getTopRunningProjects = asyncHandler(async (req, res) => {
   res.json(runningProjects)
 })
 
-export {
-  getRunningProjects,
-  getRunningProjectById,
-  deleteRunningProject,
-  createRunningProject,
-  updateRunningProject,
-  createRunningProjectReview,
-  getTopRunningProjects,
-}
+export { getRunningProjects, getRunningProjectById, deleteRunningProject, createRunningProject, updateRunningProject, createRunningProjectReview, getTopRunningProjects }
+

@@ -63,7 +63,7 @@ const createContactInfo = asyncHandler(async (req, res) => {
 // @access  Private/Admin
 
 const updateContactInfo = asyncHandler(async (req, res) => {
-  const { title, icon,description, textColor } = req.body
+  const { title, icon, description, textColor } = req.body
 
   const contactInfo = await ContactInfo.findById(req.params.id)
 

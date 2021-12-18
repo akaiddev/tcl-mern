@@ -6,7 +6,7 @@ import {
   getPrivateProjectById,
   getPrivateProjects,
   getTopPrivateProjects,
-  updatePrivateProject,
+  updatePrivateProject
 } from '../controllers/privateProjectControllers.js'
 import { admin, protect } from '../middleware/authMiddleware.js'
 const router = express.Router()

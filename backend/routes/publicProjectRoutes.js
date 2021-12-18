@@ -6,7 +6,7 @@ import {
   getPublicProjectById,
   getPublicProjects,
   getTopPublicProjects,
-  updatePublicProject,
+  updatePublicProject
 } from '../controllers/publicProjectControllers.js'
 import { admin, protect } from '../middleware/authMiddleware.js'
 const router = express.Router()

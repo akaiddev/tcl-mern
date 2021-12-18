@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from 'mongoose'
 
 const ManagementSchema = mongoose.Schema(
   {
@@ -16,5 +16,3 @@ const ManagementSchema = mongoose.Schema(
 const Management = mongoose.model('Management', ManagementSchema)
 
 export default Management
-
-
