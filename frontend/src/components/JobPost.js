@@ -18,7 +18,7 @@ const JobPost = ({ career }) => {
             <strong>Experience:</strong> {career.experience}
           </Card.Text>
         </Card.Body>
-        <Card.Footer className='text-muted fw-bold'> {career.type} </Card.Footer>
+        <Card.Footer className='text-muted'> <strong>Job Type:</strong> {career.type} </Card.Footer>
       </Card>
     </Link>
   )

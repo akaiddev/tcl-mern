@@ -58,7 +58,7 @@ const FeatureArea = () => {
         </div>
         {/* end about */}
         {/* services */}
-        <div className='services section bg-grey'>
+        <div className='services section bg-grey' >
           <div className='container'>
             <div className='title-section'>
               <h3>
