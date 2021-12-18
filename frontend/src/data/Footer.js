@@ -8,7 +8,7 @@ const Footers = [
 
   {
     title: 'Contact Info',
-    description: ['123, Lorem Ipsum, Dummy City, FL-12345 USA', '+(1) 123-878-1649 | +(1) 123-878-1649', 'info@Joblly.com | support@Joblly.com'],
+    description: ['House No: 24, Road 14, Block-G, Niketon, Gulshan, Dhaka-1212', 'tanvirconstructions2020@Joblly.com | support@tanvirconstructions2020.com'],
   },
   {
     title: 'Quick Link',

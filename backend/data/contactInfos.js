@@ -2,7 +2,7 @@ const contactInfos = [
   {
     icon: 'fas fa-map-marker-alt',
     title: 'Head Office / Address',
-    description: 'Managing Director & CEO',
+    description: 'House No: 24, Road 14, Block-G, Niketon, Gulshan, Dhaka-1212',
     textColor: 'text-info'
   },
   {
