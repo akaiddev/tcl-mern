@@ -50,7 +50,7 @@ const createSocialMedia = asyncHandler(async (req, res) => {
     name: 'facebook',
 
     url: 'https://www.facebook.com',
-    icon: 'fab fa-facebook',
+    icon: 'fab fa-youtube',
     animation: 'animation-Right',
     iconColor: 'text-dark',
     user: req.user._id,

@@ -22,7 +22,7 @@ import {
   RUNNING_PROJECT_UPDATE_FAIL,
   RUNNING_PROJECT_UPDATE_REQUEST,
   RUNNING_PROJECT_UPDATE_RESET,
-  RUNNING_PROJECT_UPDATE_SUCCESS,
+  RUNNING_PROJECT_UPDATE_SUCCESS
 } from '../constants/runningProjectConstants'
 
 export const runningProjectListReducer = (state = { runningProjects: [] }, action) => {
@@ -30,7 +30,7 @@ export const runningProjectListReducer = (state = { runningProjects: [] }, actio
     case RUNNING_PROJECT_LIST_REQUEST:
       return { loading: true, runningProjects: [] }
     case RUNNING_PROJECT_LIST_SUCCESS:
-      return { loading: false,   runningProjects: action.payload.runningProjects, pages: action.payload.pages, page: action.payload.page}
+      return { loading: false, runningProjects: action.payload.runningProjects, pages: action.payload.pages, page: action.payload.page }
     case RUNNING_PROJECT_LIST_FAIL:
       return { loading: false, error: action.payload }
     default:

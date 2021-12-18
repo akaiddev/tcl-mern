@@ -27,7 +27,7 @@ p {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  color: #FFF;
+  color: #fff;
 }
 .service {
   background-image: url('../assets/service.png');
@@ -46,13 +46,14 @@ p {
 }
 .carousel-caption {
   right: initial;
-  top: 50%;
+  top: 40%;
   bottom: initial;
   padding-bottom: 1.25rem;
   text-align: left;
+  width: 30%;
 }
 .carousel-caption {
-  background-color: rgba(0, 0, 0, 0.514);
+  background-color: rgba(0, 0, 0, 0.600);
   padding: 20px;
   border-radius: 10px;
 }

@@ -20,7 +20,7 @@ import {
   RUNNING_PROJECT_TOP_SUCCESS,
   RUNNING_PROJECT_UPDATE_FAIL,
   RUNNING_PROJECT_UPDATE_REQUEST,
-  RUNNING_PROJECT_UPDATE_SUCCESS,
+  RUNNING_PROJECT_UPDATE_SUCCESS
 } from '../constants/runningProjectConstants'
 import { logout } from './userActions'
 
