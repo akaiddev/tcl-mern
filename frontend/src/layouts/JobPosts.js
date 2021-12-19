@@ -26,7 +26,7 @@ const JobPosts = () => {
       ) : (
         <Row>
           {careers.map((career) => (
-            <Col key={career._id} xs={12} sm={6} md={6} lg={6} className='mb-3'>
+            <Col key={career._id} xs={12} sm={4} md={4} lg={4} className='my-3'>
               <JobPost career={career} />
             </Col>
           ))}

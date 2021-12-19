@@ -6,7 +6,7 @@ const ProductService = ({ serviceProduct }) => {
   return (
     <>
       <TopTitle text={serviceProduct.title} />
-      <Card className='border-0 shadow-sm'>
+      <Card className='border-0'>
         <Card.Body>
           <Row>
             <Col md={8}>

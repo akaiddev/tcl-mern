@@ -5,9 +5,8 @@ import socialMedias from '../data/socialMedias'
 const SocialMedia = () => {
   return (
     <Container className='text-center'>
-      <h1 className='text-center py-3'>Connect With Social Media</h1>
-
-      <Row className='my-5 '>
+      
+      <Row className='py-5'>
         {socialMedias.map((socialMedia, index) => (
           <Col md={3} className={socialMedia.animation} key={index}>
             <a href={socialMedia.url} target='_blank' rel='noreferrer' className='text-decoration-none'>

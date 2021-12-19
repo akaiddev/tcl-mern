@@ -2,7 +2,7 @@ const Footers = [
   {
     title: 'Tanvir Constructions Ltd',
     description: [
-      'Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua. Ut Enim Ad Minim Veniam, Quis Exercitation Ullamco Laboris Duis Aute Irure Dolor In Reprehenderit In Voluptate Velit Esse Cillum.',
+      'Tanvir Constructions Ltd. (TCL) is one of the most promising construction companies in Bangladesh delivering high quality and innovative engineering solutions in the areafor road and airport constructions and maintenance as well asWater and Energy sector management. We also provide advisory services on Infrastructure Development Project.',
     ],
   },
 
@@ -12,7 +12,7 @@ const Footers = [
   },
   {
     title: 'Quick Link',
-    description: ['About', 'FAQs', 'Contact',],
+    description: ['About', 'FAQs', 'Contact'],
   },
 ]
 

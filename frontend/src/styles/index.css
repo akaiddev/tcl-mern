@@ -30,13 +30,14 @@ p {
   color: #fff;
 }
 .service {
-  background-image: url('../assets/service.png');
+  background-image: url('../assets/main-bg.png');
   background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .contact {
   background-image: url('../assets/world-map.png');
-
   background-attachment: fixed;
 }
 
