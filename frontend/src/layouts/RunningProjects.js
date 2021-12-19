@@ -26,7 +26,7 @@ const RunningProjects = () => {
         <>
           <Row>
             {runningProjects.map((runningProject) => (
-              <Col sm={12} md={6} lg={4} key={runningProject._id}>
+              <Col sm={12} md={6} lg={4} key={runningProject._id} className='my-3'>
                 <RunningProject runningProject={runningProject} />
               </Col>
             ))}

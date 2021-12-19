@@ -29,7 +29,7 @@ const HomeCarousel = () => {
           <Carousel.Caption>
             <h3 className='text-light'>Client: {runningProject.client} || Contact: {runningProject.contact}</h3>
             <p>{runningProject.nameOfWork}</p>
-            <Link to='/running-project' className='btn bg-dark text-light'>More Project</Link>
+            <Link to='/running-project' className='btn bg-dark text-light'>More Running Project</Link>
           </Carousel.Caption>
         </Carousel.Item>
       ))}
