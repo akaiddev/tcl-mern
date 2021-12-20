@@ -8,7 +8,7 @@ const Footers = [
 
   {
     title: 'Contact Info',
-    description: ['House No: 24, Road 14, Block-G, Niketon, Gulshan, Dhaka-1212', 'tanvirconstructions2020@Joblly.com | support@tanvirconstructions2020.com'],
+    description: ['House No: 24, Road 14, Block-G, Niketon, Gulshan, Dhaka-1212', 'tanvirconstructions2020@gmail.com | support@tanvirconstructions2020.com'],
   },
   {
     title: 'Quick Link',

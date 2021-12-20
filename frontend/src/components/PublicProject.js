@@ -14,7 +14,7 @@ const PublicProject = ({ publicProject }) => {
 
       <Card.Footer className='d-flex justify-content-between align-items-center '>
         <Link to={`/public-project-details/${publicProject._id}`} className='btn fw-bold '>
-          More <i className='fas fa-angle-right'></i>
+        Explore <i className='fas fa-angle-right'></i>
         </Link>
 
         <small>

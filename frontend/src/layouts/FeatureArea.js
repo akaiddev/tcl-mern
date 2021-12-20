@@ -41,9 +41,6 @@ const FeatureArea = () => {
                     <li>
                       <i className='fa fa-check' /> Protecting assets and services.
                     </li>
-                    <li>
-                      <i className='fa fa-check' /> Providing upgraded technological banking services.
-                    </li>
                   </ul>
                 </div>
               </div>
@@ -58,7 +55,7 @@ const FeatureArea = () => {
         </div>
         {/* end about */}
         {/* services */}
-        <div className='services section bg-grey' >
+        <div className='services section bg-grey'>
           <div className='container'>
             <div className='title-section'>
               <h3 className='text-light'>

@@ -27,9 +27,13 @@ const HomeCarousel = () => {
         <Carousel.Item interval={1000} key={index}>
           <Image className='d-block w-100' src={runningProject.image} alt='First slide' />
           <Carousel.Caption>
-            <h3 className='text-light'>Client: {runningProject.client} || Contact: {runningProject.contact}</h3>
+            <h3 className='text-light'>
+              Client: {runningProject.client} || Contact: {runningProject.contact}
+            </h3>
             <p>{runningProject.nameOfWork}</p>
-            <Link to='/running-project' className='btn bg-dark text-light'>More Running Project</Link>
+            <Link to='/running-project' className='btn bg-dark text-light'>
+              Explore Running Project <i class="fas fa-arrow-right"></i>
+            </Link>
           </Carousel.Caption>
         </Carousel.Item>
       ))}
