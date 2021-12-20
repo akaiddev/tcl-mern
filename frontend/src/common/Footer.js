@@ -34,7 +34,7 @@ const Footer = () => {
           </Col>
         </Row>
       </Container>
-      <div className='bg-dark text-light  py-3 border-top'>
+      <div className='bg-dark text-light  py-2 border-top'>
         <div className='text-center'>
           All Rights Reserved <strong> Tanvir Constructions Ltd</strong>. {new Date().getFullYear()}
         </div>

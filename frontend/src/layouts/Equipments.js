@@ -35,8 +35,8 @@ const Equipments = () => {
           <>
             <Row>
               {equipments.map((equipment) => (
-                <Col xs={12} sm={12} md={6} lg={6} xxl={6} key={equipment._id}>
-                  <Equipment equipment={equipment} />
+                <Col xs={12} sm={12} md={6} lg={6} xxl={6} key={equipment._id} className='my-3'>
+                  <Equipment equipment={equipment} /> 
                 </Col>
               ))}
             </Row>
