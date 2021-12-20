@@ -75,7 +75,7 @@ const SocialMediaList = () => {
           <Message variant='danger'>{error}</Message>
         ) : (
           <>
-            <Table striped bordered hover variant='info' responsive size='sm'>
+            <Table striped bordered hover variant='info' responsive size='sm' className='text-center'>
               <thead>
                 <tr>
                   <th>#ID</th>

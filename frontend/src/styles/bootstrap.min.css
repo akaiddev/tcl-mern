@@ -266,11 +266,11 @@ a > code {
   color: inherit;
 }
 kbd {
-  padding: 0.2rem 0.4rem;
+  padding: 0rem 0.4rem;
   font-size: 0.875em;
   color: #fff;
   background-color: #212529;
-  border-radius: 0.2rem;
+  border-radius: 0rem;
 }
 kbd kbd {
   padding: 0;
@@ -1983,7 +1983,7 @@ progress {
   min-height: calc(1.5em + 0.5rem + 2px);
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
-  border-radius: 0.2rem;
+  border-radius: 0rem;
 }
 .form-control-sm::-webkit-file-upload-button {
   padding: 0.25rem 0.5rem;
@@ -2100,7 +2100,7 @@ textarea.form-control-lg {
   padding-bottom: 0.25rem;
   padding-left: 0.5rem;
   font-size: 0.875rem;
-  border-radius: 0.2rem;
+  border-radius: 0rem;
 }
 .form-select-lg {
   padding-top: 0.5rem;
@@ -2417,7 +2417,7 @@ textarea.form-control-lg {
 .input-group-sm > .input-group-text {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
-  border-radius: 0.2rem;
+  border-radius: 0rem;
 }
 .input-group-lg > .form-select,
 .input-group-sm > .form-select {
@@ -3273,7 +3273,7 @@ fieldset:disabled .btn {
 .btn-sm {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
-  border-radius: 0.2rem;
+  border-radius: 0rem;
 }
 .fade {
   transition: opacity 0.15s linear;
@@ -4602,12 +4602,12 @@ fieldset:disabled .btn {
   font-size: 0.875rem;
 }
 .pagination-sm .page-item:first-child .page-link {
-  border-top-left-radius: 0.2rem;
-  border-bottom-left-radius: 0.2rem;
+  border-top-left-radius: 0rem;
+  border-bottom-left-radius: 0rem;
 }
 .pagination-sm .page-item:last-child .page-link {
-  border-top-right-radius: 0.2rem;
-  border-bottom-right-radius: 0.2rem;
+  border-top-right-radius: 0rem;
+  border-bottom-right-radius: 0rem;
 }
 .badge {
   display: inline-block;
@@ -7258,7 +7258,7 @@ fieldset:disabled .btn {
   border-radius: 0 !important;
 }
 .rounded-1 {
-  border-radius: 0.2rem !important;
+  border-radius: 0rem !important;
 }
 .rounded-2 {
   border-radius: 0.25rem !important;
