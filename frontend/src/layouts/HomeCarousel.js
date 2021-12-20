@@ -32,7 +32,7 @@ const HomeCarousel = () => {
             </h3>
             <p>{runningProject.nameOfWork}</p>
             <Link to='/running-project' className='btn bg-dark text-light'>
-              Explore Running Project <i class="fas fa-arrow-right"></i>
+              Explore Running Project <i className="fas fa-arrow-right"></i>
             </Link>
           </Carousel.Caption>
         </Carousel.Item>

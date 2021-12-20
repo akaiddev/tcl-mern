@@ -12,7 +12,7 @@ const Footers = [
   },
   {
     title: 'Quick Link',
-    description: ['About', 'FAQs', 'Contact'],
+    description: ['About', 'Contact', 'Carrers'],
   },
 ]
 

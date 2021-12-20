@@ -14,7 +14,7 @@ const Header = () => {
     dispatch(logout())
   }
   return (
-    <Navbar bg='light' variant='light' expand='md' fixed='top' className='shadow-sm'>
+    <Navbar bg='light' variant='light' expand='md' fixed='top' className='top-0 shadow-sm'>
       <Container>
         <Navbar.Brand as={Link} to='/'>
           Tanvir Constructions Ltd

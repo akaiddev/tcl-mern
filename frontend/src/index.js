@@ -5,6 +5,7 @@ import App from './App'
 import store from './redux/store'
 import './styles/bootstrap.min.css'
 import './styles/index.css'
+// import './styles/soft.css'
 import './styles/style.css'
 
 ReactDOM.render(
