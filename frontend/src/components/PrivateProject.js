@@ -1,15 +1,23 @@
 import React from 'react'
-import { Card } from 'react-bootstrap'
+import { Card, Image } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Rating from '../components/Rating'
 
 const PrivateProject = ({ privateProject }) => {
   return (
-    <Card className='h-100'>
-      <Card.Img variant='top' src={privateProject.image} alt={privateProject.client} fluid='true' />
-
+    <Card className='card-profile'>
+      <Card.Header className=' card-header-image'>
+        <Link to={`/public-project-details/${privateProject._id}`}>
+          <Image fluid className='img' src={privateProject.image} alt={privateProject.client} title={privateProject.client} />
+        </Link>
+        <div
+          className='colored-shadow'
+          style={{ backgroundImage: 'url("https://zsuttonphoto.com/wp-content/uploads/2014/02/Albuquerque-Portrait-Photography-11.jpg")', opacity: 1 }}
+        />
+      </Card.Header>
       <Card.Body>
-        <Card.Text>{privateProject.nameOfWork}</Card.Text>
+        <Card.Title>{privateProject.client}</Card.Title>
+        <h6 className='card-category text-gray'>{privateProject.nameOfWork}</h6>
       </Card.Body>
 
       <Card.Footer className='d-flex justify-content-between align-items-center '>

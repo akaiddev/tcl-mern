@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Col, Container } from 'react-bootstrap'
+import { Col, Container, Row } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick-theme.css'
@@ -67,13 +67,15 @@ const Managements = () => {
       ) : error ? (
         <Message variant='danger'>{error}</Message>
       ) : (
-        <Slider {...settings}>
-          {managements.map((managementItem) => (
-            <Col xs={12} sm={6} md={4} lg={4} key={managementItem._id}>
-              <Management managementItem={managementItem} />
-            </Col>
-          ))}
-        </Slider>
+        <Row>
+          <Slider {...settings}>
+            {managements.map((managementItem) => (
+              <Col xs={12} sm={6} md={4} lg={4} key={managementItem._id}>
+                <Management managementItem={managementItem} />
+              </Col>
+            ))}
+          </Slider>
+        </Row>
       )}
     </Container>
   )

@@ -19,7 +19,7 @@ const Header = () => {
       <Container>
         <Navbar.Brand as={Link} to='/'>
           <i className='fas fa-globe'></i>
-          <cite>Tanvir Constructions Ltd</cite>
+          <cite> Tanvir Constructions Ltd</cite>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>

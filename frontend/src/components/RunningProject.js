@@ -1,23 +1,30 @@
 import React from 'react'
-import { ButtonGroup, Card } from 'react-bootstrap'
+import { Card, Image } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Rating from './Rating'
 
 const RunningProject = ({ runningProject }) => {
   return (
-    <Card className='h-100'>
-      <Card.Img variant='top' src={runningProject.image} alt={runningProject.client} fluid='true' />
-
+    <Card className='card-profile'>
+      <Card.Header className='card-header-image'>
+        <Link to={`/public-project-details/${runningProject._id}`}>
+          <Image fluid className='img' src={runningProject.image} alt={runningProject.client} title={runningProject.client} />
+        </Link>
+        <div
+          className='colored-shadow'
+          style={{ backgroundImage: 'url("https://zsuttonphoto.com/wp-content/uploads/2014/02/Albuquerque-Portrait-Photography-11.jpg")', opacity: 1 }}
+        />
+      </Card.Header>
       <Card.Body>
-        <Card.Text>{runningProject.nameOfWork}</Card.Text>
+        <Card.Title>{runningProject.client}</Card.Title>
+        <h6 className='card-category text-gray'>{runningProject.nameOfWork}</h6>
       </Card.Body>
 
       <Card.Footer className='d-flex justify-content-between align-items-center '>
-        <ButtonGroup>
-          <Link to={`/running-project-details/${runningProject._id}`} className='btn fw-bold '>
+        <Link to={`/private-project-details/${runningProject._id}`} className='btn  fw-bold '>
           Explore <i className='fas fa-angle-right'></i>
-          </Link>
-        </ButtonGroup>
+        </Link>
+
         <small>
           <Rating value={runningProject.rating} text={` ${runningProject.numReviews} Reviews`} />
         </small>
