@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { logout } from '../redux/actions/userActions'
 
+
 const Header = () => {
   const dispatch = useDispatch()
 
@@ -14,9 +15,10 @@ const Header = () => {
     dispatch(logout())
   }
   return (
-    <Navbar bg='light' variant='light' expand='md' fixed='top' className='top-0 shadow-sm'>
+    <Navbar bg='dark' variant='dark' expand='md' fixed='top' className='top-0 shadow-sm'>
       <Container>
         <Navbar.Brand as={Link} to='/'>
+          <i className='fas fa-globe'></i>
           <cite>Tanvir Constructions Ltd</cite>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
@@ -46,7 +48,7 @@ const Header = () => {
           </Nav>
           <Nav className='ms-auto'>
             <Nav.Link as={Link} to='/careers'>
-              Careers
+              Career
             </Nav.Link>
             <Nav.Link as={Link} to='/contact'>
               Contact

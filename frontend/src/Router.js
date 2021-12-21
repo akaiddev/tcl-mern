@@ -43,12 +43,13 @@ import EquipmentScreen from './screens/EquipmentScreen'
 import HomeScreen from './screens/HomeScreen'
 import PrivateProjectDetailScreen from './screens/PrivateProjectDetailScreen'
 import PrivateProjectScreen from './screens/PrivateProjectScreen'
-import ProductServicesScreen from './screens/ProductServicesScreen'
 import ProjectEquipmentScreen from './screens/ProjectEquipmentScreen'
 import PublicProjectDetailScreen from './screens/PublicProjectDetailScreen'
 import PublicProjectScreen from './screens/PublicProjectScreen'
 import RunningProjectDetailsScreen from './screens/RunningProjectDetailsScreen'
 import RunningProjectScreen from './screens/RunningProjectScreen'
+import ServiceDetailScreen from './screens/ServiceDetailScreen'
+import ServiceScreen from './screens/ServiceScreen'
 
 function Router() {
   return (
@@ -67,7 +68,8 @@ function Router() {
         <Route path='/project-equipment' element={<ProjectEquipmentScreen />} />
 
         {/* Services */}
-        <Route path='/service' element={<ProductServicesScreen />} />
+        <Route path='/service' element={<ServiceScreen />} />
+        <Route path='/service-product-details/:id' element={<ServiceDetailScreen />} />
 
         {/* Equipments */}
         <Route path='/equipments' element={<EquipmentScreen />} />

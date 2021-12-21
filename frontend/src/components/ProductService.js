@@ -1,29 +1,20 @@
 import React from 'react'
-import { Card, Col, Row } from 'react-bootstrap'
-import TopTitle from './TopTitle'
+import { Image } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 const ProductService = ({ serviceProduct }) => {
   return (
-    <>
-      <TopTitle text={serviceProduct.title} />
-      <Card className='border-0'>
-        <Card.Body>
-          <Row>
-            <Col md={8}>
-              <Card.Text as='h5'>{serviceProduct.description}</Card.Text>
-              <Card.Text as='ol'>
-                {serviceProduct.point.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </Card.Text>
-            </Col>
-            <Col md={4}>
-              <Card.Img variant='top' src={serviceProduct.image} alt={serviceProduct.title} />
-            </Col>
-          </Row>
-        </Card.Body>
-      </Card>
-    </>
+    <div className='service-box'>
+      <div className='service-icon'>
+        <Image src={serviceProduct.image} alt='image' width='100' />
+      </div>
+      <div className='service-title mt-4 fw-bold'>{serviceProduct.title}</div>
+      <div className='service-desc mb-3'>{serviceProduct.description}</div>
+
+      <Link to={`/service-product-details/${serviceProduct._id}`} className='btn fw-bold btn-dark'>
+        Explore <i className='fas fa-angle-right'></i>
+      </Link>
+    </div>
   )
 }
 

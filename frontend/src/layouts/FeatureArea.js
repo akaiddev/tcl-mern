@@ -1,7 +1,8 @@
 import React from 'react'
 import { Col, Container, Image, Row } from 'react-bootstrap'
 import about from '../assets/about//about.png'
-import features from '../assets/about/features.jpg'
+import features2 from '../assets/about/features2.jpg'
+import features3 from '../assets/about/features3.jpg'
 
 const FeatureArea = () => {
   return (
@@ -111,17 +112,17 @@ const FeatureArea = () => {
         <Container>
           <div className='title-section'>
             <h3 className='text-light'>
-              Our <span>Campany</span> Features
+              OUR <span>VISION</span>
             </h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit dolore vel voluptatum libero consectetur accusamus! Ipsum qui veniam nemo nisi.</p>
+            <p>Be a partner to build the nation. To be a leading construction company in the global market</p>
           </div>
           <Row>
             <Col xs={12} sm={12} md={6}>
               <div className='content'>
-                <h4 className='text-light'>We always give the best</h4>
+                <h4 className='text-light'>OUR MISSION</h4>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda sed quo laudantium quae soluta magni architecto, voluptate quasi quidem error,
-                  dolorum accusamus modi quaerat eos autem.
+                  To provide high quality engineering solutions. To manage projects at affordable price. To provide safe working environment and delivering quality work
+                  within reasonable time frame.
                 </p>
               </div>
               <div className='content'>
@@ -129,8 +130,8 @@ const FeatureArea = () => {
                   <i className='fa fa-fire' />
                 </div>
                 <div className='content-text'>
-                  <h5 className='text-light'>Repair if there is damage </h5>
-                  <p className='mb-0'>Lorem ipsum dolor sit amet consectetur adipisicing elit Amet perspiciatis fuga repellendus similique quod obcaecati.</p>
+                  <h5 className='text-light'>OUR COMMITMENTS </h5>
+                  <p className='mb-0'>To the Customers. To the Nation. To the Shareholders. To the Employees. To the other Stakeholders</p>
                 </div>
               </div>
               <div className='content'>
@@ -138,8 +139,11 @@ const FeatureArea = () => {
                   <i className='fa fa-calendar' />
                 </div>
                 <div className='content-text'>
-                  <h5 className='text-light'>Controling every month</h5>
-                  <p className='mb-0'>Lorem ipsum dolor sit amet consectetur adipisicing elit Amet perspiciatis fuga repellendus similique quod obcaecati.</p>
+                  <h5 className='text-light'>STRATEGIC OBJECTIVES</h5>
+                  <p className='mb-0'>
+                    Introducing innovative and technology based Products & Services. Ensuring fast, accurate and state of the art construction services with customersʼ
+                    satisfaction. Ensuring balanced and sustainable growth strategy. To achieve global standards.
+                  </p>
                 </div>
               </div>
               <div className='content'>
@@ -147,8 +151,12 @@ const FeatureArea = () => {
                   <i className='fa fa-cog' />
                 </div>
                 <div className='content-text'>
-                  <h5 className='text-light'>Strong and durable</h5>
-                  <p className='mb-0'>Lorem ipsum dolor sit amet consectetur adipisicing elit Amet perspiciatis fuga repellendus similique quod obcaecati.</p>
+                  <h5 className='text-light'>EMPLOYEE CODE OF CONDUCT</h5>
+                  <p className='mb-0'>
+                    Adhere to the Principles and applicable laws. Inform the customers about the benefits and risks of the products and services offered to them. laws Not
+                    to cause any loss of reputation of the organization during works and attitudes. Not to be engaged in any activity that can be classified as personal
+                    business. Not to use the TCLʼs assets and resources unproductively and outside the designated purpose
+                  </p>
                 </div>
               </div>
               <div className='content pb-0'>
@@ -156,13 +164,18 @@ const FeatureArea = () => {
                   <i className='fa fa-comments' />
                 </div>
                 <div className='content-text'>
-                  <h5 className='text-light'>Free consultation</h5>
-                  <p className='mb-0'>Lorem ipsum dolor sit amet consectetur adipisicing elit Amet perspiciatis fuga repellendus similique quod obcaecati.</p>
+                  <h5 className='text-light'>OUR CORE VALUES</h5>
+                  <p className='mb-0'>
+                    Honest to our customers, employees, regulators, shareholders and others Gaining efficiency through best use of man and machine. Accountable to the
+                    stakeholders and to the society at large. Transparent in each and every transaction. Continuous innovative idea generation and finding of engineering
+                    solutions. Protecting assets and services.
+                  </p>
                 </div>
               </div>
             </Col>
             <Col xs={12} sm={12} md={6}>
-              <img src={features} alt='img' className='w-100 mb-5' />
+              <img src={features2} alt='img' className='w-100 mb-5' />
+              <img src={features3} alt='img' className='w-100 mb-5' />
             </Col>
           </Row>
         </Container>
