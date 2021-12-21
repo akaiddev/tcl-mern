@@ -89,7 +89,7 @@ const EquipmentList = () => {
                   <th>Name Of Equipment</th>
                   <th>Model No</th>
                   <th>Quantity</th>
-                  <th>MadeIn</th>
+                  <th>Made In</th>
                   <th>Edit</th>
                   <th>Delete</th>
                 </tr>
