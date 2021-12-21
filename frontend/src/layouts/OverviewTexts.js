@@ -30,7 +30,7 @@ const OverviewTexts = () => {
             <Col md={OverviewText.col} key={OverviewText._id} className={`${OverviewText.animation} mx-auto mb-2`}>
               <Card.Body>
                 <Card.Text>
-                  <strong>{index + 1}.</strong> {OverviewText.description}
+                  <i className='far fa-check-circle'></i> {OverviewText.description}
                 </Card.Text>
               </Card.Body>
             </Col>

@@ -79,7 +79,7 @@ const EquipmentDetailScreen = () => {
               </Col>
             </Row>
 
-            <Card>
+            <Card className='my-3'>
               <Card.Body>
                 <Row>
                   <Col md={6}>

@@ -29,11 +29,12 @@ const Corporates = () => {
             {corporates.map((corporate) => (
               <Col xs={12} sm={6} key={corporate._id}>
                 <TopTitle text={corporate.name} />
-                <ol>
-                  {corporate.description.map((items) => (
-                    <li key={items}> {items} </li>
-                  ))}
-                </ol>
+
+                {corporate.description.map((items) => (
+                  <li key={items} className='list-unstyled'>
+                    <i className='far fa-check-circle'></i> {items}
+                  </li>
+                ))}
               </Col>
             ))}
           </Row>

@@ -5,9 +5,9 @@ import Rating from '../components/Rating'
 
 const PrivateProject = ({ privateProject }) => {
   return (
-    <Card className='card-profile'>
+    <Card className=' customCard card-profile'>
       <Card.Header className=' card-header-image'>
-        <Link to={`/public-project-details/${privateProject._id}`}>
+        <Link to={`/private-project-details/${privateProject._id}`}>
           <Image fluid className='img' src={privateProject.image} alt={privateProject.client} title={privateProject.client} />
         </Link>
         <div

@@ -8,22 +8,36 @@ const OurCoreValue = () => {
       <Row>
         {OurCoreValues.map((coreValue) => (
           <Col key={coreValue._id}>
-            <Card.Title as='h4' className='fw-bold'>{coreValue.name}</Card.Title>
+            <Card.Title as='h4' className='fw-bold'>
+              {coreValue.name}
+            </Card.Title>
             <Card.Body>
               <Row>
                 <Col md={6}>
                   <Card.Text>{coreValue.description}</Card.Text>
                 </Col>
                 <Col md={6}>
-                  <ol>
-                    <li>{coreValue.honesty}</li>
-                    <li>{coreValue.efficiency}</li>
-                    <li>{coreValue.accountability}</li>
-                    <li>{coreValue.transparency}</li>
-                    <li>{coreValue.innovation}</li>
-                    <li>{coreValue.security}</li>
-                    <li>{coreValue.technology}</li>
-                  </ol>
+                  <li className='list-unstyled'>
+                    <i className='far fa-check-circle'></i> {coreValue.honesty}
+                  </li>
+                  <li className='list-unstyled'>
+                    <i className='far fa-check-circle'></i> {coreValue.efficiency}
+                  </li>
+                  <li className='list-unstyled'>
+                    <i className='far fa-check-circle'></i> {coreValue.accountability}
+                  </li>
+                  <li className='list-unstyled'>
+                    <i className='far fa-check-circle'></i> {coreValue.transparency}
+                  </li>
+                  <li className='list-unstyled'>
+                    <i className='far fa-check-circle'></i> {coreValue.innovation}
+                  </li>
+                  <li className='list-unstyled'>
+                    <i className='far fa-check-circle'></i> {coreValue.security}
+                  </li>
+                  <li className='list-unstyled'>
+                    <i className='far fa-check-circle'></i> {coreValue.technology}
+                  </li>
                 </Col>
               </Row>
             </Card.Body>

@@ -5,7 +5,7 @@ import Rating from './Rating'
 
 const PublicProject = ({ publicProject }) => {
   return (
-    <Card className='card-profile'>
+    <Card className='customCard card-profile'>
       <Card.Header className='card-header-image'>
         <Link to={`/public-project-details/${publicProject._id}`}>
           <Image fluid className='img' src={publicProject.image} alt={publicProject.client} title={publicProject.client} />
@@ -21,7 +21,7 @@ const PublicProject = ({ publicProject }) => {
       </Card.Body>
 
       <Card.Footer className='d-flex justify-content-between align-items-center '>
-        <Link to={`/private-project-details/${publicProject._id}`} className='btn  fw-bold '>
+        <Link to={`/public-project-details/${publicProject._id}`} className='btn  fw-bold '>
           Explore <i className='fas fa-angle-right'></i>
         </Link>
 

@@ -495,9 +495,8 @@ p {
   margin-top: 10px;
   color: #3c4858;
 }
-.card {
+.customCard {
   border: 0;
-  margin-bottom: 30px;
   margin-top: 50px;
   border-radius: 6px !important;
   color: rgba(0, 0, 0, 0.87);

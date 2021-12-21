@@ -75,7 +75,7 @@ const OverviewList = () => {
           <Message variant='danger'>{error}</Message>
         ) : (
           <>
-            <Table striped bordered hover variant='info' responsive size='sm' className='text-center'>
+            <Table striped bordered hover variant='info' responsive size='sm' >
               <thead>
                 <tr>
                   <th>#ID</th>
@@ -95,11 +95,9 @@ const OverviewList = () => {
                     <td>{corporate.col}</td>
                     <td width='180'>{corporate.animation}</td>
                     <td>
-                      <ol>
-                        {corporate.description.map((item) => (
-                          <li key={item}>{item}</li>
-                        ))}
-                      </ol>
+                      {corporate.description.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
                     </td>
 
                     <td>
