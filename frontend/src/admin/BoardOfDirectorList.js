@@ -92,7 +92,7 @@ const BoardOfDirectorList = () => {
                   <tr key={boardOfDirector._id}>
                     <td>{index + 1}</td>
                     <td>
-                      <Image src={boardOfDirector.image} fluid width='60' className='rounded-circle' />
+                      <Image src={boardOfDirector.image} fluid width='40' className='rounded-circle' />
                     </td>
                     <td>{boardOfDirector.name}</td>
                     <td>{boardOfDirector.designation}</td>

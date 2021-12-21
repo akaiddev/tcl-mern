@@ -18,17 +18,23 @@ const Footer = () => {
           <Col sm={6} md={4}>
             <h3 className='my-3'>Contact Info</h3>
             <p> House No: 24, Road 14, Block-G, Niketon, Gulshan, Dhaka-1212 </p>
-            <p> tanvirconstructions2020@gmail.com </p>
-            <p> support@tanvirconstructions2020.com</p>
+            <a href={`mailto:tanvirconstructions2020`} className='text-decoration-none'>tanvirconstructions2020@gmail.com</a>
+            <br />
+            <a href={`mailto:support@tanvirconstructions2020.com`} className='text-decoration-none'>support@tanvirconstructions2020.com</a>
           </Col>
           <Col sm={6} md={4}>
             <h3 className='my-3'>Contact Info</h3>
             <Nav className='flex-column'>
               <Nav.Item>
-                <Nav.Link as={Link} to='/about'>About</Nav.Link>
-                <Nav.Link as={Link} to='/careers'>Career</Nav.Link>
-                <Nav.Link as={Link} to='/contact'>Contact</Nav.Link>
-                
+                <Nav.Link as={Link} to='/about'>
+                  About
+                </Nav.Link>
+                <Nav.Link as={Link} to='/careers'>
+                  Career
+                </Nav.Link>
+                <Nav.Link as={Link} to='/contact'>
+                  Contact
+                </Nav.Link>
               </Nav.Item>
             </Nav>
           </Col>

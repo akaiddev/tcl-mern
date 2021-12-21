@@ -93,7 +93,7 @@ const ManagementList = () => {
                   <tr key={management._id}>
                     <td>{index + 1}</td>
                     <td>
-                      <Image src={management.image} fluid width='60' className='rounded-circle' />
+                      <Image src={management.image} fluid width='40' className='rounded-circle' />
                     </td>
                     <td>{management.name}</td>
                     <td>{management.email}</td>

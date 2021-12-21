@@ -55,6 +55,34 @@ const Header = () => {
             {userInfo && userInfo.isAdmin && (
               <>
                 <NavDropdown title='Admin' id='adminMenu'>
+                  <NavDropdown.Item as={Link} to='/admin/board-of-director'>
+                    Board Of Director List
+                  </NavDropdown.Item>
+
+                  <NavDropdown.Item as={Link} to='/admin/management'>
+                    Management List
+                  </NavDropdown.Item>
+                  
+                  <NavDropdown.Item as={Link} to='/admin/service-product'>
+                    Service Product List
+                  </NavDropdown.Item>
+
+                  <NavDropdown.Item as={Link} to='/admin/equipment'>
+                    Equipment List
+                  </NavDropdown.Item>
+
+                  <NavDropdown.Item as={Link} to='/admin/running-project'>
+                    Running Project List
+                  </NavDropdown.Item>
+
+                  <NavDropdown.Item as={Link} to='/admin/public-project'>
+                    Public Project List
+                  </NavDropdown.Item>
+
+                  <NavDropdown.Item as={Link} to='/admin/private-project'>
+                    Private Project List
+                  </NavDropdown.Item>
+
                   <NavDropdown.Item as={Link} to='/admin/careers'>
                     Careers List
                   </NavDropdown.Item>
@@ -62,36 +90,19 @@ const Header = () => {
                   <NavDropdown.Item as={Link} to='/admin/social-media'>
                     Social Media List
                   </NavDropdown.Item>
+
                   <NavDropdown.Item as={Link} to='/admin/contact-Info'>
                     Contact Info List
                   </NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to='/admin/management'>
-                    Management List
-                  </NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to='/admin/board-of-director'>
-                    Board Of Director List
-                  </NavDropdown.Item>
+
                   <NavDropdown.Item as={Link} to='/admin/corporate'>
                     Corporate List
                   </NavDropdown.Item>
+
                   <NavDropdown.Item as={Link} to='/admin/overview'>
                     Overview List
                   </NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to='/admin/service-product'>
-                    Service Product List
-                  </NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to='/admin/equipment'>
-                    Equipment List
-                  </NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to='/admin/running-project'>
-                    Running Project List
-                  </NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to='/admin/public-project'>
-                    Public Project List
-                  </NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to='/admin/private-project'>
-                    Private Project List
-                  </NavDropdown.Item>
+
                   <NavDropdown.Item as={Link} to='/admin/users'>
                     User List
                   </NavDropdown.Item>

@@ -75,7 +75,7 @@ const ServiceProductList = () => {
           <Message variant='danger'>{error}</Message>
         ) : (
           <>
-            <Table striped bordered hover variant='info' responsive size='sm' className='text-center'>
+            <Table striped bordered hover variant='info' responsive size='sm'>
               <thead>
                 <tr>
                   <th>#ID</th>
