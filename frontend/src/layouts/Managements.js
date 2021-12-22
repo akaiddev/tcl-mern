@@ -6,7 +6,6 @@ import 'slick-carousel/slick/slick-theme.css'
 import 'slick-carousel/slick/slick.css'
 import Message from '../common/Message'
 import Management from '../components/Management'
-import TopTitle from '../components/TopTitle'
 import Loader from './../common/Loader'
 import { listManagement } from './../redux/actions/ManagementActions'
 
@@ -60,14 +59,12 @@ const Managements = () => {
   }
   return (
     <Container>
-      <TopTitle text='MANAGEMENT STRUCTURE' />
-
       {loading ? (
         <Loader />
       ) : error ? (
         <Message variant='danger'>{error}</Message>
       ) : (
-        <Row>
+        <Row className='py-5'>
           <Slider {...settings}>
             {managements.map((managementItem) => (
               <Col xs={12} sm={6} md={4} lg={4} key={managementItem._id}>
