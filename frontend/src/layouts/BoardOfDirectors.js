@@ -25,7 +25,7 @@ const BoardOfDirectors = () => {
     autoplay: true,
     autoplaySpeed: 3000,
     pauseOnHover: true,
-   
+
     centerPadding: '10rem',
 
     responsive: [
@@ -59,7 +59,7 @@ const BoardOfDirectors = () => {
   return (
     <Container className='my-5'>
       <Row>
-        <Col md={5}>
+        <Col md={4}>
           {loading ? (
             <Loader />
           ) : error ? (
@@ -76,8 +76,8 @@ const BoardOfDirectors = () => {
             </Row>
           )}
         </Col>
-        <Col md={7}>
-          <p className=' text-justify'>
+        <Col md={8} className='p-5'>
+          <p className='text-light '>
             With the constant pursuit for operational excellence and relentless strive for business accomplishment,
             <strong>Tanvir Constructions Ltd</strong> . is now one of the growing construction firms in Bangladesh. As one of the promising construction company in
             Bangladesh, our corporate journey began in the early 2001 named as <strong>TANVIR TRADERS</strong>. Now we prepare to embark on the next chapter of our
@@ -91,8 +91,8 @@ const BoardOfDirectors = () => {
             future. It is an absolute pleasure to introduce <strong>Tanvir Constructions Ltd</strong>.
           </p>
           <small>
-            <h5 className='fw-bold'>Tanvir Ahmed</h5>
-            <cite className='fw-bold'>Managing Director and CEO</cite>
+            <h5 className='text-light fw-bold'>Tanvir Ahmed</h5>
+            <cite className='text-light fw-bold'>Managing Director and CEO</cite>
           </small>
         </Col>
       </Row>
