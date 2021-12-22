@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import ForgotPassword from './accounts/ForgotPassword'
 import Login from './accounts/Login'
 import Profile from './accounts/Profile'
 import Registration from './accounts/Registration'
@@ -101,6 +102,7 @@ function Router() {
 
         {/* Account admin Auth And User Screen */}
         <Route path='/login' element={<Login />} />
+        <Route path='/forgot-password' element={<ForgotPassword />} />
         <Route path='/registration' element={<Registration />} />
         <Route path='/profile' element={<Profile />} />
         <Route path='/admin' element={<AdminScreen />} />

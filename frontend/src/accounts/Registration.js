@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { Button, Col, Form, Row } from 'react-bootstrap'
+import { Button, Col, Container, Form, Image, Row } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
+import registerImg from '../assets/accounts/illustration_register.png'
 import Loader from '../common/Loader'
 import Message from '../common/Message'
-import FormContainer from '../components/FormContainer'
+import Banner from '../components/Banner'
 import { register } from '../redux/actions/userActions'
 
 const Registration = () => {
@@ -41,67 +42,74 @@ const Registration = () => {
   }
 
   return (
-    <FormContainer>
-      <h1 className='fw-bold text-center my-3'>
-        <i className='fas fa-id-card'></i> Registration
-      </h1>
+    <>
+      <Banner title='Registration' />
 
-      {message && <Message variant='danger'>{message}</Message>}
-      {error && <Message variant='danger'>{error}</Message>}
-      {loading && <Loader />}
-
-      <Form onSubmit={submitHandler} autoComplete='off'>
-        <Form.Group as={Row} className='mb-3' controlId='FullName'>
-          <Form.Label column sm='3'>
-            Full Name
-          </Form.Label>
-          <Col sm='9'>
-            <Form.Control type='text' placeholder='Your Full Name' value={name} onChange={(e) => setName(e.target.value)} required />
+      <Container className='my-5'>
+        <Row>
+          <Col xs={12} sm={12} md={12} lg={6}>
+            <Image src={registerImg} alt='registerImg' />
           </Col>
-        </Form.Group>
+          <Col xs={12} sm={12} md={12} lg={6} className='my-5'>
+            {message && <Message variant='danger'>{message}</Message>}
+            {error && <Message variant='danger'>{error}</Message>}
+            {loading && <Loader />}
 
-        <Form.Group as={Row} className='mb-3' controlId='Email'>
-          <Form.Label column sm='3'>
-            Email
-          </Form.Label>
-          <Col sm='9'>
-            <Form.Control type='email' placeholder='your-mail@gmail.com' value={email} onChange={(e) => setEmail(e.target.value)} required />
+            <Form onSubmit={submitHandler} autoComplete='off'>
+              <Form.Group as={Row} className='mb-3' controlId='FullName'>
+                <Form.Label column sm='3'>
+                  Full Name
+                </Form.Label>
+                <Col sm='9'>
+                  <Form.Control type='text' placeholder='Your Full Name' value={name} onChange={(e) => setName(e.target.value)} required />
+                </Col>
+              </Form.Group>
+
+              <Form.Group as={Row} className='mb-3' controlId='Email'>
+                <Form.Label column sm='3'>
+                  Email
+                </Form.Label>
+                <Col sm='9'>
+                  <Form.Control type='email' placeholder='your-mail@gmail.com' value={email} onChange={(e) => setEmail(e.target.value)} required />
+                </Col>
+              </Form.Group>
+
+              <Form.Group as={Row} className='mb-3' controlId='Password'>
+                <Form.Label column sm='3'>
+                  Password
+                </Form.Label>
+                <Col sm='9'>
+                  <Form.Control type='password' placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} required />
+                </Col>
+              </Form.Group>
+
+              <Form.Group as={Row} className='mb-3' controlId='confirmPassword'>
+                <Form.Label column sm='3'>
+                  Confirm
+                </Form.Label>
+                <Col sm='9'>
+                  <Form.Control type='password' placeholder='Confirm Password' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
+                </Col>
+              </Form.Group>
+
+              <Form.Group as={Row} className='mb-3'>
+                <Col sm={{ span: 9, offset: 3 }}>
+                  <Button type='submit' variant='dark' className='col-12'>
+                    Register
+                  </Button>
+                </Col>
+              </Form.Group>
+            </Form>
+
+            <Row className='py-3 fw-bold'>
+              <Col>
+                Already have an account? <Link to={redirect ? `/login?redirect=${redirect}` : '/login'}>Login</Link>
+              </Col>
+            </Row>
           </Col>
-        </Form.Group>
-
-        <Form.Group as={Row} className='mb-3' controlId='Password'>
-          <Form.Label column sm='3'>
-            Password
-          </Form.Label>
-          <Col sm='9'>
-            <Form.Control type='password' placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} required />
-          </Col>
-        </Form.Group>
-
-        <Form.Group as={Row} className='mb-3' controlId='confirmPassword'>
-          <Form.Label column sm='3'>
-            Confirm
-          </Form.Label>
-          <Col sm='9'>
-            <Form.Control type='password' placeholder='Confirm Password' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
-          </Col>
-        </Form.Group>
-
-        <Form.Group as={Row} className='mb-3'>
-          <Col sm={{ span: 9, offset: 3 }}>
-            <Button type='submit' variant='outline-dark' className='w-50'>
-              Registration
-            </Button>
-          </Col>
-        </Form.Group>
-      </Form>
-
-      <Row className='py-3'>
-        <Col>
-          Have an Account? <Link to={redirect ? `/login?redirect=${redirect}` : '/login'}>Login</Link>
-        </Col>
-      </Row>
-    </FormContainer>
+        </Row>
+      </Container>
+    </>
   )
 }
 
