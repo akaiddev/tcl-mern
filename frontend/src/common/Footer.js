@@ -1,8 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Col, Container, Image, Nav, Row } from 'react-bootstrap'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import logo from '../assets/logo.png'
+import { listContactInfo } from '../redux/actions/contactInfoActions'
 const Footer = () => {
+  const dispatch = useDispatch()
+
+  const contactInfoList = useSelector((state) => state.contactInfoList)
+  const { loading, error, contactInfos } = contactInfoList
+
+  useEffect(() => {
+    dispatch(listContactInfo())
+  }, [dispatch])
+
   return (
     <div className='footer'>
       <Container>
@@ -12,12 +23,9 @@ const Footer = () => {
           </Col>
           <Col xs={12} sm={12} md={6} lg={4}>
             <h3 className='my-3'>Contact Info</h3>
-            <p> House No: 24, Road 14, Block-G, Niketon, Gulshan, Dhaka-1212 </p>
-            <a href={`mailto:tanvirconstructions2020`} className='text-decoration-none text-dark'>
-              tanvirconstructions2020@gmail.com
-            </a>
-            <br />
-            <p>Phone: 88 02 9841220 FAX: 88 02 9841221</p>
+            {contactInfos.map((contactInfo) => (
+              <p>{contactInfo.description}</p>
+            ))}
           </Col>
           <Col xs={12} sm={12} md={6} lg={4}>
             <h3 className='my-3'>Contact Info</h3>

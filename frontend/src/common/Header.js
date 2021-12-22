@@ -47,9 +47,6 @@ const Header = () => {
             </NavDropdown>
           </Nav>
           <Nav className='ms-auto'>
-            <Nav.Link as={Link} to='/careers'>
-              Career
-            </Nav.Link>
             <Nav.Link as={Link} to='/contact'>
               Contact
             </Nav.Link>
