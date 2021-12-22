@@ -38,7 +38,7 @@ const ForgotPassword = () => {
 
         <Row className='align-items-center mt-4 fw-bold'>
           <Col>
-            <Link to='/login'> Loign</Link>
+            <Link to='/login'> Login</Link>
           </Col>
           <Col className='d-md-flex justify-content-md-end'>
             <Link to='/registration'> Register</Link>
