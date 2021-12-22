@@ -4,6 +4,7 @@ import ProductService from '../components/ProductService'
 import Loader from './../common/Loader'
 import Message from './../common/Message'
 import Banner from './../components/Banner'
+import WhoWeAre from './../layouts/WhoWeAre'
 import { listServiceProduct } from './../redux/actions/serviceProductActions'
 
 const ServiceScreen = () => {
@@ -19,6 +20,8 @@ const ServiceScreen = () => {
   return (
     <>
       <Banner title='Our Service And Product' subtitle='TCL is a reputed civil engineering company operating in Bangladesh' />
+
+      <WhoWeAre />
 
       {loading ? (
         <Loader />

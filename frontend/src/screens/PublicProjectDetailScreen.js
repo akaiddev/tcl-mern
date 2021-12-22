@@ -36,7 +36,7 @@ const PublicProjectDetailScreen = () => {
 
   return (
     <>
-      <Banner title={publicProject.contact} />
+      <Banner title={publicProject.contact} subtitle={publicProject.nameOfWork} />
 
       <Container className='my-5'>
         {loading ? (

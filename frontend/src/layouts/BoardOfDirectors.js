@@ -57,7 +57,7 @@ const BoardOfDirectors = () => {
   }
 
   return (
-    <Container>
+    <Container className='my-5'>
       <Row>
         <Col md={5}>
           {loading ? (

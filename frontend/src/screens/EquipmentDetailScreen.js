@@ -36,7 +36,7 @@ const EquipmentDetailScreen = () => {
 
   return (
     <>
-      <Banner title={equipment.nameOfEquipment} />
+      <Banner title={equipment.nameOfEquipment} subtitle={equipment.madeIn} />
 
       <Container className='my-5'>
         {loading ? (

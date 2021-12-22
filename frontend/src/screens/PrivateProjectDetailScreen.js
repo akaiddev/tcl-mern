@@ -36,7 +36,7 @@ const PrivateProjectDetailScreen = () => {
 
   return (
     <>
-      <Banner title={privateProject.contact} />
+      <Banner title={privateProject.contact} subtitle={privateProject.nameOfWork} />
 
       <Container className='my-5'>
         {loading ? (
