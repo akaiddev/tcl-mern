@@ -6,7 +6,7 @@ const Management = ({ managementItem }) => {
     <Card className='border-0 m-1'>
       <Image src={managementItem.image} alt={managementItem.name} />
       <Card.Body>
-        <Card.Title as='h4'>{managementItem.name}</Card.Title>
+        <Card.Title as='h5'>{managementItem.name}</Card.Title>
         <Card.Text as='h6'>
           <strong> Designation: </strong>
           {managementItem.designation}
