@@ -3,48 +3,49 @@ import React, { useEffect, useState } from 'react'
 import { Button, Col, Form, Row } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
-import Loader from '../common/Loader'
-import Message from '../common/Message'
-import FormContainer from '../components/FormContainer'
-import { listServiceProductDetails, updateServiceProduct } from './../redux/actions/serviceProductActions'
-import { SERVICE_PRODUCT_UPDATE_RESET } from './../redux/constants/serviceProductConstants'
+import Loader from '../../common/Loader'
+import Message from '../../common/Message'
+import FormContainer from '../../components/FormContainer'
+import { listRunningProjectDetails, updateRunningProject } from '../../redux/actions/runningProjectActions'
+import { RUNNING_PROJECT_UPDATE_RESET } from '../../redux/constants/runningProjectConstants'
 
-const ServiceProductEdit = () => {
+const RunningProjectEdit = () => {
   const params = useParams()
 
-  const serviceProductId = params.id
+  const runningProjectId = params.id
 
-  const [title, setTitle] = useState('')
-  const [description, setDescription] = useState('')
-  const [point, setPoint] = useState('')
-
+  const [contact, setContact] = useState('')
+  const [valueOfWork, setValueOfWork] = useState(0)
+  const [client, setClient] = useState('')
+  const [nameOfWork, setNameOfWork] = useState('')
   const [image, setImage] = useState('')
   const [uploading, setUploading] = useState(false)
 
   const dispatch = useDispatch()
   let navigate = useNavigate()
 
-  const serviceProductDetails = useSelector((state) => state.serviceProductDetails)
-  const { loading, error, serviceProduct } = serviceProductDetails
+  const runningProjectDetails = useSelector((state) => state.runningProjectDetails)
+  const { loading, error, runningProject } = runningProjectDetails
 
-  const serviceProductUpdate = useSelector((state) => state.serviceProductUpdate)
-  const { loading: loadingUpdate, error: errorUpdate, success: successUpdate } = serviceProductUpdate
+  const runningProjectUpdate = useSelector((state) => state.runningProjectUpdate)
+  const { loading: loadingUpdate, error: errorUpdate, success: successUpdate } = runningProjectUpdate
 
   useEffect(() => {
     if (successUpdate) {
-      dispatch({ type: SERVICE_PRODUCT_UPDATE_RESET })
-      navigate('/admin/service-product')
+      dispatch({ type: RUNNING_PROJECT_UPDATE_RESET })
+      navigate('/admin/running-project')
     } else {
-      if (!serviceProduct.title || serviceProduct._id !== serviceProductId) {
-        dispatch(listServiceProductDetails(serviceProductId))
+      if (!runningProject.contact || runningProject._id !== runningProjectId) {
+        dispatch(listRunningProjectDetails(runningProjectId))
       } else {
-        setTitle(serviceProduct.title)
-        setDescription(serviceProduct.description)
-        setPoint(serviceProduct.point)
-        setImage(serviceProduct.image)
+        setContact(runningProject.contact)
+        setValueOfWork(runningProject.valueOfWork)
+        setClient(runningProject.client)
+        setImage(runningProject.image)
+        setNameOfWork(runningProject.nameOfWork)
       }
     }
-  }, [dispatch, navigate, serviceProductId, serviceProduct, successUpdate])
+  }, [dispatch, navigate, runningProjectId, runningProject, successUpdate])
 
   const uploadFileHandler = async (e) => {
     const file = e.target.files[0]
@@ -66,13 +67,13 @@ const ServiceProductEdit = () => {
 
   const submitHandler = (e) => {
     e.preventDefault()
-    dispatch(updateServiceProduct({ _id: serviceProductId, image, title, description, point }))
+    dispatch(updateRunningProject({ _id: runningProjectId, image, client, contact, valueOfWork, nameOfWork }))
   }
   return (
     <>
       <FormContainer>
         <h1 className='fw-bold text-center my-4'>
-          <i className='fas fa-edit'></i> Service Product Updates
+          <i className='fas fa-edit'></i> Running Project Updates
         </h1>
 
         {loadingUpdate && <Loader />}
@@ -86,29 +87,28 @@ const ServiceProductEdit = () => {
           <Form onSubmit={submitHandler} autoComplete='off'>
             <Form.Group as={Row} className='mb-3'>
               <Form.Label column sm='3'>
-                Title
+                Contact
               </Form.Label>
               <Col sm='9'>
-                <Form.Control type='text' placeholder='Title' value={title} onChange={(e) => setTitle(e.target.value)} />
+                <Form.Control type='text' placeholder='Contact' value={contact} onChange={(e) => setContact(e.target.value)} />
               </Col>
             </Form.Group>
 
             <Form.Group as={Row} className='mb-3'>
               <Form.Label column sm='3'>
-                Description
+                Value Of Work
               </Form.Label>
               <Col sm='9'>
-                <Form.Control as='textarea' rows={6} type='text' placeholder='Description' value={description} onChange={(e) => setDescription(e.target.value)} />
+                <Form.Control type='text' placeholder='Value Of Work' value={valueOfWork} onChange={(e) => setValueOfWork(e.target.value)} />
               </Col>
             </Form.Group>
 
-            
             <Form.Group as={Row} className='mb-3'>
               <Form.Label column sm='3'>
-                Point
+                Client
               </Form.Label>
               <Col sm='9'>
-                <Form.Control type='text' placeholder='Point' value={point} onChange={(e) => setPoint(e.target.value)} />
+                <Form.Control type='text' placeholder='Client' value={client} onChange={(e) => setClient(e.target.value)} />
               </Col>
             </Form.Group>
 
@@ -120,6 +120,15 @@ const ServiceProductEdit = () => {
                 <Form.Control type='text' placeholder='Choose File' value={image} onChange={(e) => setImage(e.target.value)} />
                 <Form.Control type='file' id='image-file' label='Choose File' custom='true' onChange={uploadFileHandler}></Form.Control>
                 {uploading && <Loader />}
+              </Col>
+            </Form.Group>
+
+            <Form.Group as={Row} className='mb-3'>
+              <Form.Label column sm='3'>
+                Name Of Work
+              </Form.Label>
+              <Col sm='9'>
+                <Form.Control as='textarea' rows={4} value={nameOfWork} onChange={(e) => setNameOfWork(e.target.value)} placeholder='Name Of Work' />
               </Col>
             </Form.Group>
 
@@ -137,4 +146,4 @@ const ServiceProductEdit = () => {
   )
 }
 
-export default ServiceProductEdit
+export default RunningProjectEdit

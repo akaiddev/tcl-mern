@@ -2,12 +2,12 @@ import React, { useEffect } from 'react'
 import { Button, Col, Container, Image, Row, Table } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate, useParams } from 'react-router-dom'
-import Loader from '../common/Loader'
-import Message from '../common/Message'
-import Banner from '../components/Banner'
-import Paginate from '../components/Paginate'
-import { EQUIPMENTS_CREATE_RESET } from '../redux/constants/equipmentConstants'
-import { createEquipment, deleteEquipment, listEquipment } from './../redux/actions/equipmentActions'
+import Loader from '../../common/Loader'
+import Message from '../../common/Message'
+import Banner from '../../components/Banner'
+import Paginate from '../../components/Paginate'
+import { createEquipment, deleteEquipment, listEquipment } from '../../redux/actions/equipmentActions'
+import { EQUIPMENTS_CREATE_RESET } from '../../redux/constants/equipmentConstants'
 
 const EquipmentList = () => {
   const dispatch = useDispatch()

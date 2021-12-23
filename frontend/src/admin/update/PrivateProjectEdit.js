@@ -3,51 +3,50 @@ import React, { useEffect, useState } from 'react'
 import { Button, Col, Form, Row } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
-import Loader from '../common/Loader'
-import Message from '../common/Message'
-import FormContainer from '../components/FormContainer'
-import { EQUIPMENTS_UPDATE_RESET } from '../redux/constants/equipmentConstants'
-import { listEquipmentDetails, updateEquipment } from './../redux/actions/equipmentActions'
+import Loader from '../../common/Loader'
+import Message from '../../common/Message'
+import FormContainer from '../../components/FormContainer'
+import { listPrivateProjectDetails, updatePrivateProject } from '../../redux/actions/privateProjectActions'
+import { PRIVATE_PROJECT_UPDATE_RESET } from '../../redux/constants/privateProjectsConstants'
 
-const EquipmentEdit = () => {
+
+const PrivateProjectEdit = () => {
   const params = useParams()
 
-  const equipmentId = params.id
+  const privateProjectId = params.id
 
-  const [nameOfEquipment, setNameOfEquipment] = useState('')
-  const [capacity, setCapacity] = useState('')
-  const [modelNo, setModelNo] = useState('')
-  const [quantity, setQuantity] = useState('')
-  const [madeIn, setMadeIn] = useState('')
+  const [contact, setContact] = useState('')
+  const [valueOfWork, setValueOfWork] = useState(0)
+  const [client, setClient] = useState('')
+  const [nameOfWork, setNameOfWork] = useState('')
   const [image, setImage] = useState('')
   const [uploading, setUploading] = useState(false)
 
   const dispatch = useDispatch()
   let navigate = useNavigate()
 
-  const equipmentDetails = useSelector((state) => state.equipmentDetails)
-  const { loading, error, equipment } = equipmentDetails
+  const privateProjectDetails = useSelector((state) => state.privateProjectDetails)
+  const { loading, error, privateProject } = privateProjectDetails
 
-  const equipmentUpdate = useSelector((state) => state.equipmentUpdate)
-  const { loading: loadingUpdate, error: errorUpdate, success: successUpdate } = equipmentUpdate
+  const privateProjectUpdate = useSelector((state) => state.privateProjectUpdate)
+  const { loading: loadingUpdate, error: errorUpdate, success: successUpdate } = privateProjectUpdate
 
   useEffect(() => {
     if (successUpdate) {
-      dispatch({ type: EQUIPMENTS_UPDATE_RESET })
-      navigate('/admin/equipment')
+      dispatch({ type: PRIVATE_PROJECT_UPDATE_RESET })
+      navigate('/admin/private-project')
     } else {
-      if (!equipment.nameOfEquipment || equipment._id !== equipmentId) {
-        dispatch(listEquipmentDetails(equipmentId))
+      if (!privateProject.contact || privateProject._id !== privateProjectId) {
+        dispatch(listPrivateProjectDetails(privateProjectId))
       } else {
-        setNameOfEquipment(equipment.nameOfEquipment)
-        setCapacity(equipment.capacity)
-        setQuantity(equipment.quantity)
-        setMadeIn(equipment.madeIn)
-        setModelNo(equipment.modelNo)
-        setImage(equipment.image)
+        setContact(privateProject.contact)
+        setValueOfWork(privateProject.valueOfWork)
+        setClient(privateProject.client)
+        setImage(privateProject.image)
+        setNameOfWork(privateProject.nameOfWork)
       }
     }
-  }, [dispatch, navigate, equipmentId, equipment, successUpdate])
+  }, [dispatch, navigate, privateProjectId, privateProject, successUpdate])
 
   const uploadFileHandler = async (e) => {
     const file = e.target.files[0]
@@ -69,13 +68,13 @@ const EquipmentEdit = () => {
 
   const submitHandler = (e) => {
     e.preventDefault()
-    dispatch(updateEquipment({ _id: equipmentId, image, nameOfEquipment, capacity, modelNo, quantity, madeIn }))
+    dispatch(updatePrivateProject({ _id: privateProjectId, image, client, contact, valueOfWork, nameOfWork }))
   }
   return (
     <>
       <FormContainer>
         <h1 className='fw-bold text-center my-4'>
-          <i className='fas fa-edit'></i> Equipment Updates
+          <i className='fas fa-edit'></i> Private Project Updates
         </h1>
 
         {loadingUpdate && <Loader />}
@@ -89,37 +88,28 @@ const EquipmentEdit = () => {
           <Form onSubmit={submitHandler} autoComplete='off'>
             <Form.Group as={Row} className='mb-3'>
               <Form.Label column sm='3'>
-                Name Of Equipment
+                Contact
               </Form.Label>
               <Col sm='9'>
-                <Form.Control type='text' placeholder='name Of Equipment' value={nameOfEquipment} onChange={(e) => setNameOfEquipment(e.target.value)} />
+                <Form.Control type='text' placeholder='Contact' value={contact} onChange={(e) => setContact(e.target.value)} />
               </Col>
             </Form.Group>
 
             <Form.Group as={Row} className='mb-3'>
               <Form.Label column sm='3'>
-                Capacity
+                Value Of Work
               </Form.Label>
               <Col sm='9'>
-                <Form.Control type='text' placeholder='Capacity' value={capacity} onChange={(e) => setCapacity(e.target.value)} />
+                <Form.Control type='text' placeholder='Value Of Work' value={valueOfWork} onChange={(e) => setValueOfWork(e.target.value)} />
               </Col>
             </Form.Group>
 
             <Form.Group as={Row} className='mb-3'>
               <Form.Label column sm='3'>
-                Model No
+                Client
               </Form.Label>
               <Col sm='9'>
-                <Form.Control type='text' placeholder='Model No' value={modelNo} onChange={(e) => setModelNo(e.target.value)} />
-              </Col>
-            </Form.Group>
-
-            <Form.Group as={Row} className='mb-3'>
-              <Form.Label column sm='3'>
-                Made In
-              </Form.Label>
-              <Col sm='9'>
-                <Form.Control type='text' placeholder='Made In' value={madeIn} onChange={(e) => setModelNo(e.target.value)} />
+                <Form.Control type='text' placeholder='Client' value={client} onChange={(e) => setClient(e.target.value)} />
               </Col>
             </Form.Group>
 
@@ -134,7 +124,14 @@ const EquipmentEdit = () => {
               </Col>
             </Form.Group>
 
-        
+            <Form.Group as={Row} className='mb-3'>
+              <Form.Label column sm='3'>
+                Name Of Work
+              </Form.Label>
+              <Col sm='9'>
+                <Form.Control as='textarea' rows={4} value={nameOfWork} onChange={(e) => setNameOfWork(e.target.value)} placeholder='Name Of Work' />
+              </Col>
+            </Form.Group>
 
             <Form.Group as={Row} className='mb-3'>
               <Col sm={{ span: 9, offset: 3 }}>
@@ -150,4 +147,4 @@ const EquipmentEdit = () => {
   )
 }
 
-export default EquipmentEdit
+export default PrivateProjectEdit

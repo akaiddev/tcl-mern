@@ -3,11 +3,12 @@ import React, { useEffect, useState } from 'react'
 import { Button, Col, Form, Row } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
-import Loader from '../common/Loader'
-import Message from '../common/Message'
-import FormContainer from '../components/FormContainer'
-import { listPublicProjectDetails, updatePublicProject } from '../redux/actions/publicProjectActions'
-import { PUBLIC_PROJECT_UPDATE_RESET } from '../redux/constants/publicProjectConstants'
+import Loader from '../../common/Loader'
+import Message from '../../common/Message'
+import FormContainer from '../../components/FormContainer'
+import { listPublicProjectDetails, updatePublicProject } from '../../redux/actions/publicProjectActions'
+import { PUBLIC_PROJECT_UPDATE_RESET } from '../../redux/constants/publicProjectConstants'
+
 
 const PublicProjectEdit = () => {
   const params = useParams()

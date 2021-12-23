@@ -2,12 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { Button, Col, Form, Row } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
-import Loader from '../common/Loader'
-import Message from '../common/Message'
-import FormContainer from '../components/FormContainer'
-import { listOverviewDetails } from '../redux/actions/OverviewActions'
-import { updateOverview } from './../redux/actions/OverviewActions'
-import { OVERVIEW_UPDATE_RESET } from './../redux/constants/OverviewConstants'
+import Loader from '../../common/Loader'
+import Message from '../../common/Message'
+import FormContainer from '../../components/FormContainer'
+import { listOverviewDetails, updateOverview } from '../../redux/actions/OverviewActions'
+import { OVERVIEW_UPDATE_RESET } from '../../redux/constants/OverviewConstants'
 
 const OverviewEdit = () => {
   const params = useParams()

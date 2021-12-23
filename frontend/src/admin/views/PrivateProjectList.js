@@ -2,70 +2,70 @@ import React, { useEffect } from 'react'
 import { Button, Col, Container, Image, Row, Table } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate, useParams } from 'react-router-dom'
-import Loader from '../common/Loader'
-import Message from '../common/Message'
-import Banner from '../components/Banner'
-import Paginate from '../components/Paginate'
-import { createRunningProject, deleteRunningProject, listRunningProject } from '../redux/actions/runningProjectActions'
-import { RUNNING_PROJECT_CREATE_RESET } from '../redux/constants/runningProjectConstants'
+import Loader from '../../common/Loader'
+import Message from '../../common/Message'
+import Banner from '../../components/Banner'
+import Paginate from '../../components/Paginate'
+import { createPrivateProject, deletePrivateProject, listPrivateProject } from '../../redux/actions/privateProjectActions'
+import { PRIVATE_PROJECT_CREATE_RESET } from '../../redux/constants/privateProjectsConstants'
 
-const RunningProjectList = () => {
-  const params = useParams()
-
-  const pageNumber = params.pageNumber || 1
-
+const PrivateProjectList = () => {
   const dispatch = useDispatch()
 
   let navigate = useNavigate()
 
-  const runningProjectList = useSelector((state) => state.runningProjectList)
-  const { loading, error, runningProjects, page, pages } = runningProjectList
+  const params = useParams()
 
-  const runningProjectDelete = useSelector((state) => state.runningProjectDelete)
-  const { loading: loadingDelete, error: errorDelete, success: successDelete } = runningProjectDelete
+  const pageNumber = params.pageNumber || 1
 
-  const runningProjectCreate = useSelector((state) => state.runningProjectCreate)
-  const { loading: loadingCreate, error: errorCreate, success: successCreate, runningProject: createdRunningProject } = runningProjectCreate
+  const privateProjectList = useSelector((state) => state.privateProjectList)
+  const { loading, error, privateProjects, page, pages } = privateProjectList
+
+  const privateProjectDelete = useSelector((state) => state.privateProjectDelete)
+  const { loading: loadingDelete, error: errorDelete, success: successDelete } = privateProjectDelete
+
+  const privateProjectCreate = useSelector((state) => state.privateProjectCreate)
+  const { loading: loadingCreate, error: errorCreate, success: successCreate, privateProject: createdPrivateProjeuct } = privateProjectCreate
 
   const userLogin = useSelector((state) => state.userLogin)
   const { userInfo } = userLogin
 
   useEffect(() => {
-    dispatch({ type: RUNNING_PROJECT_CREATE_RESET })
+    dispatch({ type: PRIVATE_PROJECT_CREATE_RESET })
 
     if (!userInfo || !userInfo.isAdmin) {
       navigate('/login')
     }
 
     if (successCreate) {
-      navigate(`/admin/running-project/${createdRunningProject._id}/edit`)
+      navigate(`/admin/private-project/${createdPrivateProjeuct._id}/edit`)
     } else {
-      dispatch(listRunningProject('', pageNumber))
+      dispatch(listPrivateProject('', pageNumber))
     }
-  }, [dispatch, navigate, userInfo, successDelete, successCreate, createdRunningProject, pageNumber])
+  }, [dispatch, navigate, userInfo, successDelete, successCreate, createdPrivateProjeuct, pageNumber])
 
   const deleteHandler = (id) => {
     if (window.confirm('Are you sure')) {
-      dispatch(deleteRunningProject(id))
+      dispatch(deletePrivateProject(id))
     }
   }
 
-  const createRunningProjectHandler = () => {
-    dispatch(createRunningProject())
+  const createPrivateProjectHandler = () => {
+    dispatch(createPrivateProject())
   }
 
   return (
     <>
-      <Banner title='All Running Project List' />
+      <Banner title='All Private Project List' />
       <Container className='my-5'>
         <Row className='align-items-center my-3'>
           <Col>
             <h1 className='fw-bold'>
-              <i className='fas fa-briefcase'></i> Running Project List
+              <i className='fas fa-briefcase'></i> Private Project List
             </h1>
           </Col>
           <Col className='text-right'>
-            <Button variant='dark' className='col-12 ' onClick={createRunningProjectHandler}>
+            <Button variant='dark' className='col-12 ' onClick={createPrivateProjectHandler}>
               <i className='fas fa-plus'></i> Create a New Project
             </Button>
           </Col>
@@ -84,38 +84,38 @@ const RunningProjectList = () => {
             <Table striped bordered hover variant='info' responsive size='sm' className='text-center'>
               <thead>
                 <tr>
-                  <th>#ID</th>
+                  <th>ID</th>
                   <th>Image</th>
                   <th>Contact</th>
-                  <th>Work Value</th>
+                  <th>Work Value </th>
                   <th>Client</th>
                   <th>Name Of Work</th>
+
                   <th>Edit</th>
                   <th>Delete</th>
                 </tr>
               </thead>
               <tbody>
-                {runningProjects.map((runningProject, index) => (
-                  <tr key={runningProject._id}>
+                {privateProjects.map((privateProject, index) => (
+                  <tr key={privateProject._id}>
                     <td>{index + 1}</td>
                     <td>
-                      <Image src={runningProject.image} fluid width='60' />
+                      <Image src={privateProject.image} fluid width='60' />
                     </td>
-                    <td>{runningProject.contact}</td>
-                    <td>{runningProject.valueOfWork}</td>
-
-                    <td>{runningProject.client}</td>
-                    <td>{runningProject.nameOfWork}</td>
+                    <td>{privateProject.contact}</td>
+                    <td>{privateProject.valueOfWork}</td>
+                    <td>{privateProject.client}</td>
+                    <td>{privateProject.nameOfWork}</td>
 
                     <td>
-                      <Link to={`/admin/running-project/${runningProject._id}/edit`}>
+                      <Link to={`/admin/private-project/${privateProject._id}/edit`}>
                         <Button variant='outline-dark' className='btn-sm rounded-circle'>
                           <i className='fas fa-edit'></i>
                         </Button>
                       </Link>
                     </td>
                     <td>
-                      <Button variant='outline-danger' className='btn-sm rounded-circle' onClick={() => deleteHandler(runningProject._id)}>
+                      <Button variant='outline-danger' className='btn-sm rounded-circle' onClick={() => deleteHandler(privateProject._id)}>
                         <i className='fas fa-trash'></i>
                       </Button>
                     </td>
@@ -132,4 +132,4 @@ const RunningProjectList = () => {
   )
 }
 
-export default RunningProjectList
+export default PrivateProjectList

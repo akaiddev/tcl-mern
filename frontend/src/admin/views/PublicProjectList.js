@@ -2,12 +2,12 @@ import React, { useEffect } from 'react'
 import { Button, Col, Container, Image, Row, Table } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate, useParams } from 'react-router-dom'
-import Loader from '../common/Loader'
-import Message from '../common/Message'
-import Banner from '../components/Banner'
-import Paginate from '../components/Paginate'
-import { createPublicProject, deletePublicProject, listPublicProject } from '../redux/actions/publicProjectActions'
-import { PUBLIC_PROJECT_CREATE_RESET } from '../redux/constants/publicProjectConstants'
+import Loader from '../../common/Loader'
+import Message from '../../common/Message'
+import Banner from '../../components/Banner'
+import Paginate from '../../components/Paginate'
+import { createPublicProject, deletePublicProject, listPublicProject } from '../../redux/actions/publicProjectActions'
+import { PUBLIC_PROJECT_CREATE_RESET } from '../../redux/constants/publicProjectConstants'
 
 const PublicProjectList = () => {
   const params = useParams()

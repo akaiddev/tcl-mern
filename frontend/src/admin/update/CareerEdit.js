@@ -2,11 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { Button, Col, Form, Row } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
-import Loader from '../common/Loader'
-import Message from '../common/Message'
-import FormContainer from '../components/FormContainer'
-import { listCareerDetails, updateCareer } from '../redux/actions/CareerActions'
-import { CAREER_UPDATE_RESET } from './../redux/constants/CareerConstants'
+import Loader from '../../common/Loader'
+import Message from '../../common/Message'
+import FormContainer from '../../components/FormContainer'
+import { listCareerDetails, updateCareer } from '../../redux/actions/CareerActions'
+import { CAREER_UPDATE_RESET } from '../../redux/constants/CareerConstants'
+
+
+
 
 const CareerEdit = () => {
   const params = useParams()

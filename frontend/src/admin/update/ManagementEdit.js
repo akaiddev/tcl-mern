@@ -3,18 +3,20 @@ import React, { useEffect, useState } from 'react'
 import { Button, Col, Form, Row } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
-import Loader from '../common/Loader'
-import Message from '../common/Message'
-import FormContainer from '../components/FormContainer'
-import { listBoardOfDirectorDetails, updateBoardOfDirector } from '../redux/actions/BoardOfDirectorActions'
-import { BOARD_OF_DIRECTOR_UPDATE_RESET } from '../redux/constants/BoardOfDirectorConstants'
+import Loader from '../../common/Loader'
+import Message from '../../common/Message'
+import FormContainer from '../../components/FormContainer'
+import { listManagementDetails, updateManagement } from '../../redux/actions/ManagementActions'
+import { MANAGEMENT_UPDATE_RESET } from '../../redux/constants/ManagementConstants'
 
-const BoardOfDirectorEdit = () => {
+
+const ManagementEdit = () => {
   const params = useParams()
 
-  const boardOfDirectorId = params.id
+  const managementId = params.id
 
   const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
   const [designation, setDesignation] = useState('')
 
   const [image, setImage] = useState('')
@@ -23,27 +25,28 @@ const BoardOfDirectorEdit = () => {
   const dispatch = useDispatch()
   let navigate = useNavigate()
 
-  const boardOfDirectorDetails = useSelector((state) => state.boardOfDirectorDetails)
-  const { loading, error, boardOfDirector } = boardOfDirectorDetails
+  const managementDetails = useSelector((state) => state.managementDetails)
+  const { loading, error, management } = managementDetails
 
-  const boardOfDirectorUpdate = useSelector((state) => state.boardOfDirectorUpdate)
-  const { loading: loadingUpdate, error: errorUpdate, success: successUpdate } = boardOfDirectorUpdate
+  const managementUpdate = useSelector((state) => state.managementUpdate)
+  const { loading: loadingUpdate, error: errorUpdate, success: successUpdate } = managementUpdate
 
   useEffect(() => {
     if (successUpdate) {
-      dispatch({ type: BOARD_OF_DIRECTOR_UPDATE_RESET })
-      navigate('/admin/board-of-director')
+      dispatch({ type: MANAGEMENT_UPDATE_RESET })
+      navigate('/admin/management')
     } else {
-      if (!boardOfDirector.name || boardOfDirector._id !== boardOfDirectorId) {
-        dispatch(listBoardOfDirectorDetails(boardOfDirectorId))
+      if (!management.name || management._id !== managementId) {
+        dispatch(listManagementDetails(managementId))
       } else {
-        setName(boardOfDirector.name)
-        setDesignation(boardOfDirector.designation)
+        setName(management.name)
+        setEmail(management.email)
+        setDesignation(management.designation)
 
-        setImage(boardOfDirector.image)
+        setImage(management.image)
       }
     }
-  }, [dispatch, navigate, boardOfDirectorId, boardOfDirector, successUpdate])
+  }, [dispatch, navigate, managementId, management, successUpdate])
 
   const uploadFileHandler = async (e) => {
     const file = e.target.files[0]
@@ -65,7 +68,7 @@ const BoardOfDirectorEdit = () => {
 
   const submitHandler = (e) => {
     e.preventDefault()
-    dispatch(updateBoardOfDirector({ _id: boardOfDirectorId, image, name, designation }))
+    dispatch(updateManagement({ _id: managementId, image, name, email, designation }))
   }
   return (
     <>
@@ -89,6 +92,15 @@ const BoardOfDirectorEdit = () => {
               </Form.Label>
               <Col sm='9'>
                 <Form.Control type='text' placeholder='Name' value={name} onChange={(e) => setName(e.target.value)} />
+              </Col>
+            </Form.Group>
+
+            <Form.Group as={Row} className='mb-3'>
+              <Form.Label column sm='3'>
+                Email
+              </Form.Label>
+              <Col sm='9'>
+                <Form.Control type='text' placeholder='Name' value={email} onChange={(e) => setEmail(e.target.value)} />
               </Col>
             </Form.Group>
 
@@ -126,4 +138,4 @@ const BoardOfDirectorEdit = () => {
   )
 }
 
-export default BoardOfDirectorEdit
+export default ManagementEdit

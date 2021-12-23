@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { Button, Col, Form, Row } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
-import Loader from '../common/Loader'
-import Message from '../common/Message'
-import FormContainer from '../components/FormContainer'
-import { listSocialMediaDetails, updateSocialMedia } from '../redux/actions/SocialMediaActions'
-import { SOCIAL_MEDIA_UPDATE_RESET } from '../redux/constants/SocialMediaConstants'
+import Loader from '../../common/Loader'
+import Message from '../../common/Message'
+import FormContainer from '../../components/FormContainer'
+import { listSocialMediaDetails, updateSocialMedia } from '../../redux/actions/SocialMediaActions'
+import { SOCIAL_MEDIA_UPDATE_RESET } from '../../redux/constants/SocialMediaConstants'
 
 const SocialMediaEdit = () => {
   const params = useParams()

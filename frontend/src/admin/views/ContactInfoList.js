@@ -2,50 +2,50 @@ import React, { useEffect } from 'react'
 import { Button, Col, Container, Row, Table } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
-import Loader from '../common/Loader'
-import Message from '../common/Message'
-import Banner from '../components/Banner'
-import { createSocialMedia, deleteSocialMedia, listSocialMedia } from '../redux/actions/SocialMediaActions'
-import { SOCIAL_MEDIA_CREATE_RESET } from './../redux/constants/SocialMediaConstants'
+import Loader from '../../common/Loader'
+import Message from '../../common/Message'
+import Banner from '../../components/Banner'
+import { createContactInfo, deleteContactInfo, listContactInfo } from '../../redux/actions/contactInfoActions'
+import { CONTACT_INFO_CREATE_RESET } from '../../redux/constants/contactInfoConstants'
 
-const SocialMediaList = () => {
+const ContactInfoList = () => {
   const dispatch = useDispatch()
   let navigate = useNavigate()
 
-  const socialMediaList = useSelector((state) => state.socialMediaList)
-  const { loading, error, socialMedias } = socialMediaList
+  const contactInfoList = useSelector((state) => state.contactInfoList)
+  const { loading, error, contactInfos } = contactInfoList
 
-  const socialMediaDelete = useSelector((state) => state.socialMediaDelete)
-  const { loading: loadingDelete, error: errorDelete, success: successDelete } = socialMediaDelete
+  const contactInfoDelete = useSelector((state) => state.contactInfoDelete)
+  const { loading: loadingDelete, error: errorDelete, success: successDelete } = contactInfoDelete
 
-  const socialMediaCreate = useSelector((state) => state.socialMediaCreate)
-  const { loading: loadingCreate, error: errorCreate, success: successCreate, socialMedia: createdSocialMedia } = socialMediaCreate
+  const contactInfoCreate = useSelector((state) => state.contactInfoCreate)
+  const { loading: loadingCreate, error: errorCreate, success: successCreate, contactInfo: createdContactInfo } = contactInfoCreate
 
   const userLogin = useSelector((state) => state.userLogin)
   const { userInfo } = userLogin
 
   useEffect(() => {
-    dispatch({ type: SOCIAL_MEDIA_CREATE_RESET })
+    dispatch({ type: CONTACT_INFO_CREATE_RESET })
 
     if (!userInfo || !userInfo.isAdmin) {
       navigate('/login')
     }
 
     if (successCreate) {
-      navigate(`/admin/social-media/${createdSocialMedia._id}/edit`)
+      navigate(`/admin/contact-Info/${createdContactInfo._id}/edit`)
     } else {
-      dispatch(listSocialMedia())
+      dispatch(listContactInfo())
     }
-  }, [dispatch, navigate, userInfo, successDelete, successCreate, createdSocialMedia])
+  }, [dispatch, navigate, userInfo, successDelete, successCreate, createdContactInfo])
 
   const deleteHandler = (id) => {
     if (window.confirm('Are you sure')) {
-      dispatch(deleteSocialMedia(id))
+      dispatch(deleteContactInfo(id))
     }
   }
 
-  const createSocialMediaHandler = () => {
-    dispatch(createSocialMedia())
+  const createContactInfoHandler = () => {
+    dispatch(createContactInfo())
   }
 
   return (
@@ -55,12 +55,12 @@ const SocialMediaList = () => {
         <Row className='align-items-center my-3'>
           <Col>
             <h1 className='fw-bold'>
-              <i className='fas fa-briefcase'></i> Contact Infos List
+              <i className='fas fa-briefcase'></i> Contact Info List
             </h1>
           </Col>
           <Col className='text-right'>
-            <Button variant='dark' className='col-12 ' onClick={createSocialMediaHandler}>
-              <i className='fas fa-plus'></i> Create a New Contact Infos
+            <Button variant='dark' className='col-12 ' onClick={createContactInfoHandler}>
+              <i className='fas fa-plus'></i> Create a New Contact Info
             </Button>
           </Col>
         </Row>
@@ -79,38 +79,36 @@ const SocialMediaList = () => {
               <thead>
                 <tr>
                   <th>#ID</th>
-                  <th>name</th>
-                  <th>url</th>
-                  <th>icon</th>
-                  <th>iconColor</th>
-                  <th>animation</th>
+                  <th>Icon</th>
+                  <th>title</th>
+                  <th>Description</th>
+                  <th>textColor</th>
 
                   <th>Edit</th>
                   <th>Delete</th>
                 </tr>
               </thead>
               <tbody>
-                {socialMedias.map((socialMedia, index) => (
-                  <tr key={socialMedia._id}>
+                {contactInfos.map((contactInfo, index) => (
+                  <tr key={contactInfo._id}>
                     <td>{index + 1}</td>
-                    <td>{socialMedia.name}</td>
-                    <td>{socialMedia.url}</td>
+
                     <td>
-                      <i className={socialMedia.icon}></i>
+                      <i className={contactInfo.icon}></i>
                     </td>
-
-                    <td>{socialMedia.iconColor}</td>
-                    <td>{socialMedia.animation}</td>
+                    <td>{contactInfo.title}</td>
+                    <td>{contactInfo.description}</td>
+                    <td>{contactInfo.textColor}</td>
 
                     <td>
-                      <Link to={`/admin/social-media/${socialMedia._id}/edit`}>
+                      <Link to={`/admin/contact-Info/${contactInfo._id}/edit`}>
                         <Button variant='outline-dark' className='btn-sm rounded-circle'>
                           <i className='fas fa-edit'></i>
                         </Button>
                       </Link>
                     </td>
                     <td>
-                      <Button variant='outline-danger' className='btn-sm rounded-circle' onClick={() => deleteHandler(socialMedia._id)}>
+                      <Button variant='outline-danger' className='btn-sm rounded-circle' onClick={() => deleteHandler(contactInfo._id)}>
                         <i className='fas fa-trash'></i>
                       </Button>
                     </td>
@@ -125,4 +123,4 @@ const SocialMediaList = () => {
   )
 }
 
-export default SocialMediaList
+export default ContactInfoList

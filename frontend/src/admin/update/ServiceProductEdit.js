@@ -3,49 +3,49 @@ import React, { useEffect, useState } from 'react'
 import { Button, Col, Form, Row } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
-import Loader from '../common/Loader'
-import Message from '../common/Message'
-import FormContainer from '../components/FormContainer'
-import { listPrivateProjectDetails, updatePrivateProject } from '../redux/actions/privateProjectActions'
-import { PRIVATE_PROJECT_UPDATE_RESET } from '../redux/constants/privateProjectsConstants'
+import Loader from '../../common/Loader'
+import Message from '../../common/Message'
+import FormContainer from '../../components/FormContainer'
+import { listServiceProductDetails, updateServiceProduct } from '../../redux/actions/serviceProductActions'
+import { SERVICE_PRODUCT_UPDATE_RESET } from '../../redux/constants/serviceProductConstants'
 
-const PrivateProjectEdit = () => {
+
+const ServiceProductEdit = () => {
   const params = useParams()
 
-  const privateProjectId = params.id
+  const serviceProductId = params.id
 
-  const [contact, setContact] = useState('')
-  const [valueOfWork, setValueOfWork] = useState(0)
-  const [client, setClient] = useState('')
-  const [nameOfWork, setNameOfWork] = useState('')
+  const [title, setTitle] = useState('')
+  const [description, setDescription] = useState('')
+  const [point, setPoint] = useState('')
+
   const [image, setImage] = useState('')
   const [uploading, setUploading] = useState(false)
 
   const dispatch = useDispatch()
   let navigate = useNavigate()
 
-  const privateProjectDetails = useSelector((state) => state.privateProjectDetails)
-  const { loading, error, privateProject } = privateProjectDetails
+  const serviceProductDetails = useSelector((state) => state.serviceProductDetails)
+  const { loading, error, serviceProduct } = serviceProductDetails
 
-  const privateProjectUpdate = useSelector((state) => state.privateProjectUpdate)
-  const { loading: loadingUpdate, error: errorUpdate, success: successUpdate } = privateProjectUpdate
+  const serviceProductUpdate = useSelector((state) => state.serviceProductUpdate)
+  const { loading: loadingUpdate, error: errorUpdate, success: successUpdate } = serviceProductUpdate
 
   useEffect(() => {
     if (successUpdate) {
-      dispatch({ type: PRIVATE_PROJECT_UPDATE_RESET })
-      navigate('/admin/private-project')
+      dispatch({ type: SERVICE_PRODUCT_UPDATE_RESET })
+      navigate('/admin/service-product')
     } else {
-      if (!privateProject.contact || privateProject._id !== privateProjectId) {
-        dispatch(listPrivateProjectDetails(privateProjectId))
+      if (!serviceProduct.title || serviceProduct._id !== serviceProductId) {
+        dispatch(listServiceProductDetails(serviceProductId))
       } else {
-        setContact(privateProject.contact)
-        setValueOfWork(privateProject.valueOfWork)
-        setClient(privateProject.client)
-        setImage(privateProject.image)
-        setNameOfWork(privateProject.nameOfWork)
+        setTitle(serviceProduct.title)
+        setDescription(serviceProduct.description)
+        setPoint(serviceProduct.point)
+        setImage(serviceProduct.image)
       }
     }
-  }, [dispatch, navigate, privateProjectId, privateProject, successUpdate])
+  }, [dispatch, navigate, serviceProductId, serviceProduct, successUpdate])
 
   const uploadFileHandler = async (e) => {
     const file = e.target.files[0]
@@ -67,13 +67,13 @@ const PrivateProjectEdit = () => {
 
   const submitHandler = (e) => {
     e.preventDefault()
-    dispatch(updatePrivateProject({ _id: privateProjectId, image, client, contact, valueOfWork, nameOfWork }))
+    dispatch(updateServiceProduct({ _id: serviceProductId, image, title, description, point }))
   }
   return (
     <>
       <FormContainer>
         <h1 className='fw-bold text-center my-4'>
-          <i className='fas fa-edit'></i> Private Project Updates
+          <i className='fas fa-edit'></i> Service Product Updates
         </h1>
 
         {loadingUpdate && <Loader />}
@@ -87,28 +87,29 @@ const PrivateProjectEdit = () => {
           <Form onSubmit={submitHandler} autoComplete='off'>
             <Form.Group as={Row} className='mb-3'>
               <Form.Label column sm='3'>
-                Contact
+                Title
               </Form.Label>
               <Col sm='9'>
-                <Form.Control type='text' placeholder='Contact' value={contact} onChange={(e) => setContact(e.target.value)} />
+                <Form.Control type='text' placeholder='Title' value={title} onChange={(e) => setTitle(e.target.value)} />
               </Col>
             </Form.Group>
 
             <Form.Group as={Row} className='mb-3'>
               <Form.Label column sm='3'>
-                Value Of Work
+                Description
               </Form.Label>
               <Col sm='9'>
-                <Form.Control type='text' placeholder='Value Of Work' value={valueOfWork} onChange={(e) => setValueOfWork(e.target.value)} />
+                <Form.Control as='textarea' rows={6} type='text' placeholder='Description' value={description} onChange={(e) => setDescription(e.target.value)} />
               </Col>
             </Form.Group>
 
+            
             <Form.Group as={Row} className='mb-3'>
               <Form.Label column sm='3'>
-                Client
+                Point
               </Form.Label>
               <Col sm='9'>
-                <Form.Control type='text' placeholder='Client' value={client} onChange={(e) => setClient(e.target.value)} />
+                <Form.Control type='text' placeholder='Point' value={point} onChange={(e) => setPoint(e.target.value)} />
               </Col>
             </Form.Group>
 
@@ -120,15 +121,6 @@ const PrivateProjectEdit = () => {
                 <Form.Control type='text' placeholder='Choose File' value={image} onChange={(e) => setImage(e.target.value)} />
                 <Form.Control type='file' id='image-file' label='Choose File' custom='true' onChange={uploadFileHandler}></Form.Control>
                 {uploading && <Loader />}
-              </Col>
-            </Form.Group>
-
-            <Form.Group as={Row} className='mb-3'>
-              <Form.Label column sm='3'>
-                Name Of Work
-              </Form.Label>
-              <Col sm='9'>
-                <Form.Control as='textarea' rows={4} value={nameOfWork} onChange={(e) => setNameOfWork(e.target.value)} placeholder='Name Of Work' />
               </Col>
             </Form.Group>
 
@@ -146,4 +138,4 @@ const PrivateProjectEdit = () => {
   )
 }
 
-export default PrivateProjectEdit
+export default ServiceProductEdit

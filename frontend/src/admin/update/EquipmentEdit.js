@@ -3,49 +3,52 @@ import React, { useEffect, useState } from 'react'
 import { Button, Col, Form, Row } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
-import Loader from '../common/Loader'
-import Message from '../common/Message'
-import FormContainer from '../components/FormContainer'
-import { listRunningProjectDetails, updateRunningProject } from '../redux/actions/runningProjectActions'
-import { RUNNING_PROJECT_UPDATE_RESET } from '../redux/constants/runningProjectConstants'
+import Loader from '../../common/Loader'
+import Message from '../../common/Message'
+import FormContainer from '../../components/FormContainer'
+import { listEquipmentDetails, updateEquipment } from '../../redux/actions/equipmentActions'
+import { EQUIPMENTS_UPDATE_RESET } from '../../redux/constants/equipmentConstants'
 
-const RunningProjectEdit = () => {
+
+const EquipmentEdit = () => {
   const params = useParams()
 
-  const runningProjectId = params.id
+  const equipmentId = params.id
 
-  const [contact, setContact] = useState('')
-  const [valueOfWork, setValueOfWork] = useState(0)
-  const [client, setClient] = useState('')
-  const [nameOfWork, setNameOfWork] = useState('')
+  const [nameOfEquipment, setNameOfEquipment] = useState('')
+  const [capacity, setCapacity] = useState('')
+  const [modelNo, setModelNo] = useState('')
+  const [quantity, setQuantity] = useState('')
+  const [madeIn, setMadeIn] = useState('')
   const [image, setImage] = useState('')
   const [uploading, setUploading] = useState(false)
 
   const dispatch = useDispatch()
   let navigate = useNavigate()
 
-  const runningProjectDetails = useSelector((state) => state.runningProjectDetails)
-  const { loading, error, runningProject } = runningProjectDetails
+  const equipmentDetails = useSelector((state) => state.equipmentDetails)
+  const { loading, error, equipment } = equipmentDetails
 
-  const runningProjectUpdate = useSelector((state) => state.runningProjectUpdate)
-  const { loading: loadingUpdate, error: errorUpdate, success: successUpdate } = runningProjectUpdate
+  const equipmentUpdate = useSelector((state) => state.equipmentUpdate)
+  const { loading: loadingUpdate, error: errorUpdate, success: successUpdate } = equipmentUpdate
 
   useEffect(() => {
     if (successUpdate) {
-      dispatch({ type: RUNNING_PROJECT_UPDATE_RESET })
-      navigate('/admin/running-project')
+      dispatch({ type: EQUIPMENTS_UPDATE_RESET })
+      navigate('/admin/equipment')
     } else {
-      if (!runningProject.contact || runningProject._id !== runningProjectId) {
-        dispatch(listRunningProjectDetails(runningProjectId))
+      if (!equipment.nameOfEquipment || equipment._id !== equipmentId) {
+        dispatch(listEquipmentDetails(equipmentId))
       } else {
-        setContact(runningProject.contact)
-        setValueOfWork(runningProject.valueOfWork)
-        setClient(runningProject.client)
-        setImage(runningProject.image)
-        setNameOfWork(runningProject.nameOfWork)
+        setNameOfEquipment(equipment.nameOfEquipment)
+        setCapacity(equipment.capacity)
+        setQuantity(equipment.quantity)
+        setMadeIn(equipment.madeIn)
+        setModelNo(equipment.modelNo)
+        setImage(equipment.image)
       }
     }
-  }, [dispatch, navigate, runningProjectId, runningProject, successUpdate])
+  }, [dispatch, navigate, equipmentId, equipment, successUpdate])
 
   const uploadFileHandler = async (e) => {
     const file = e.target.files[0]
@@ -67,13 +70,13 @@ const RunningProjectEdit = () => {
 
   const submitHandler = (e) => {
     e.preventDefault()
-    dispatch(updateRunningProject({ _id: runningProjectId, image, client, contact, valueOfWork, nameOfWork }))
+    dispatch(updateEquipment({ _id: equipmentId, image, nameOfEquipment, capacity, modelNo, quantity, madeIn }))
   }
   return (
     <>
       <FormContainer>
         <h1 className='fw-bold text-center my-4'>
-          <i className='fas fa-edit'></i> Running Project Updates
+          <i className='fas fa-edit'></i> Equipment Updates
         </h1>
 
         {loadingUpdate && <Loader />}
@@ -87,28 +90,37 @@ const RunningProjectEdit = () => {
           <Form onSubmit={submitHandler} autoComplete='off'>
             <Form.Group as={Row} className='mb-3'>
               <Form.Label column sm='3'>
-                Contact
+                Name Of Equipment
               </Form.Label>
               <Col sm='9'>
-                <Form.Control type='text' placeholder='Contact' value={contact} onChange={(e) => setContact(e.target.value)} />
+                <Form.Control type='text' placeholder='name Of Equipment' value={nameOfEquipment} onChange={(e) => setNameOfEquipment(e.target.value)} />
               </Col>
             </Form.Group>
 
             <Form.Group as={Row} className='mb-3'>
               <Form.Label column sm='3'>
-                Value Of Work
+                Capacity
               </Form.Label>
               <Col sm='9'>
-                <Form.Control type='text' placeholder='Value Of Work' value={valueOfWork} onChange={(e) => setValueOfWork(e.target.value)} />
+                <Form.Control type='text' placeholder='Capacity' value={capacity} onChange={(e) => setCapacity(e.target.value)} />
               </Col>
             </Form.Group>
 
             <Form.Group as={Row} className='mb-3'>
               <Form.Label column sm='3'>
-                Client
+                Model No
               </Form.Label>
               <Col sm='9'>
-                <Form.Control type='text' placeholder='Client' value={client} onChange={(e) => setClient(e.target.value)} />
+                <Form.Control type='text' placeholder='Model No' value={modelNo} onChange={(e) => setModelNo(e.target.value)} />
+              </Col>
+            </Form.Group>
+
+            <Form.Group as={Row} className='mb-3'>
+              <Form.Label column sm='3'>
+                Made In
+              </Form.Label>
+              <Col sm='9'>
+                <Form.Control type='text' placeholder='Made In' value={madeIn} onChange={(e) => setModelNo(e.target.value)} />
               </Col>
             </Form.Group>
 
@@ -120,15 +132,6 @@ const RunningProjectEdit = () => {
                 <Form.Control type='text' placeholder='Choose File' value={image} onChange={(e) => setImage(e.target.value)} />
                 <Form.Control type='file' id='image-file' label='Choose File' custom='true' onChange={uploadFileHandler}></Form.Control>
                 {uploading && <Loader />}
-              </Col>
-            </Form.Group>
-
-            <Form.Group as={Row} className='mb-3'>
-              <Form.Label column sm='3'>
-                Name Of Work
-              </Form.Label>
-              <Col sm='9'>
-                <Form.Control as='textarea' rows={4} value={nameOfWork} onChange={(e) => setNameOfWork(e.target.value)} placeholder='Name Of Work' />
               </Col>
             </Form.Group>
 
@@ -146,4 +149,4 @@ const RunningProjectEdit = () => {
   )
 }
 
-export default RunningProjectEdit
+export default EquipmentEdit

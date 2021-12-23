@@ -2,11 +2,11 @@ import React, { useEffect } from 'react'
 import { Button, Col, Container, Image, Row, Table } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
-import Loader from '../common/Loader'
-import Message from '../common/Message'
-import Banner from '../components/Banner'
-import { SERVICE_PRODUCT_CREATE_RESET } from '../redux/constants/serviceProductConstants'
-import { createServiceProduct, deleteServiceProduct, listServiceProduct } from './../redux/actions/serviceProductActions'
+import Loader from '../../common/Loader'
+import Message from '../../common/Message'
+import Banner from '../../components/Banner'
+import { createServiceProduct, deleteServiceProduct, listServiceProduct } from '../../redux/actions/serviceProductActions'
+import { SERVICE_PRODUCT_CREATE_RESET } from '../../redux/constants/serviceProductConstants'
 
 const ServiceProductList = () => {
   const dispatch = useDispatch()

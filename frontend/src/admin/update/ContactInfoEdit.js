@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { Button, Col, Form, Row } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
-import Loader from '../common/Loader'
-import Message from '../common/Message'
-import FormContainer from '../components/FormContainer'
-import { listContactInfoDetails, updateContactInfo } from '../redux/actions/contactInfoActions'
-import { CONTACT_INFO_UPDATE_RESET } from '../redux/constants/contactInfoConstants'
+import Loader from '../../common/Loader'
+import Message from '../../common/Message'
+import FormContainer from '../../components/FormContainer'
+import { listContactInfoDetails, updateContactInfo } from '../../redux/actions/contactInfoActions'
+import { CONTACT_INFO_UPDATE_RESET } from '../../redux/constants/contactInfoConstants'
 
 const ContactInfoEdit = () => {
   const params = useParams()
@@ -45,7 +45,7 @@ const ContactInfoEdit = () => {
 
   const submitHandler = (e) => {
     e.preventDefault()
-    dispatch(updateContactInfo({ _id: contactInfoId, icon, description, title , textColor}))
+    dispatch(updateContactInfo({ _id: contactInfoId, icon, description, title, textColor }))
   }
   return (
     <>
@@ -92,7 +92,7 @@ const ContactInfoEdit = () => {
 
             <Form.Group as={Row} className='mb-3'>
               <Form.Label column sm='3'>
-              TextColor
+                TextColor
               </Form.Label>
               <Col sm='9'>
                 <Form.Control type='text' placeholder='textColor' value={textColor} onChange={(e) => setTextColor(e.target.value)} />
