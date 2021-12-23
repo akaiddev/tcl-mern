@@ -95,14 +95,16 @@ const Login = () => {
               </Form.Group>
             </Form>
 
-            <Row className='align-items-center mt-4 fw-bold'>
-              <Col >
-                Don’t have an account? <Link to={redirect ? `/registration?redirect=${redirect}` : '/registration'}> Register</Link>
-              </Col>
-              <Col className='d-md-flex justify-content-md-end'>
-                <Link to={redirect ? `/forgot-password?redirect=${redirect}` : '/forgot-password'}> Forget Password</Link>
-              </Col>
-            </Row>
+            <Col sm={{ span: 9, offset: 3 }}>
+              <Row className='align-items-center mt-4 fw-bold'>
+                <Col>
+                  Don’t have an account? <Link to={redirect ? `/registration?redirect=${redirect}` : '/registration'}> Register</Link>
+                </Col>
+                <Col className='d-md-flex justify-content-md-end'>
+                  <Link to={redirect ? `/forgot-password?redirect=${redirect}` : '/forgot-password'}> Forget Password</Link>
+                </Col>
+              </Row>
+            </Col>
           </Col>
         </Row>
       </Container>

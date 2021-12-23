@@ -100,12 +100,14 @@ const Registration = () => {
                 </Col>
               </Form.Group>
             </Form>
-
-            <Row className='py-3 fw-bold'>
-              <Col>
-                Already have an account? <Link to={redirect ? `/login?redirect=${redirect}` : '/login'}>Login</Link>
-              </Col>
-            </Row>
+            
+            <Col sm={{ span: 9, offset: 3 }}>
+              <Row className='py-3 fw-bold'>
+                <Col>
+                  Already have an account? <Link to={redirect ? `/login?redirect=${redirect}` : '/login'}>Login</Link>
+                </Col>
+              </Row>
+            </Col>
           </Col>
         </Row>
       </Container>
