@@ -18,7 +18,7 @@ const Footer = () => {
     <div className='footer'>
       <Container>
         <Row className='py-5'>
-          <Col xs={12} sm={12} md={6} lg={4}>
+          <Col xs={12} sm={12} md={12} lg={4} className='text-md-center'>
             <Image src={logo} alt='logo' className='d-inline-block align-top img-fluid' />
           </Col>
           <Col xs={12} sm={12} md={6} lg={4}>

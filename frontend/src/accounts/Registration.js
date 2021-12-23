@@ -100,7 +100,7 @@ const Registration = () => {
                 </Col>
               </Form.Group>
             </Form>
-            
+
             <Col sm={{ span: 9, offset: 3 }}>
               <Row className='py-3 fw-bold'>
                 <Col>
