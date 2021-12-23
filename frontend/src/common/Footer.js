@@ -23,8 +23,9 @@ const Footer = () => {
           </Col>
           <Col xs={12} sm={12} md={6} lg={4}>
             <h3 className='my-3'>Contact Info</h3>
+
             {contactInfos.map((contactInfo) => (
-              <p>{contactInfo.description}</p>
+              <p key={contactInfo._id}>{contactInfo.description}</p>
             ))}
           </Col>
           <Col xs={12} sm={12} md={6} lg={4}>

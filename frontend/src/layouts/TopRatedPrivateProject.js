@@ -41,7 +41,7 @@ const TopRatedPrivateProject = () => {
         ) : (
           <Row>
             {privateProjects.map((privateProject) => (
-              <Col xs={12} sm={6} md={6} lg={4} xl={3} xxl={3} key={privateProject._id}>
+              <Col xs={12} sm={12} md={6} lg={6} xl={4} key={privateProject._id}>
                 <PrivateProject privateProject={privateProject} />
               </Col>
             ))}

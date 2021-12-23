@@ -96,11 +96,11 @@ const Login = () => {
             </Form>
 
             <Row className='align-items-center mt-4 fw-bold'>
-              <Col>
-                <Link to={redirect ? `/forgot-password?redirect=${redirect}` : '/forgot-password'}> Forget Password</Link>
+              <Col >
+                Don’t have an account? <Link to={redirect ? `/registration?redirect=${redirect}` : '/registration'}> Register</Link>
               </Col>
               <Col className='d-md-flex justify-content-md-end'>
-                Don’t have an account? <Link to={redirect ? `/registration?redirect=${redirect}` : '/registration'}> Register</Link>
+                <Link to={redirect ? `/forgot-password?redirect=${redirect}` : '/forgot-password'}> Forget Password</Link>
               </Col>
             </Row>
           </Col>
