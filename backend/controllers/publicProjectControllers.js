@@ -124,7 +124,7 @@ const createPublicProjectReview = asyncHandler(async (req, res) => {
 // @access  Public
 
 const getTopPublicProjects = asyncHandler(async (req, res) => {
-  const publicProjects = await PublicProject.find({}).sort({ rating: -1 }).limit(4)
+  const publicProjects = await PublicProject.find({}).sort({ rating: -1 }).limit(6)
   res.json(publicProjects)
 })
 

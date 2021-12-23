@@ -7,7 +7,7 @@ import OverviewTexts from '../layouts/OverviewTexts'
 const AboutScreen = () => {
   return (
     <div>
-      <Banner title='About Us ' subtitle='Tanvir Constructions Limited.' />
+      <Banner title='About Us ' subtitle='About Tanvir Constructions Limited.' />
       <OverviewTexts />
       <Corporates />
       <OurCoreValue />

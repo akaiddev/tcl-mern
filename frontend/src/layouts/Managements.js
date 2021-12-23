@@ -59,6 +59,7 @@ const Managements = () => {
   }
   return (
     <Container>
+      
       {loading ? (
         <Loader />
       ) : error ? (

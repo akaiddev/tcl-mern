@@ -124,7 +124,7 @@ const createPrivateProjectReview = asyncHandler(async (req, res) => {
 // @access  Public
 
 const getTopPrivateProjects = asyncHandler(async (req, res) => {
-  const privateProjects = await PrivateProject.find({}).sort({ rating: -1 }).limit(4)
+  const privateProjects = await PrivateProject.find({}).sort({ rating: -1 }).limit(6)
   res.json(privateProjects)
 })
 
