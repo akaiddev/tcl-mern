@@ -73,9 +73,9 @@ const PrivateProjectEdit = () => {
   return (
     <>
       <FormContainer>
-        <h1 className='fw-bold text-center my-4'>
+        <h3 className='fw-bold text-center my-4'>
           <i className='fas fa-edit'></i> Private Project Updates
-        </h1>
+        </h3>
 
         {loadingUpdate && <Loader />}
         {errorUpdate && <Message variant='danger'>{errorUpdate}</Message>}

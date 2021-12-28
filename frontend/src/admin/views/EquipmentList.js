@@ -60,9 +60,9 @@ const EquipmentList = () => {
       <Container className='my-5'>
         <Row className='align-items-center my-3'>
           <Col>
-            <h1 className='fw-bold'>
+            <h3 className='fw-bold'>
               <i className='fas fa-briefcase'></i> Equipment List
-            </h1>
+            </h3>
           </Col>
           <Col className='text-right'>
             <Button variant='dark' className='col-12 ' onClick={createEquipmentHandler}>

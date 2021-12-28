@@ -52,8 +52,8 @@ const Footer = () => {
         </div>
         <div className='text-center '>
           Designed and Development by{' '}
-          <a href='/' className='text-danger fw-bold '>
-            <cite> Tanvir Software solutions </cite>
+          <a href='https://akaid.herokuapp.com' target='_blank' rel='noreferrer' className='text-danger fw-bold '>
+            <cite> Abdur Rahman </cite>
           </a>
         </div>
       </div>
