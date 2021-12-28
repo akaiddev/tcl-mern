@@ -16,7 +16,15 @@ const ForgotPassword = () => {
         <h1 className='fw-bold text-center my-4'>
           <i className='fas fa-user-cog'></i> Forgot your password?
         </h1>
-        <p className='fw-bold my-3'>Please enter the email address associated with your account and We will email you a link to reset your password</p>
+
+        <Col sm={{ span: 9, offset: 3 }}>
+          <Row className='align-items-center mt-4 fw-bold'>
+            <Col>
+              <p className='fw-bold my-3'>Please enter the email address associated with your account and We will email you a link to reset your password</p>
+            </Col>
+          </Row>
+        </Col>
+
         <Form onSubmit={submitHandler} autoComplete='off'>
           <Form.Group as={Row} className='mb-3' controlId='formPlaintextEmail'>
             <Form.Label column sm='3'>
@@ -36,14 +44,16 @@ const ForgotPassword = () => {
           </Form.Group>
         </Form>
 
-        <Row className='align-items-center mt-4 fw-bold'>
-          <Col>
-            <Link to='/login'> Login</Link>
-          </Col>
-          <Col className='d-md-flex justify-content-md-end'>
-            <Link to='/registration'> Register</Link>
-          </Col>
-        </Row>
+        <Col sm={{ span: 9, offset: 3 }}>
+          <Row className='align-items-center mt-4 fw-bold'>
+            <Col>
+              <Link to='/login'> Login</Link>
+            </Col>
+            <Col className='d-md-flex justify-content-md-end'>
+              <Link to='/registration'> Register</Link>
+            </Col>
+          </Row>
+        </Col>
       </FormContainer>
     </>
   )
