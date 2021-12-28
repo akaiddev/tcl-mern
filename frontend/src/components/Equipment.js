@@ -7,7 +7,7 @@ const Equipment = ({ equipment }) => {
   return (
     <Card className=' customCard card-profile'>
       <Card.Header className=' card-header-image'>
-        <Link to={`/private-project-details/${equipment._id}`}>
+        <Link to={`/equipment-details/${equipment._id}`}>
           <Image fluid className='img' src={equipment.image} alt={equipment.client} title={equipment.client} />
         </Link>
         <div
