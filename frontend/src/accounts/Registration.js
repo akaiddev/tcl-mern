@@ -102,9 +102,12 @@ const Registration = () => {
             </Form>
 
             <Col sm={{ span: 9, offset: 3 }}>
-              <Row className='py-3 fw-bold'>
+              <Row className='align-items-center mt-4 fw-bold'>
                 <Col>
                   Already have an account? <Link to={redirect ? `/login?redirect=${redirect}` : '/login'}>Login</Link>
+                </Col>
+                <Col className='d-md-flex justify-content-md-end'>
+                  <Link to={redirect ? `/forgot-password?redirect=${redirect}` : '/forgot-password'}> Forget Password</Link>
                 </Col>
               </Row>
             </Col>

@@ -17,26 +17,20 @@ const ForgotPassword = () => {
           <i className='fas fa-user-cog'></i> Forgot your password?
         </h1>
 
-        <Col sm={{ span: 9, offset: 3 }}>
-          <Row className='align-items-center mt-4 fw-bold'>
-            <Col>
-              <p className='fw-bold my-3'>Please enter the email address associated with your account and We will email you a link to reset your password</p>
-            </Col>
-          </Row>
+        <Col>
+          <p className='fw-bold my-3'>Please enter the email address associated with your account and We will email you a link to reset your password</p>
         </Col>
 
         <Form onSubmit={submitHandler} autoComplete='off'>
-          <Form.Group as={Row} className='mb-3' controlId='formPlaintextEmail'>
-            <Form.Label column sm='3'>
-              Email Adreess
-            </Form.Label>
-            <Col sm='9'>
-              <Form.Control type='email' placeholder='Email Adreess' value={email} onChange={(e) => setEmail(e.target.value)} required />
-            </Col>
-          </Form.Group>
+          <Form>
+            <Form.Group className='mb-3' controlId='exampleForm.ControlInput1'>
+              <Form.Label>Email address</Form.Label>
+              <Form.Control type='email' placeholder='your-mail@gmail.com' value={email} onChange={(e) => setEmail(e.target.value)} required />
+            </Form.Group>
+          </Form>
 
           <Form.Group as={Row} className='mb-3'>
-            <Col sm={{ span: 9, offset: 3 }}>
+            <Col>
               <Button type='submit' variant='dark' className='col-12'>
                 Reset-Password
               </Button>
@@ -44,7 +38,7 @@ const ForgotPassword = () => {
           </Form.Group>
         </Form>
 
-        <Col sm={{ span: 9, offset: 3 }}>
+        <Col>
           <Row className='align-items-center mt-4 fw-bold'>
             <Col>
               <Link to='/login'> Login</Link>
