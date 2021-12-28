@@ -58,10 +58,10 @@ const PrivateProjectDetailScreen = () => {
                       <Card.Title className='fw-bold'>{privateProject.contact}</Card.Title>
                     </ListGroupItem>
                     <ListGroupItem>
-                      <Card.Text>valueOfWork: {privateProject.valueOfWork}</Card.Text>
+                      <Card.Text>Value Of Work: {privateProject.valueOfWork}</Card.Text>
                     </ListGroupItem>
                     <ListGroupItem>
-                      <Card.Text>valueOfWork: {privateProject.client}</Card.Text>
+                      <Card.Text>Client: {privateProject.client}</Card.Text>
                     </ListGroupItem>
                     <ListGroupItem>
                       <Card.Text>{privateProject.nameOfWork}</Card.Text>
