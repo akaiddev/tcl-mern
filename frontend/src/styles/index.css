@@ -495,7 +495,7 @@ p {
   color: #3c4858;
 }
 .customCard {
-  border: 0;
+  border-bottom: 0.4rem solid #232f3e;
   margin-top: 50px;
   border-radius: 6px !important;
   width: 100%;
