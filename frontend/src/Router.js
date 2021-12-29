@@ -60,7 +60,6 @@ function Router() {
       <Routes>
         <Route path='/' element={<HomeScreen />} />
         <Route path='/about' element={<AboutScreen />} />
-        <Route path='/management' element={<ManagementScreen />} />
 
         {/* Running-project */}
         <Route path='/running-project' element={<RunningProjectScreen />} />
@@ -80,6 +79,9 @@ function Router() {
 
         {/* Complete-project */}
         <Route path='/complete-project' element={<CompleteProjectScreen />} />
+
+        {/* management */}
+        <Route path='/management' element={<ManagementScreen />} />
 
         {/* Public-projects */}
         <Route path='/public-projects' element={<PublicProjectScreen />} />
