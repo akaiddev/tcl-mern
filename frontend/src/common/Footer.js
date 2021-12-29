@@ -22,18 +22,21 @@ const Footer = () => {
             <Image src={logo} alt='logo' className='d-inline-block align-top img-fluid' />
           </Col>
           <Col xs={12} sm={12} md={6} lg={4}>
-            <h3 className='my-3'>Contact Info</h3>
+            <h5 className='my-3'>Contact Info</h5>
 
             {contactInfos.map((contactInfo) => (
               <p key={contactInfo._id}>{contactInfo.description}</p>
             ))}
           </Col>
           <Col xs={12} sm={12} md={6} lg={4}>
-            <h3 className='my-3'>Contact Info</h3>
+            <h5 className='my-3'>Contact Info</h5>
             <Nav className='flex-column'>
               <Nav.Item>
                 <Nav.Link as={Link} to='/about'>
                   About
+                </Nav.Link>
+                <Nav.Link as={Link} to='/management'>
+                  Management
                 </Nav.Link>
                 <Nav.Link as={Link} to='/careers'>
                   Career

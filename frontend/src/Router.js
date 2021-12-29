@@ -46,6 +46,7 @@ import CompleteProjectScreen from './screens/CompleteProjectScreen'
 import ContactScreen from './screens/ContactScreen'
 import EquipmentScreen from './screens/EquipmentScreen'
 import HomeScreen from './screens/HomeScreen'
+import ManagementScreen from './screens/ManagementScreen'
 import PrivateProjectScreen from './screens/PrivateProjectScreen'
 import ProjectEquipmentScreen from './screens/ProjectEquipmentScreen'
 import PublicProjectScreen from './screens/PublicProjectScreen'
@@ -59,6 +60,7 @@ function Router() {
       <Routes>
         <Route path='/' element={<HomeScreen />} />
         <Route path='/about' element={<AboutScreen />} />
+        <Route path='/management' element={<ManagementScreen />} />
 
         {/* Running-project */}
         <Route path='/running-project' element={<RunningProjectScreen />} />
