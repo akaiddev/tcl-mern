@@ -34,7 +34,7 @@ const PrivateProjects = () => {
         <>
           <Row>
             {privateProjects.map((privateProject) => (
-              <Col xs={12} sm={12} md={6} lg={6} key={privateProject._id} className='my-3'>
+              <Col xs={12} sm={12} md={6} lg={6} xl={4} key={privateProject._id} className='my-3'>
                 <PrivateProject privateProject={privateProject} />
               </Col>
             ))}

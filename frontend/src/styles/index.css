@@ -495,11 +495,13 @@ p {
   color: #3c4858;
 }
 .customCard {
-  border-bottom: 0.4rem solid #232f3e;
   margin-top: 50px;
-  border-radius: 6px !important;
+  border-radius: 3em;
   width: 100%;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(40px);
+  border: solid 2px transparent;
+  background-clip: padding-box;
+  box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03);
 }
 
 .card .card-body {

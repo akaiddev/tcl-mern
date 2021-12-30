@@ -106,9 +106,7 @@ const Registration = () => {
                 <Col>
                   Already have an account? <Link to={redirect ? `/login?redirect=${redirect}` : '/login'}>Login</Link>
                 </Col>
-                <Col className='d-md-flex justify-content-md-end'>
-                  <Link to={redirect ? `/forgot-password?redirect=${redirect}` : '/forgot-password'}> Forget Password</Link>
-                </Col>
+                
               </Row>
             </Col>
           </Col>
