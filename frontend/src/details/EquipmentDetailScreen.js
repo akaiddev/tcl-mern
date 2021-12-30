@@ -83,10 +83,10 @@ const EquipmentDetailScreen = () => {
               <Card.Body>
                 <Row>
                   <Col md={6}>
-                    <h2 className='fw-bold'>
+                    <h4 className='fw-bold'>
                       <i className='fas fa-comments'></i> Reviews
                       <hr className='w-50 bg-info rounded-3' />
-                    </h2>
+                    </h4>
                     {equipment.reviews.length === 0 && <Message>No Reviews</Message>}
                     <ListGroup variant='flush'>
                       {equipment.reviews.map((review) => (
@@ -103,10 +103,10 @@ const EquipmentDetailScreen = () => {
                   <Col md={6}>
                     <ListGroup variant='flush'>
                       <ListGroup.Item>
-                        <h2 className='fw-bold'>
+                        <h4 className='fw-bold'>
                           <i className='fas fa-pen-alt'></i> Write a Review
                           <hr className='w-50 bg-info rounded-3' />
-                        </h2>
+                        </h4>
 
                         {successEquipmentReview && <Message variant='success'>Review submitted successfully</Message>}
                         {loadingEquipmentReview && <Loader />}

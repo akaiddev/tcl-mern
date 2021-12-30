@@ -80,10 +80,10 @@ const PublicProjectDetailScreen = () => {
               <Card.Body>
                 <Row>
                   <Col md={6}>
-                    <h2 className='fw-bold'>
+                    <h4 className='fw-bold'>
                       <i className='fas fa-comments'></i> Reviews
                       <hr className='w-50 bg-info rounded-3' />
-                    </h2>
+                    </h4>
                     {runningProject.reviews.length === 0 && <Message>No Reviews</Message>}
                     <ListGroup variant='flush'>
                       {runningProject.reviews.map((review) => (
@@ -100,10 +100,10 @@ const PublicProjectDetailScreen = () => {
                   <Col md={6}>
                     <ListGroup variant='flush'>
                       <ListGroup.Item>
-                        <h2 className='fw-bold'>
+                        <h4 className='fw-bold'>
                           <i className='fas fa-pen-alt'></i> Write a Review
                           <hr className='w-50 bg-info rounded-3' />
-                        </h2>
+                        </h4>
 
                         {successRunningProjectReview && <Message variant='success'>Review submitted successfully</Message>}
                         {loadingRunningProjectReview && <Loader />}
