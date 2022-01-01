@@ -3,7 +3,10 @@ import { Col, Container, Image, Nav, Row } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import logo from '../assets/logo.png'
+import Loader from '../common/Loader'
+import Message from '../common/Message'
 import { listContactInfo } from '../redux/actions/contactInfoActions'
+
 const Footer = () => {
   const dispatch = useDispatch()
 
@@ -22,15 +25,20 @@ const Footer = () => {
             <Image src={logo} alt='logo' className='d-inline-block align-top img-fluid' />
           </Col>
           <Col xs={12} sm={12} md={6} lg={4}>
-            <h5 className='my-3'>Contact Info</h5>
+            <h5 className='my-3 text-light fw-bold'>Contact Info</h5>
+            
+            {error && <Message variant='danger'>{error}</Message>}
+            {loading && <Loader />}
 
             {contactInfos.map((contactInfo) => (
-              <p key={contactInfo._id}>{contactInfo.description}</p>
+              <p key={contactInfo._id} className='text-light fw-bold'>
+                {contactInfo.description}
+              </p>
             ))}
           </Col>
           <Col xs={12} sm={12} md={6} lg={4}>
-            <h5 className='my-3'>Contact Info</h5>
-            <Nav className='flex-column'>
+            <h5 className='my-3 fw-bold text-light'>Importent</h5>
+            <Nav className='flex-column fw-bold text-light'>
               <Nav.Item>
                 <Nav.Link as={Link} to='/about'>
                   About
@@ -49,13 +57,13 @@ const Footer = () => {
           </Col>
         </Row>
       </Container>
-      <div className='bg-dark text-light  py-2 border-top'>
+      <div className='bg-danger text-light  py-2'>
         <div className='text-center'>
           All Rights Reserved <strong> Tanvir Constructions Ltd</strong>. {new Date().getFullYear()}
         </div>
         <div className='text-center '>
           Designed and Development by{' '}
-          <a href='https://akaid.herokuapp.com' target='_blank' rel='noreferrer' className='text-danger fw-bold '>
+          <a href='https://akaid.herokuapp.com' target='_blank' rel='noreferrer' className='text-dark fw-bold '>
             <cite> Abdur Rahman </cite>
           </a>
         </div>
