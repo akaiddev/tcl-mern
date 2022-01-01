@@ -58,14 +58,15 @@ const Managements = () => {
     ],
   }
   return (
-    <Container>
-      
+    <Container className='py-5'>
+      <h3 className='text-light'>Management Structure</h3>
+
       {loading ? (
         <Loader />
       ) : error ? (
         <Message variant='danger'>{error}</Message>
       ) : (
-        <Row className='py-5'>
+        <Row >
           <Slider {...settings}>
             {managements.map((managementItem) => (
               <Col xs={12} sm={6} md={4} lg={4} key={managementItem._id}>
