@@ -125,7 +125,7 @@ p {
 }
 
 .footer {
-  background-image: url('../assets/footer-bg.png');
+  background: url('../assets/footer-bg.png');
 }
 
 /* about us */
