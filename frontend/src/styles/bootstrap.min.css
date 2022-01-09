@@ -1869,11 +1869,11 @@ progress {
   cursor: pointer;
 }
 .form-control:focus {
-  color: #232f3e;
+  color: #14aab4;
   background-color: #fff;
-  border-color: #078ddb6c;
+  border-color: #09dbdbb0;
   outline: 0;
-  box-shadow: 0 0 0 0.15rem rgba(0, 5, 12, 0.25);
+  box-shadow: 0 0 0 0.10rem rgba(31, 156, 187, 0.616);
 }
 .form-control::-webkit-date-and-time-value {
   height: 1.5em;
