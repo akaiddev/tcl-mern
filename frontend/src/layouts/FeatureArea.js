@@ -83,7 +83,7 @@ const FeatureArea = () => {
             <Col xs={12} sm={12} md={6} lg={4}>
               <div className='content content-center'>
                 <i className='fa fa-dumbbell' />
-                <h5 >OUR STRENGTH & EXPERTISE</h5>
+                <h5>OUR STRENGTH & EXPERTISE</h5>
                 <p className='mb-0 text-light'>
                   Tanvir Constructions Limitedhas some proven professionals and expert engineers, technicians and is offering one stop service to its customers in the
                   domestic civil engineering sector. Our specialized teams have proven expertise and experience in delivering mega projects in the countryʼs construction
@@ -114,7 +114,7 @@ const FeatureArea = () => {
             <h3>
               OUR <span>VISION</span>
             </h3>
-            <p >Be a partner to build the nation. To be a leading construction company in the global market</p>
+            <p>Be a partner to build the nation. To be a leading construction company in the global market</p>
           </div>
           <Row>
             <Col xs={12} sm={12} md={6}>
