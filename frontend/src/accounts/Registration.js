@@ -106,7 +106,6 @@ const Registration = () => {
                 <Col>
                   Already have an account? <Link to={redirect ? `/login?redirect=${redirect}` : '/login'}>Login</Link>
                 </Col>
-                
               </Row>
             </Col>
           </Col>

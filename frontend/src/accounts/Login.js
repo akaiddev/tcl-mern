@@ -14,11 +14,9 @@ const Login = () => {
   const [isRevealPwd, setIsRevealPwd] = useState(false)
 
   let navigate = useNavigate()
-
   let location = useLocation()
-
   const dispatch = useDispatch()
-
+  
   const userLogin = useSelector((state) => state.userLogin)
   const { loading, error, userInfo } = userLogin
 
@@ -63,7 +61,13 @@ const Login = () => {
                   Password
                 </Form.Label>
                 <Col sm='9'>
-                  <Form.Control type={isRevealPwd ? 'text' : 'password'} placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} required />
+                  <Form.Control
+                    type={isRevealPwd ? 'text' : 'password'}
+                    placeholder='Password'
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                  />
                 </Col>
               </Form.Group>
 

@@ -84,10 +84,9 @@ export const updateBoardOfDirector = (boardOfDirector) => async (dispatch, getSt
     const {
       userLogin: { userInfo },
     } = getState()
-
+    
     const config = { headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${userInfo.token}` } }
     const { data } = await axios.put(`/api/boardOfDirectors/${boardOfDirector._id}`, boardOfDirector, config)
-
     dispatch({ type: BOARD_OF_DIRECTOR_UPDATE_SUCCESS, payload: data })
     dispatch({ type: BOARD_OF_DIRECTOR_DETAILS_SUCCESS, payload: data })
   } catch (error) {
