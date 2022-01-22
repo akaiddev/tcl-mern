@@ -125,7 +125,7 @@ p {
 }
 
 .footer {
-  background: url('../assets/footer-bg.png');
+  background: #e9ecef!important;
 }
 
 /* about us */
