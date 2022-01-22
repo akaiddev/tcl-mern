@@ -10,11 +10,9 @@ const HomeScreen = () => {
       <HomeCarousel />
       <BoardOfDirectors />
       <FeatureArea />
-      <Managements />      
-
+      <Managements />
     </div>
   )
 }
 
 export default HomeScreen
-
