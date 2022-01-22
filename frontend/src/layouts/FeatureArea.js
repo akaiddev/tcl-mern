@@ -7,7 +7,7 @@ import features3 from '../assets/about/features3.jpg'
 const FeatureArea = () => {
   return (
     <>
-      <div className='about text-light'>
+      <div className='about'>
         <Container>
           <Row>
             <Col md={6}>
@@ -56,7 +56,7 @@ const FeatureArea = () => {
       </div>
       {/* end about */}
       {/* services */}
-      <div className='services section bg-grey text-light'>
+      <div className='services section bg-grey'>
         <Container>
           <div className='title-section'>
             <h3>
@@ -73,7 +73,7 @@ const FeatureArea = () => {
               <div className='content'>
                 <i className='fa fa-building' />
                 <h5>OUR PRODUCTS & SERVICES</h5>
-                <p className='mb-0 text-light'>
+                <p className='mb-0'>
                   TCL is a reputed civil engineering company operating in Bangladesh mainly engaged in constructions and maintenance of large and medium type projects
                   Road & High Ways, Water Plant, Airport, Electrical Plant etc. both in Private and Public Sector.TCL is offering various products and services which
                   include the followings
@@ -84,7 +84,7 @@ const FeatureArea = () => {
               <div className='content content-center'>
                 <i className='fa fa-dumbbell' />
                 <h5>OUR STRENGTH & EXPERTISE</h5>
-                <p className='mb-0 text-light'>
+                <p className='mb-0'>
                   Tanvir Constructions Limitedhas some proven professionals and expert engineers, technicians and is offering one stop service to its customers in the
                   domestic civil engineering sector. Our specialized teams have proven expertise and experience in delivering mega projects in the countryʼs construction
                   sector.
@@ -95,7 +95,7 @@ const FeatureArea = () => {
               <div className='content'>
                 <i className='fa fa-wrench' />
                 <h5>CORPORATE SOCIAL RESPONSIBILITY (CSR)</h5>
-                <p className='mb-0 text-light'>
+                <p className='mb-0'>
                   Now-a-days,saving our ‘Mother Planetʼ has become the crucial issue. To save our beloved earth from all sorts of erosion and pollution, we, as global
                   citizen, obviously have some responsibilities to keep our mother planet green.Tanvir Construction Limited is also committed to maintaining a clean
                   environment.
@@ -108,7 +108,7 @@ const FeatureArea = () => {
       {/* end services */}
 
       {/* features */}
-      <div className='features section text-light'>
+      <div className='features section'>
         <Container>
           <div className='title-section'>
             <h3>
@@ -131,7 +131,7 @@ const FeatureArea = () => {
                 </div>
                 <div className='content-text'>
                   <h5>OUR COMMITMENTS </h5>
-                  <p className='mb-0 text-light'>To the Customers. To the Nation. To the Shareholders. To the Employees. To the other Stakeholders</p>
+                  <p className='mb-0'>To the Customers. To the Nation. To the Shareholders. To the Employees. To the other Stakeholders</p>
                 </div>
               </div>
               <div className='content'>
@@ -140,7 +140,7 @@ const FeatureArea = () => {
                 </div>
                 <div className='content-text'>
                   <h5>STRATEGIC OBJECTIVES</h5>
-                  <p className='mb-0 text-light'>
+                  <p className='mb-0'>
                     Introducing innovative and technology based Products & Services. Ensuring fast, accurate and state of the art construction services with customersʼ
                     satisfaction. Ensuring balanced and sustainable growth strategy. To achieve global standards.
                   </p>
@@ -152,7 +152,7 @@ const FeatureArea = () => {
                 </div>
                 <div className='content-text'>
                   <h5>EMPLOYEE CODE OF CONDUCT</h5>
-                  <p className='mb-0 text-light'>
+                  <p className='mb-0'>
                     Adhere to the Principles and applicable laws. Inform the customers about the benefits and risks of the products and services offered to them. laws Not
                     to cause any loss of reputation of the organization during works and attitudes. Not to be engaged in any activity that can be classified as personal
                     business. Not to use the TCLʼs assets and resources unproductively and outside the designated purpose
@@ -165,7 +165,7 @@ const FeatureArea = () => {
                 </div>
                 <div className='content-text'>
                   <h5>OUR CORE VALUES</h5>
-                  <p className='mb-0 text-light'>
+                  <p className='mb-0'>
                     Honest to our customers, employees, regulators, shareholders and others Gaining efficiency through best use of man and machine. Accountable to the
                     stakeholders and to the society at large. Transparent in each and every transaction. Continuous innovative idea generation and finding of engineering
                     solutions. Protecting assets and services.

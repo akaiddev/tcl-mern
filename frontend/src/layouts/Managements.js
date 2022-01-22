@@ -59,7 +59,7 @@ const Managements = () => {
   }
   return (
     <Container className='py-5'>
-      <h3 className='text-light'>Management Structure</h3>
+      <h3>Management Structure</h3>
 
       {loading ? (
         <Loader />
