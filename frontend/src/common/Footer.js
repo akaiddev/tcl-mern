@@ -38,7 +38,7 @@ const Footer = () => {
           </Col>
           <Col xs={12} sm={12} md={6} lg={4}>
             <h5 className='my-3 fw-bold '>Importent Link</h5>
-            <Nav className='flex-column fw-bold'>
+            <Nav className='flex-column fw-bold '>
               <Nav.Item >
                 <Nav.Link as={Link} to='/about' >
                   About
