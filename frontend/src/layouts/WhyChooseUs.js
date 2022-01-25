@@ -22,7 +22,7 @@ const WhyChooseUs = () => {
         <Row>
           <Col sm={12} className='section-head'>
             <h4 className='fw-bold'>
-              <span>Why Choose</span> Us?
+              <span>Why Work With</span> Tanvir Constructions Ltd?
             </h4>
           </Col>
           {loading ? (

@@ -7,7 +7,10 @@ import OverviewTexts from '../layouts/OverviewTexts'
 const AboutScreen = () => {
   return (
     <div>
-      <Banner title='About Us ' subtitle='About Tanvir Constructions Limited.' />
+      <Banner
+        title='About Us.'
+        subtitle='We Building Everything That You Needed.'
+      />
       <OverviewTexts />
       <Corporates />
       <OurCoreValue />
@@ -16,4 +19,3 @@ const AboutScreen = () => {
 }
 
 export default AboutScreen
-

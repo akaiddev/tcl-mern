@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const ProductService = ({ serviceProduct }) => {
   return (
-    <div className='service-box'>
+    <div className='service-box mt-3'>
       <div className='service-icon'>
         <Image src={serviceProduct.image} alt='image' width='100' />
       </div>
