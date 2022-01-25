@@ -76,7 +76,7 @@ const BoardOfDirectors = () => {
             </Row>
           )}
         </Col>
-        <Col md={8} className='p-5'>
+        <Col md={8} >
           <p>
             With the constant pursuit for operational excellence and relentless strive for business accomplishment,
             <strong>Tanvir Constructions Ltd</strong> . is now one of the growing construction firms in Bangladesh. As one of the promising construction company
