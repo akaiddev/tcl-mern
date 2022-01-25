@@ -21,7 +21,7 @@ const WhyChooseUs = () => {
       <Container>
         <Row>
           <Col sm={12} className='section-head'>
-            <h4>
+            <h4 className='fw-bold'>
               <span>Why Choose</span> Us?
             </h4>
           </Col>
@@ -34,10 +34,7 @@ const WhyChooseUs = () => {
               {corporates.map((corporate) => (
                 <Col sm={6} lg={4}>
                   <div className='item'>
-                    <span className='icon feature_box_col_one'>
-                      <i className='fa fa-globe' />
-                    </span>
-                    <h6>{corporate.name}</h6>
+                    <h4>{corporate.name}</h4>
                     <p>{corporate.description.map((items) => items)}</p>
                   </div>
                 </Col>
