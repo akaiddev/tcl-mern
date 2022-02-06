@@ -142,7 +142,7 @@ p {
 }
 
 .footer {
-  background: #FFF !important;
+  background: #fff !important;
 }
 
 .card-title {
@@ -281,7 +281,7 @@ p {
   color: #f91942;
   line-height: 1;
   letter-spacing: 0.3px;
-  font-size: 34px;
+  font-size: 24px;
   font-weight: 700;
   text-align: center;
   text-transform: none;
@@ -486,7 +486,6 @@ p.awesome_line {
 /********************************/
 
 .services-section {
-  
   padding: 40px 0;
 }
 .inner-width {
@@ -497,8 +496,8 @@ p.awesome_line {
   overflow: hidden;
 }
 .section-title {
-  text-align:justify;
- 
+  text-align: justify;
+
   text-transform: uppercase;
   font-size: 30px;
 }
@@ -540,7 +539,6 @@ p.awesome_line {
 }
 .service-box:hover .service-icon {
   background: #82ccdd;
-  
 }
 .service-title {
   font-size: 18px;
