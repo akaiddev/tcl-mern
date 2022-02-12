@@ -6,7 +6,6 @@ import Profile from './accounts/Profile'
 import Registration from './accounts/Registration'
 import UserEditScreen from './accounts/UserEditScreen'
 import UserListScreen from './accounts/UserListScreen'
-import AdminScreen from './admin/AdminScreen'
 import BoardOfDirectorEdit from './admin/update/BoardOfDirectorEdit'
 import CareerEdit from './admin/update/CareerEdit'
 import ContactInfoEdit from './admin/update/ContactInfoEdit'
@@ -66,7 +65,6 @@ function Router() {
 
         {/* about */}
         <Route path='/about' element={<AboutScreen />} />
-        
 
         {/* Services */}
         <Route path='/service' element={<ServiceScreen />} />
@@ -108,7 +106,7 @@ function Router() {
         <Route path='/forgot-password' element={<ForgotPassword />} />
         <Route path='/registration' element={<Registration />} />
         <Route path='/profile' element={<Profile />} />
-        <Route path='/admin' element={<AdminScreen />} />
+        {/* <Route path='/admin' element={<AdminScreen />} /> */}
         <Route path='/admin/users' element={<UserListScreen />} />
         <Route path='/admin/user/:id/edit' element={<UserEditScreen />} />
 
