@@ -15,11 +15,11 @@ const Header = () => {
     dispatch(logout())
   }
   return (
-    <Navbar bg='dark' variant='dark' expand='md' fixed='top' className='top-0 shadow-sm'>
+    <Navbar bg='light' variant='light' expand='md' fixed='top' className='top-0 shadow-sm'>
       <Container>
         <Navbar.Brand as={Link} to='/'>
           <i className='fas fa-globe'></i>
-          <cite> Tanvir Constructions Ltd</cite>
+          <cite> <span className='text-danger fw-bold'> Tanvir</span> Constructions <span className='text-danger fw-bold'> Ltd</span> </cite>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>

@@ -57,13 +57,13 @@ const Footer = () => {
           </Col>
         </Row>
       </Container>
-      <div className='bg-dark text-light  py-2'>
+      <div className='bg-info text-light  py-2'>
         <div className='text-center'>
           All Rights Reserved <strong> Tanvir Constructions Ltd</strong>. {new Date().getFullYear()}
         </div>
         <div className='text-center '>
           Designed and Development by{' '}
-          <a href='https://akaid.herokuapp.com' target='_blank' rel='noreferrer' className='text-danger fw-bold '>
+          <a href='https://akaid.herokuapp.com' target='_blank' rel='noreferrer' className='text-dark fw-bold '>
             <cite> Abdur Rahman </cite>
           </a>
         </div>
