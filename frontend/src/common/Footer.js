@@ -59,7 +59,7 @@ const Footer = () => {
       </Container>
       <div className='bg-info text-light  py-2'>
         <div className='text-center'>
-          All Rights Reserved <strong> Tanvir Constructions Ltd</strong>. {new Date().getFullYear()}
+          All Rights Reserved <strong> <span className='text-danger fw-bold'> Tanvir </span> Constructions Ltd</strong>. {new Date().getFullYear()}
         </div>
         <div className='text-center '>
           Designed and Development by{' '}
