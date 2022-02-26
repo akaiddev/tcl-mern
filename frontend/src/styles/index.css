@@ -6,7 +6,7 @@
 }
 
 ::-webkit-scrollbar {
-  width: 0.4rem;
+  width: 0.5rem;
   background-color: #f5f5f5;
 }
 
@@ -142,7 +142,7 @@ p {
 }
 
 .footer {
-  background: #fff !important;
+  background-image: url('../assets/footer.svg');
 }
 
 .card-title {

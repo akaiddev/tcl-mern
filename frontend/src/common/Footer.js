@@ -25,19 +25,19 @@ const Footer = () => {
             <Image src={logo} alt='logo' className='d-inline-block align-top img-fluid' />
           </Col>
           <Col xs={12} sm={12} md={6} lg={4}>
-            <h5 className='my-3  fw-bold'>Contact Info</h5>
+            <h5 className='my-3 text-light  fw-bold'>Contact Info</h5>
             
             {error && <Message variant='danger'>{error}</Message>}
             {loading && <Loader />}
 
             {contactInfos.map((contactInfo) => (
-              <p key={contactInfo._id} className=' fw-bold'>
+              <p key={contactInfo._id} className='text-light  fw-bold'>
                 {contactInfo.description}
               </p>
             ))}
           </Col>
           <Col xs={12} sm={12} md={6} lg={4}>
-            <h5 className='my-3 fw-bold '>Importent Link</h5>
+            <h5 className='my-3 fw-bold text-light '>Importent Link</h5>
             <Nav className='flex-column fw-bold '>
               <Nav.Item >
                 <Nav.Link as={Link} to='/about' >
