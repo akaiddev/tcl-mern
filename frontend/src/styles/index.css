@@ -6,7 +6,7 @@
 }
 
 ::-webkit-scrollbar {
-  width: 0.5rem;
+  width: 0.4rem;
   background-color: #f5f5f5;
 }
 
@@ -68,6 +68,16 @@ p {
   background-color: #00000099;
   padding: 20px;
   border-radius: 10px;
+}
+
+.carousel-item {
+  height: 100vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .banner h2 {

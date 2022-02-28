@@ -22,7 +22,7 @@ const HomeCarousel = () => {
   ) : error ? (
     <Message variant='danger'> {error} </Message>
   ) : (
-    <Carousel pause='hover'>
+    <Carousel pause='hover' fade>
       {runningProjects.map((runningProject, index) => (
         <Carousel.Item interval={1000} key={index}>
           <Image className='d-block w-100' src={runningProject.image} alt='First slide' />
