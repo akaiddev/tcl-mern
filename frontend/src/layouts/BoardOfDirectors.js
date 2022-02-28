@@ -1,21 +1,21 @@
-import React, { useEffect } from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
-import { useDispatch, useSelector } from 'react-redux'
-import Slider from 'react-slick'
-import Loader from '../common/Loader'
-import Message from '../common/Message'
-import BoardOfDirector from '../components/BoardOfDirector'
-import { listBoardOfDirector } from '../redux/actions/BoardOfDirectorActions'
+import React, { useEffect } from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
+import Slider from 'react-slick';
+import Loader from '../common/Loader';
+import Message from '../common/Message';
+import BoardOfDirector from '../components/BoardOfDirector';
+import { listBoardOfDirector } from '../redux/actions/BoardOfDirectorActions';
 
 const BoardOfDirectors = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  const boardOfDirectorList = useSelector((state) => state.boardOfDirectorList)
-  const { loading, error, boardOfDirectors } = boardOfDirectorList
+  const boardOfDirectorList = useSelector((state) => state.boardOfDirectorList);
+  const { loading, error, boardOfDirectors } = boardOfDirectorList;
 
   useEffect(() => {
-    dispatch(listBoardOfDirector())
-  }, [dispatch])
+    dispatch(listBoardOfDirector());
+  }, [dispatch]);
 
   let settings = {
     dots: true,
@@ -54,7 +54,7 @@ const BoardOfDirectors = () => {
         },
       },
     ],
-  }
+  };
 
   return (
     <Container className='my-5'>
@@ -108,7 +108,7 @@ const BoardOfDirectors = () => {
         </Col>
       </Row>
     </Container>
-  )
-}
+  );
+};
 
-export default BoardOfDirectors
+export default BoardOfDirectors;
