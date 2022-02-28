@@ -27,7 +27,7 @@ const HomeCarousel = () => {
         <Carousel.Item interval={1000} key={index}>
           <Image className='d-block w-100' src={runningProject.image} alt='First slide' />
           <Carousel.Caption>
-            <h4 className='text-light'>{runningProject.client}</h4>
+            <h1 className='text-light'>{runningProject.client}</h1>
 
             <Link to='/running-project' className='btn bg-dark text-light'>
               Explore Running Project <i className='fas fa-arrow-right'></i>
