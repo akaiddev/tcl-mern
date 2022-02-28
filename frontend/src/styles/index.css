@@ -57,12 +57,12 @@ p {
 }
 .carousel-caption {
   right: initial;
-  top: 40%;
+  top: 30%;
   bottom: 0%;
   bottom: initial;
   padding-bottom: 1.25rem;
   text-align: left;
-  width: 30%;
+  width: 40%;
 }
 .carousel-caption {
   background-color: #00000099;
