@@ -52,7 +52,7 @@ p {
 }
 
 #CarouselSlider {
-  max-height: 100vh;
+  max-height: 100%;
   overflow: hidden;
 }
 .carousel-caption {
@@ -71,13 +71,29 @@ p {
 }
 
 .carousel-item {
-  height: 100vh;
   min-height: 350px;
   background: no-repeat center center scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+@media only screen and (max-width: 400px) {
+  #CarouselSlider {
+    overflow: hidden;
+  }
+  .carousel-caption {
+    display: none;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  #CarouselSlider {
+    overflow: hidden;
+  }
+  .carousel-caption {
+    display: none;
+  }
 }
 
 .banner h2 {
@@ -353,10 +369,10 @@ p.awesome_line {
 .item {
   background: #fff;
   text-align: center;
-  padding: 1rem 0.5rem;
+  padding: 1.2rem 0.8rem;
   -webkit-box-shadow: 0 0px 25px rgba(0, 0, 0, 0.07);
   box-shadow: 0 0px 25px rgba(0, 0, 0, 0.07);
-  border-radius: 8px;
+  border-radius: 10px;
   border: 1px solid rgba(0, 0, 0, 0.07);
   margin-bottom: 1rem;
   -webkit-transition: all 0.5s ease 0;
