@@ -13,7 +13,7 @@ const runningProjects = [
     contact: 'DZ(e-GP)-05/PMP(Road)/2021-2022(TID-607730)',
     valueOfWork: '148353702.364',
     client: 'Roads & Highways  Department',
-    image: '/runningProject/1.jpg',
+    image: '/runningProject/3.jpg',
     rating: 5,
     numReviews: 12,
     nameOfWork:
