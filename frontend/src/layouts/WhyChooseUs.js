@@ -32,7 +32,7 @@ const WhyChooseUs = () => {
           ) : (
             <>
               {corporates.map((corporate , index) => (
-                <Col sm={6} lg={4}>
+                <Col xs={12}  lg={6} >
                   <div className='item'>
                     <h4>{index + 1}. <span>{corporate.name}</span> </h4>
                     <p>{corporate.description.map((items) => items)}</p>
