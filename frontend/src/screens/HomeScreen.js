@@ -11,8 +11,9 @@ const HomeScreen = () => {
       <HomeCarousel />
       <WhoWeAre />
       <BoardOfDirectors />
-      <WhyChooseUs />
       <Managements />
+      <WhyChooseUs />
+      
     </div>
   )
 }
