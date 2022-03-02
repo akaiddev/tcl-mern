@@ -13,7 +13,6 @@ const HomeScreen = () => {
       <BoardOfDirectors />
       <Managements />
       <WhyChooseUs />
-      
     </div>
   )
 }
