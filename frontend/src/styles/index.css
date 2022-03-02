@@ -63,7 +63,7 @@ p {
   position: relative;
 }
 .carousel-inner {
-  padding-top: 43.25%;
+  padding-top: 50%;
   display: block;
   content: '';
 }
