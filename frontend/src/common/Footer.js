@@ -38,18 +38,18 @@ const Footer = () => {
           </Col>
           <Col xs={12} sm={12} md={6} lg={4}>
             <h5 className='my-3 fw-bold text-light '>Importent Link</h5>
-            <Nav className='flex-column fw-bold '>
+            <Nav className='flex-column text-light fw-bold '>
               <Nav.Item >
-                <Nav.Link as={Link} to='/about' >
+                <Nav.Link as={Link} to='/about' className='text-light' >
                   About
                 </Nav.Link>
-                <Nav.Link as={Link} to='/management'>
+                <Nav.Link as={Link} to='/management' className='text-light'>
                   Management
                 </Nav.Link>
-                <Nav.Link as={Link} to='/careers'>
+                <Nav.Link as={Link} to='/careers' className='text-light'>
                   Career
                 </Nav.Link>
-                <Nav.Link as={Link} to='/contact'>
+                <Nav.Link as={Link} to='/contact' className='text-light'>
                   Contact
                 </Nav.Link>
               </Nav.Item>
