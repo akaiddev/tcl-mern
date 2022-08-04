@@ -10,9 +10,8 @@ const HomeScreen = () => {
     <div className='home'>
       <HomeCarousel />
       <WhoWeAre />
-      <BoardOfDirectors />
-      <Managements />
       <WhyChooseUs />
+      
     </div>
   )
 }
