@@ -13,7 +13,7 @@ const Management = ({ managementItem }) => {
         />
       </Card.Header>
       <Card.Body>
-        <Card.Title> {managementItem.designation}</Card.Title>
+        <Card.Title> {managementItem.name}</Card.Title>
         <Card.Text as='h6' className='card-category text-gray'>
           {managementItem.designation}
         </Card.Text>

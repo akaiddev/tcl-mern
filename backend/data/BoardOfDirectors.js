@@ -2,12 +2,12 @@ const BoardOfDirectors = [
   {
     name: 'Mrs. Parveen Akter',
     designation: 'Chairman',
-    image: '/managements/img_avatar5.png',
+    image: '/managements/Chairman.jpg',
   },
   {
     name: 'Mr. Tanvir Ahmed',
     designation: 'Managing Director & CEO',
-    image: '/managements/img_avatar3.png',
+    image: '/managements/Managingdirector.jpg',
   },
 ]
 
